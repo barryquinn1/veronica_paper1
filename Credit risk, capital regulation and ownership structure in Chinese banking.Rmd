@@ -1,0 +1,49 @@
+---
+title: "Credit risk, capital regulation, and state ownership dynamics in Chinese banking: New Evidence"
+
+blinded: 0
+
+authors: 
+- name: Veronica Zhang
+  thanks: The authors gratefully acknowledge Professor John Turner and Dr Clive Walker for their insight comments.
+  affiliation: Management School, Queen's University Belfast
+
+- name: Lisa Sheenan
+  affiliation: Management School, Queen's University Belfast
+
+- name: Barry Quinn
+  affiliation: Management School, Queen's University Belfast
+keywords:
+- financial institutions
+- Industrial organisation
+
+abstract: |
+  The text of your abstract.  200 or fewer words.
+
+bibliography: refs.bib
+output: bookdown::pdf_document2
+---
+
+# Introduction
+
+The relationship between capital buffers and bank risk-taking has long attracted academic attention, [@cooper2002;@RN44;@RN56].  The implementation of Basel Accords also lead to work focusing on the effects of capital regulation on bank behaviour, in particular on the impact of capital adequacy requirements on bank risk-taking behaviour. The 2007-2009 global financial crisis uncovered structural weaknesses in capital regulations which were implemented before the crisis. After the crisis, the Basel Committee on Banking Regulation and Supervision (BCBS) developed a consolidated framework (Basel III) for more stringent capital adequacy regulations and liquidity assessment, in recognition of the need for banks to be subject to more stringent capital regulations. Following the goals set by the BCBS, member countries, including China, have established legislation and regulatory frameworks. While regulatory consensus has been reached focusing on capital buffers, there is continued academic debate about what effect capital requirements could have on bank risk-taking [@RN36;@RN42;@RN68]
+
+China’s banking sector plays an essential role in the country’s economic development. It underwent fundamental reform in 1978, as an integrate part of China’s overall economic reform. Since 2001, when China got accession to the World Trade Organization (WTO), the reform of China’s banking system has stepped up its pace and the whole banking sector has been dramatically reshaped. The reform has transformed Chinese banks into market-oriented enterprises, changed their ownership structure, established modern corporate governance mechanisms, and introduced legislation and regulatory framework. Since 2010, improvements and refinements have continued in China’s banking sector as part of an advanced stage of the reform. China’s financial authority fully accepted the Basel III framework and began its implementation in 2013. A rich body of literature focusing on the previous stages of the reform assesses the relationship between capital requirements and Chinese banks’ performance and risk-taking [@RN63;@RN66;@RN75]. The objective of this paper is to analyze the impact of capital requirements on Chinese bank risk-taking following the 2007-2009 global financial crisis using the risk-based capital definition of the Basel III framework.
+
+In this paper, we extend existing empirical work studying the impact of capital requirements on bank credit risk-taking by incorporating the interaction between capital regulation and ownership structure. Financial theories suggest that capital regulations impact banks’ risk-taking due to the effect of the regulation on shareholders’ incentives. [@RN15;@RN44] (Demirgüç-Kunt and Kane, 2002, Allen et al., 2011) Empirical studies support those theories. Nevertheless, empirical studies find mixed results including negative association [RN24,RN75] (Berger and Bouwman, 2013, Tan and Floros, 2013), positive association [RN27] (Bichsel and Blum, 2004) and nonlinear relationships [@RN35] between capital regulation and bank risk-taking. Agency theory suggests that corporate risk-taking is influenced by ownership structure depending on the power of shareholder control. [@RN52,@RN4] Therefore, these theoretical keystones provide the foundation for us to examine the effect of capital regulation on bank risk-taking and how this interacts with ownership structure in determining risk-taking. 
+
+This paper provides empirical evidence using a standard Ordinary Least Square (OLS) approach for an unbalanced panel of 231 China’s commercial banks over the period 2010-2019. To perform our analysis, we also hand collect the ownership structure information of these 231 Chinese commercial banks and classify them into 5 categories of ownership identities: State-owned (Big Six and other than Big Six), Local government-holding, Joint-stock, Foreign joint-stock, and Foreign-owned banks. (Table 1)  We regress both regulatory capital requirements from the Basel III framework and ownership identities on bank credit risk-taking proxies, respectively. We employ banks’ Non-performing Loan (NPL) ratios and Loan Loss Reserves (LLR) ratios to reflect the level of banks’ credit risk-taking. We also examine the actual impact of Basel III capital regulation on credit risk-taking incorporating the interaction between capital regulation and ownership structure. 
+
+Our key findings are as follows. First, credit risk is generally lower in banks that have higher regulatory capital. This finding is consistent with the theory suggesting regulatory capital acts as a buffer to resist economic shocks and lower banks’ risk-taking incentives [@RN42,@RN64]. This finding also supports the empirical studies of Chinese banks conducted by @RN75and @RN62.
+
+Second, state-owned banks in general have higher credit risk compared to foreign-owned banks and other ownership identities. This finding is consistent with the results of @RN78 which examines risk-taking of state-owned banks and foreign banks. This finding also, to some extent, backs up the empirical results of @RN1 which finds banks with large owners who have significant cash flow rights take higher credit risk. During the financial reform, the state-shareholder in Chinese banks has transformed from a state-bureau (e.g., the Finance Ministry) to a state-corporation (e.g., Central Huijin Investment Co.) with modern corporate governance mechanisms. The state-shareholder has become a shareholder with *highly concentrated control rights and significant cash flow rights*. Due to this fact, our finding can be considered consistent with the agency theory that concentrated ownership and powerful shareholders suggest higher corporate risk-taking[@RN70;@RN74].  This finding also supports the social view of the theory of state ownership of banks that state-owned banks would undertake credit projects which might not be financially profitable[@RN73].
+
+Third, the actual impact of Basel III capital regulation on credit risk-taking can be influenced, to some extent, by ownership structure. For example, the results suggest that in government-holding banks, the negative effect of capital regulation on credit risk-taking can be enhanced by its ownership identity when there is no shareholder with significant power to increase risk-taking incentives.
+
+This paper contributes to the literature in several ways. First, this study assesses the impact of risk-based capital regulation on Chinese bank credit risk-taking following the global financial crisis, using the definition of capital from Basel III framework. It has been 10 years since the BCBS first released Basel III framework in 2010. The Chair of the BCBS stated that evaluating the regulation effects is part of the BCBS post-crisis reform in the current macroeconomic environment. In addition, China’s banking industry achieved extensive transformation before 2010 and the Chinese case provides uniqueness in terms of ownership structure.
+
+Second, our study bridges the research gap by incorporating the interaction between ownership structure and capital regulation while examining the impact of Basel III capital requirements on bank credit risk-taking. Only a small number of existing studies evaluate the joint effects of ownership structure and bank regulations on bank risk-taking, such as @RN1 2009. @RN66 test the impact of the interaction between capital regulation and ownership structure on cost efficiency of Chinese banks. To the best of our knowledge, this is the first study to assess how Basel III regulation and ownership structure jointly shape Chinese bank credit risk-taking following the global financial crisis.
+
+Third, we analyse a bespoke dataset of 231 Chinese commercial banks over a relatively long period (2010-2019) to study China’s banking sector. These 231 banks account for over 80% of China’s banking sector in terms of total assets. Apart from employing the data provided by the SNL database, we hand collected any missing values from the original annual reports of individual banks, which makes our data set extremely comprehensive. 
+
+The remainder of this paper is organised as follows. Section II reviews related literature, develops the testable predictions, as well as a brief introduction of the evolution of ownership structure of commercial banks in China. Section III presents the data set and the empirical model including the variables considered in our analysis. The empirical results are presented in section IV. And section V concludes.  
