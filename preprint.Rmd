@@ -7,7 +7,7 @@ authors:
 
 - name: Lisa Sheenan
   affiliation: Management School, Queen's University Belfast
-
+  
 - name: Barry Quinn
   affiliation: Management School, Queen's University Belfast
 abstract: |
@@ -18,9 +18,10 @@ keywords:
 - State ownership
 - Credit risk
 bibliography: refs.bib
-output: rticles::arxiv_article
+output: 
+  rticles::arxiv_article:
+    latex_engine: xelatex
 longtable: true
-latex_engine: xelatex
 header-includes:
 - \usepackage{longtable}
 - \usepackage{color}
@@ -29,7 +30,18 @@ header-includes:
 
 ```{r set-up, include=FALSE}
 knitr::opts_chunk$set(fig.align = "center",warning = FALSE, echo = FALSE)
-pacman::p_load('tidyverse','readxl','flextable','corrplot','stargazer')
+pacman::p_load('tidyverse','readxl','flextable','corrplot','stargazer',"memisc","pander")
+pacman::p_load(
+  rio,          # File import
+  here,         # File locator
+  skimr,        # get overview of data
+  tidyverse,    # data management + ggplot2 graphics 
+  gtsummary,    # summary statistics and tests
+  rstatix,      # summary statistics and statistical tests
+  janitor,      # adding totals and percents to tables
+  scales,       # easily convert proportions to percents  
+  flextable     # converting tables to pretty images
+)
 ```
 
 # Introduction
@@ -63,13 +75,12 @@ As a member of the G20 and the Basel Committee on Banking Supervision, China has
 
 ## Bank capital and risk
 
-Empirical literature and financial theories provide mixed views regarding the impact of bank capital on risk-taking and bank stability. The Basel framework, centered with capital regulation, is designed to reduce bank risk and enhance bank resilience. @RN18 support this view that bank capital acts as a buffer in absorbing economic shocks and strengthens systemic stability. @RN42 find that a strong capital position helps banks resist earning shocks and have higher probability to survive the crisis. They also find evidence to advocate higher quality capital, i.e., Tier 1 capital, in the regulatory capital requirements. A lot of theories underline that risk-based capital, more effective than interest rate ceilings, boosts banks’ "franchise value", improve borrowers screening, and lower banks’ excessive risk-taking incentives [@RN15;RN64;RN67]. Other theories emphasize a moral hazard perspective, arguing effective regulatory capitalization may offset the excessive risk-taking incentives created by deposit insurance [@RN56;@RN44]. In terms of Chinese commercial banks, [@RN75] find a significant negative relationship between bank capital and risk. @N62 report that bank capital is negatively related to NPL and support theories with the moral hazard view.  
+Empirical literature and financial theories provide mixed views regarding the impact of bank capital on risk-taking and bank stability. The Basel framework, centered with capital regulation, is designed to reduce bank risk and enhance bank resilience. @RN18 support this view that bank capital acts as a buffer in absorbing economic shocks and strengthens systemic stability. @RN42 find that a strong capital position helps banks resist earning shocks and have higher probability to survive the crisis. They also find evidence to advocate higher quality capital, i.e., Tier 1 capital, in the regulatory capital requirements. A lot of theories underline that risk-based capital, more effective than interest rate ceilings, boosts banks’ "franchise value", improve borrowers screening, and lower banks’ excessive risk-taking incentives [@RN15;RN64;RN67]. Other theories emphasize a moral hazard perspective, arguing effective regulatory capitalization may offset the excessive risk-taking incentives created by deposit insurance [@RN56;@RN44]. In terms of Chinese commercial banks, [@RN75] find a significant negative relationship between bank capital and risk. @RN62 report that bank capital is negatively related to NPL and support theories with the moral hazard view.  
 
 Contrariwise, other research posits that greater capital regulations may induce higher bank risk. @RN37 extend the research of @RN46, stating that the existence of deposit insurance weaken the depositors’ incentive to monitor banks and causes them to engage in excessive risk-taking activities. @RN29 suggests that banks may have higher incentives to raise risk due to the binding capital adequacy requirements. @RN35 find a U-shaped relationship between bank capital position and risk. The risk-taking first decreases with the increase of bank capital; then it increases as bank capital increases on its high level. They also argue that the increase in capital adequacy requirements induces banks to take additional portfolio risk even if they are well-capitalized. For Chinese banking data, @RN63 find that the negative relationship between capital and risk only exists in the sub-sample of small banks and is not found in the sub-sample of large banks. 
 We test the following two hypotheses regarding the impact of regulatory capital requirements on bank credit risk:
 
 **Hypothesis 1a:** *There is a negative relationship between regulatory capital and credit risk.*
-
 
 **Hypothesis 1b:** *There is a positive relationship between regulatory capital and credit risk.*
 
@@ -114,17 +125,6 @@ Financial theories suggest that banking regulations impact banks’ risk-taking 
 This study uses annual data for 231 commercial banks in China, for the period 2010-2019, providing a total of 2,310 observations. The categories of sample financial institutions of the banking sector and their ownership structure are listed in Table 1. 
 
 ```{r table1}
-pacman::p_load(
-  rio,          # File import
-  here,         # File locator
-  skimr,        # get overview of data
-  tidyverse,    # data management + ggplot2 graphics 
-  gtsummary,    # summary statistics and tests
-  rstatix,      # summary statistics and statistical tests
-  janitor,      # adding totals and percents to tables
-  scales,       # easily convert proportions to percents  
-  flextable     # converting tables to pretty images
-  )
 import("raw.xlsx")->dat
 dat %>% 
   distinct(Institution_Name,.keep_all=TRUE) %>%
@@ -137,7 +137,7 @@ dat %>%
     col_name = "Type",
     placement = "combined") %>% # this is necessary to print as image
   flextable() %>%    # convert to pretty image
-  autofit() %>%
+  # autofit() %>%
   set_caption("Cross tabulation of Ownership and Type") %>%
   footnote(i=1,j=3:6,value = as_paragraph(c("Branches usually cover a city and the near cities within the province where the bank headquarter is located","Foreign bank branches and subsidiaries","Branches cover the whole country; following CBIRC's categorization","Branches usually cover local communities and rural area within a province where the bank headquarter is located")),
                                           ref_symbols=c("a","b","c","d"),
@@ -145,7 +145,9 @@ dat %>%
   valign(valign="bottom",part="header") %>%
   footnote(j=1,i=c(2,4,5),value = as_paragraph(c("Joint-stock Banks having foreign strategic investors (usually shareholding over 15%)","Banks' share held by mixed-ownership insitutions and individuals; if shareholding involves indirect local government holding, the stake is less than 10%","Banks'share either held by local Treasury Bureau (no matter how much of the stake), or indirectly held by local government over 10%")),
                                           ref_symbols=c("e","f","g"),
-                                          part="body")
+                                          part="body") %>%
+  fontsize(size = 8, part = "all") 
+  
   
 # %>% # format to one line per row 
 #   save_as_image("table1.png")
@@ -167,8 +169,11 @@ In Equation (1), the subscripts $i$ and $t$ denote the individual bank and year 
 ```{r table 2}
 import("table2.xlsx") %>%
   flextable() %>%
-  autofit() %>%
-  set_caption("Table 2: Variable Definitions")
+  # autofit() %>%
+  set_caption("Table 2: Variable Definitions") %>%
+  fontsize(size = 9, part = "all") %>%
+  width(width = 2)
+
 ```
 
 
@@ -223,7 +228,8 @@ dat %>%
   get_summary_stats(show = c("n","mean","median","sd")) %>%
   flextable %>%
   autofit() %>%
-  set_caption("Table 3: Descriptive statistics of the regression predictors")
+  set_caption("Table 3: Descriptive statistics of the regression predictors") %>%
+  width(width = 2)
 ```
 
 Table 3 presents the descriptive statistics for the sample. The mean of NPL to Gross Loans is 1.503%, slightly lower than the figure of 1.8% in @RN53 where they use the sample of banks in China over the period 2004-2017, and higher than the figure of 0.92% in @RN75 where they take the sample over the period 2003-2009. The relatively low NPL ratio of Chinese banks can be regarded as one of the results of the financial industry reform in China. During the reform, the four Asset Management Companies (AMCs) purchased a large amount of non-performing loans from the state-owned banks [@RN75]. Apart from the increase of the numbers of Chinese commercial banks, the NPL figure suggests an average increase in the NPL to Gross Loan ratio of Chinese commercial banks in recent years.
@@ -234,7 +240,7 @@ The mean of ROE is 12.86 which is slightly lower than what is reported in @RN62 
 
 ```{r correlation}
 cor(dat %>%
-  dplyr::select(-Total_Assets,-Concentration,-Institution_Name,-Ownership,-Type,-Listed,-Year,-Total_Assets,-TC_to_RWA) %>% drop_na())  %>% 
+  dplyr::select(-Total_Assets,-Concentration,-Institution_Name,-Ownership,-Type,-Listed,-Year,-Total_Assets) %>% drop_na())  %>% 
   corrplot::corrplot(method="number",title="linear correlations")
 ```
 Table 4 reports the Pearson correlation matrix between the predictor variables. All correlation coefficients of the variables are lower than 0.6, except for the correlation between Tier 1 capital ratio and the total capital ratio due to the different definition of capital ratios. Therefore, the regression models will be run only using one of these two capital ratios in one model, in order to avoid high collinearity. 
@@ -245,33 +251,40 @@ Table 4 reports the Pearson correlation matrix between the predictor variables. 
 #GET YEAR FIXED OLS BASELINE REGRESSION TABLE USING Stargazer
 #Coverting formats
 obs<-dat
-obs$Year <- as.factor(obs$Year)
+obs$Year <- as.character(obs$Year)
 obs$Ownership <- as.factor(obs$Ownership)
+options(scipen=999)
 
-str(obs)
-#NPL ~ Tier1_Ratio
-Linear_NPL_1 <- lm(NPL ~ Tier1_Ratio + LnAssets + NL_to_TA + ROE +
-                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
-                     Year, data = obs)
-#NPL ~ TC_to_RWA
-Linear_NPL_2 <- lm(NPL ~ TC_to_RWA + LnAssets + NL_to_TA + ROE +
-                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
-                     Year, data = obs)
-#LLR ~ Tier1_Ratio
-Linear_LLR_1 <- lm(LLR ~ Tier1_Ratio + LnAssets + NL_to_TA + ROE +
-                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
-                     Year, data = obs)
-#LLR ~ TC_to_RWA
-Linear_LLR_2 <- lm(LLR ~ TC_to_RWA + LnAssets + NL_to_TA + ROE +
-                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
-                     Year, data = obs)
+predictors<-c('LnAssets','NL_to_TA','ROE', 
+              'Concentration','GDP_Growth',"Inflation_CPI",
+              'Income_Div','Year') # Cannot include
+## run a regression with all variables of interest 
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ Tier1_Ratio +", .) %>%
+  lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+  gtsummary::tbl_regression() ->mv1
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ TC_to_RWA +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  gtsummary::tbl_regression() ->mv2
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ Tier1_Ratio +", .) %>%
+  lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+  gtsummary::tbl_regression(digits=5) ->mv3
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ TC_to_RWA +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  gtsummary::tbl_regression() ->mv4
 
-#Write the baseline regression table
-stargazer(Linear_NPL_1, Linear_NPL_2, Linear_LLR_1, Linear_LLR_2, type = "latex", 
-          align = TRUE, 
-          title = "Baseline Regression - Year Fixed Effect Model", 
-          omit = "Year", omit.labels = "Year Fixed Effects", no.space = TRUE)
-
+tbl_merge(
+  tbls = list(mv1,mv2,mv3,mv4),                         
+  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
+  as_kable(format="latex") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped", font_size = 7,full_width = T)
 ```
 
 
@@ -283,7 +296,7 @@ Among bank-specific and macroeconomic control variables, we find that LnAssets (
 
 ## Impact on bank credit risk – Ownership structure
 
-```{r table 6}
+```{r table 6, eval=F}
 # GET FIXED EFFECT MODEL-OWNERSHIP STRUCTURE
 #NPL ~ Tier1_Ratio
 Linear_NPL_1 <- lm(NPL ~ Tier1_Ratio + Ownership + LnAssets + NL_to_TA + ROE +
@@ -303,10 +316,42 @@ Linear_LLR_2 <- lm(LLR ~ TC_to_RWA + Ownership + LnAssets + NL_to_TA + ROE +
                      Year, data = obs)
 
 #Write the regression table-ownership
-stargazer(Linear_NPL_1, Linear_NPL_2, Linear_LLR_1, Linear_LLR_2, type = "latex", 
-         align = TRUE, 
-          title = "Fixed Effect Regression - Ownership Structure",
-          omit = "Year", omit.labels = "Year Fixed Effects",no.space = TRUE)
+mtable1 <- mtable('Model 1' = Linear_NPL_1,
+            'Model 2' = Linear_NPL_2,
+            'Model 3' = Linear_LLR_1,
+            'Model 4' = Linear_LLR_2,
+            summary.stats = c('R-squared','F','p','N'))
+
+```
+
+```{rtable6alt}
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ Tier1_Ratio + Ownership +", .) %>%
+  lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+  gtsummary::tbl_regression() ->mv1
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ TC_to_RWA + + Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  gtsummary::tbl_regression() ->mv2
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ Tier1_Ratio + + Ownership + ", .) %>%
+  lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+  gtsummary::tbl_regression(digits=5) ->mv3
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ TC_to_RWA ++ Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  gtsummary::tbl_regression() ->mv4
+
+tbl_merge(
+  tbls = list(mv1,mv2,mv3,mv4),                         
+  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
+  as_kable(format="latex") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped", font_size = 7,full_width = T)
+
 ```
 
 Table 6 reports the results of the impact on bank credit risk by adding banks’ ownership structure as a specific control variable. We find that adding ownership structure does not change the significant and negative impact of bank size, net loans to total assets and industry concentration on bank credit risk, respectively. However, the relationship between capital requirements and Loan Loss Reserve ratio has become insignificant, although it remains negative. The regressions presented in Table 6 demonstrate that ownership structure is positively associated with bank credit risk. This finding is consistent with the view that shareholders have greater incentives for risky projects than managers [@RN54]. This finding also supports the empirical results of @RN1] where they find a positive association between risk and ownership of a large owner (10% or more voting rights). 
@@ -319,7 +364,7 @@ Since 2001, the ownership structure has been dramatically transformed, due to Ch
 
 ## Impact on bank credit risk – Interaction between regulation and ownership structure}
 
-```{r table 7}
+```{r table 7, eval=F}
 #GET INTERACTION REGRESSION MODEL
 #NPL ~ Tier1_Ratio
 Interaction_NPL_1 <- lm(NPL ~ Tier1_Ratio + Ownership + 
@@ -343,10 +388,41 @@ Interaction_LLR_2 <- lm(LLR ~ TC_to_RWA + Ownership +
                           Inflation_CPI + Year, data = obs)
 
 #Write the interaction regression table
-stargazer(Interaction_NPL_1, Interaction_NPL_2, Interaction_LLR_1, Interaction_LLR_2, 
-          type = "latex", align = TRUE,
-          title = "Table 7: Regression with Interaction between Ownership and Regulation",
-          omit = "Year", omit.labels = "Year Fixed Effects", no.space = TRUE)
+mtable1 <- mtable('Model 1' = Linear_NPL_1,
+            'Model 2' = Linear_NPL_2,
+            'Model 3' = Linear_LLR_1,
+            'Model 4' = Linear_LLR_2, 
+            summary.stats = c('R-squared','F','p','N'))
+kable(mtable1)
+```
+
+```{r table7alt}
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ Tier1_Ratio + Ownership + Tier1_Ratio:Ownership +", .) %>%
+  lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+  gtsummary::tbl_regression() ->mv1
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ TC_to_RWA + + Ownership + Tier1_Ratio:Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  gtsummary::tbl_regression() ->mv2
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ Tier1_Ratio + + Ownership + Tier1_Ratio:Ownership +", .) %>%
+  lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+  gtsummary::tbl_regression(digits=5) ->mv3
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ TC_to_RWA ++ Ownership + Tier1_Ratio:Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  gtsummary::tbl_regression() ->mv4
+
+tbl_merge(
+  tbls = list(mv1,mv2,mv3,mv4),                         
+  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
+  as_kable(format="latex") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped", font_size = 7,full_width = T)
 ```
 
 Table 7 presents regressions in which we assess the interactive associations among ownership structure, regulatory capital requirements, and bank credit risk. Some studies suggest that the relationship between risk and ownership structure is closely associated with national regulation. Because regulation influences both bank owners’ and bank managers’ incentives of risk-taking and risk-shifting [@RN55;RN54]. @RN1 examine the interactions between ownership structure and national regulatory requirements and stringency, and find the relationship between risk and regulation stringency depends on ownership structure. @RN24 state that capital requirements have different impact on bank performance based on different bank size. Here we include the interaction term of each of the capital adequacy variables with different ownership structure variables. Capital adequacy variables remain negative but become insignificant, except for Tier 1 Ratio remains significant but lowers its significant level, under the circumstance of the interactive association between capital ratios and ownership structure. This finding demonstrates the direct effect of the capital adequacy requirement is to reduce bank credit risk and to enhance bank stability.

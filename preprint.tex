@@ -44,6 +44,7 @@ Walker for their insight comments.}
 \usepackage{longtable}
 \usepackage{color}
 \usepackage{xcolor}
+\usepackage{fontspec}
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{colortbl}
@@ -51,6 +52,16 @@ Walker for their insight comments.}
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 
 
 \begin{document}
@@ -263,8 +274,8 @@ moral hazard perspective, arguing effective regulatory capitalization
 may offset the excessive risk-taking incentives created by deposit
 insurance (Keeley 1990; Demirgüç-Kunt and Kane 2002). In terms of
 Chinese commercial banks, (Tan and Floros 2013) find a significant
-negative relationship between bank capital and risk. ({\textbf{???}})
-report that bank capital is negatively related to NPL and support
+negative relationship between bank capital and risk. Lee, Ning, and Lee
+(2015) report that bank capital is negatively related to NPL and support
 theories with the moral hazard view.
 
 Contrariwise, other research posits that greater capital regulations may
@@ -504,13 +515,13 @@ their ownership structure are listed in Table 1.
 
 \renewcommand*{\arraystretch}{1.5}
 
-\begin{longtable}[c]{|p{2.04in}|p{0.86in}|p{1.12in}|p{1.91in}|p{1.22in}|p{1.47in}|p{1.20in}}
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
 
 \caption{Cross tabulation of Ownership and Type}\\
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Ownership/Type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Big\ Six}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{City\ bank}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{a}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Foreign\ bank\ subsidiary}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{b}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{National\ bank}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Rural\ commercial}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{d}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Ownership/Type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Big\ Six}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}City\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}a}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ bank\ subsidiary}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}b}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}National\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Rural\ commercial}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}d}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-7}
 
@@ -518,85 +529,85 @@ their ownership structure are listed in Table 1.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Ownership/Type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Big\ Six}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{City\ bank}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{a}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Foreign\ bank\ subsidiary}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{b}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{National\ bank}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Rural\ commercial}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{d}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Ownership/Type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Big\ Six}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}City\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}a}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ bank\ subsidiary}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}b}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}National\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Rural\ commercial}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}d}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-7}\endhead
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Branches\ usually\ cover\ a\ city\ and\ the\ near\ cities\ within\ the\ province\ where\ the\ bank\ headquarter\ is\ located}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{a}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Branches\ usually\ cover\ a\ city\ and\ the\ near\ cities\ within\ the\ province\ where\ the\ bank\ headquarter\ is\ located}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}a}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Foreign\ bank\ branches\ and\ subsidiaries}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{b}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ bank\ branches\ and\ subsidiaries}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}b}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Branches\ cover\ the\ whole\ country;\ following\ CBIRC's\ categorization}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{c}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Branches\ cover\ the\ whole\ country;\ following\ CBIRC's\ categorization}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}c}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Branches\ usually\ cover\ local\ communities\ and\ rural\ area\ within\ a\ province\ where\ the\ bank\ headquarter\ is\ located}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{d}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Branches\ usually\ cover\ local\ communities\ and\ rural\ area\ within\ a\ province\ where\ the\ bank\ headquarter\ is\ located}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}d}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Joint-stock\ Banks\ having\ foreign\ strategic\ investors\ (usually\ shareholding\ over\ 15\%)}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{e}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Joint-stock\ Banks\ having\ foreign\ strategic\ investors\ (usually\ shareholding\ over\ 15\%)}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}e}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Banks'\ share\ held\ by\ mixed-ownership\ insitutions\ and\ individuals;\ if\ shareholding\ involves\ indirect\ local\ government\ holding,\ the\ stake\ is\ less\ than\ 10\%}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{f}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Banks'\ share\ held\ by\ mixed-ownership\ insitutions\ and\ individuals;\ if\ shareholding\ involves\ indirect\ local\ government\ holding,\ the\ stake\ is\ less\ than\ 10\%}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}f}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 9.83in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Banks'share\ either\ held\ by\ local\ Treasury\ Bureau\ (no\ matter\ how\ much\ of\ the\ stake),\ or\ indirectly\ held\ by\ local\ government\ over\ 10\%}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{g}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Banks'share\ either\ held\ by\ local\ Treasury\ Bureau\ (no\ matter\ how\ much\ of\ the\ stake),\ or\ indirectly\ held\ by\ local\ government\ over\ 10\%}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}g}}}} \\
 
 \endfoot
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Foreign\ Joint-stock}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 12\ \ (5.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 1\ (0.4\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 13\ \ \ (5.6\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ Joint-stock}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 12\ \ (5.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 1\ (0.4\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 13\ \ \ (5.6\%)}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Foreign-owned}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{e}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ \ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{33\ (14.3\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 33\ \ (14.3\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign-owned}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}e}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ \ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}33\ (14.3\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 33\ \ (14.3\%)}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Joint-stock}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 48\ (20.8\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 5\ (2.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{66\ (28.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{119\ \ (51.5\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Joint-stock}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 48\ (20.8\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 5\ (2.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}66\ (28.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}119\ \ (51.5\%)}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Local\ government-holding}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{f}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 45\ (19.5\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 2\ (0.9\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 5\ \ (2.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 52\ \ (22.5\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Local\ government-holding}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}f}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 45\ (19.5\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 2\ (0.9\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 5\ \ (2.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 52\ \ (22.5\%)}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{State-owned}}\fontsize{11}{11}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{g}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{6\ (2.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ \ 4\ \ (1.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 4\ (1.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\ 14\ \ \ (6.1\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}State-owned}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}g}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}6\ (2.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ \ 4\ \ (1.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 4\ (1.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 14\ \ \ (6.1\%)}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.04in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.86in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{6\ (2.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.12in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{109\ (47.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{33\ (14.3\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.22in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{12\ (5.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.47in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{71\ (30.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{231\ (100.0\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}6\ (2.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}109\ (47.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}33\ (14.3\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}12\ (5.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}71\ (30.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}231\ (100.0\%)}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-7}
 
@@ -663,13 +674,13 @@ different levels of banks. The variables are defined in Table 2.
 
 \renewcommand*{\arraystretch}{1.5}
 
-\begin{longtable}[c]{|p{2.14in}|p{1.24in}|p{16.73in}|p{5.13in}}
+\begin{longtable}[c]{|p{2.00in}|p{2.00in}|p{2.00in}|p{2.00in}}
 
 \caption{Table 2: Variable Definitions}\\
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Acronym}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Definition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Data\ Source}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Acronym}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Definition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Data\ Source}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}
 
@@ -677,109 +688,109 @@ different levels of banks. The variables are defined in Table 2.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Acronym}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Definition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Data\ Source}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Acronym}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Definition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Data\ Source}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}\endhead
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Credit\ Risk}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Credit\ Risk}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{NPL}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Non-Perfroming\ Loans/Gross\ Loans,\ Non-Performing\ Loans\ as\ a\ percentage\ of\ loans\ before\ reserves}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NPL}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Non-Perfroming\ Loans/Gross\ Loans,\ Non-Performing\ Loans\ as\ a\ percentage\ of\ loans\ before\ reserves}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{LLR}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Loan\ Loss\ Reserves/Gross\ Loans,\ Reserves\ for\ loan\ losses\ as\ a\ percent\ of\ loans\ before\ reserves}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LLR}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Loan\ Loss\ Reserves/Gross\ Loans,\ Reserves\ for\ loan\ losses\ as\ a\ percent\ of\ loans\ before\ reserves}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Capital\ Adequacy}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Capital\ Adequacy}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Tier1\_Ratio}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Tier\ 1\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Tier1\_Ratio}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Tier\ 1\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{TC\_to\_RWA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total\ Regulatory\ Capital/Risk\ Weighted\ Assets,\ Total\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}TC\_to\_RWA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\ Regulatory\ Capital/Risk\ Weighted\ Assets,\ Total\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Bank\_Control\ variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Bank\_Control\ variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{NL\_to\_TA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total\ Net\ Loans/Total\ Assets,\ loans\ and\ finance\ leases,\ net\ of\ loan-loss\ reserves,\ as\ a\ percent\ of\ total\ assets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NL\_to\_TA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\ Net\ Loans/Total\ Assets,\ loans\ and\ finance\ leases,\ net\ of\ loan-loss\ reserves,\ as\ a\ percent\ of\ total\ assets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{ROE}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Return\ on\ average\ equity;\ net\ income\ as\ a\ percent\ of\ average\ equity}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}ROE}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Return\ on\ average\ equity;\ net\ income\ as\ a\ percent\ of\ average\ equity}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total\_Assets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Total\ Assets,\ all\ assets\ owned\ by\ the\ company\ as\ of\ the\ date\ indicated,\ as\ carried\ on\ the\ balance\ sheet\ and\ defined\ under\ the\ indicated\ accounting\ principles}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\_Assets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\ Assets,\ all\ assets\ owned\ by\ the\ company\ as\ of\ the\ date\ indicated,\ as\ carried\ on\ the\ balance\ sheet\ and\ defined\ under\ the\ indicated\ accounting\ principles}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{LnAssets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Natrual\ Logarithm\ of\ Total\ Assets,\ as\ an\ indicator\ of\ the\ size\ of\ a\ bank}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Manually\ compuation\ based\ on\ data\ of\ Total\_Assets}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LnAssets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Natrual\ Logarithm\ of\ Total\ Assets,\ as\ an\ indicator\ of\ the\ size\ of\ a\ bank}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Manually\ compuation\ based\ on\ data\ of\ Total\_Assets}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Income\_Div}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Income\ diversity,\ 1-(Net\ Interest\ Income\ –\ Other\ Operating\ Income)/Total\ Operating\ Income}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Manually\ compuation\ based\ on\ SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Income\_Div}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Income\ diversity,\ 1-(Net\ Interest\ Income\ –\ Other\ Operating\ Income)/Total\ Operating\ Income}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Manually\ compuation\ based\ on\ SNL\ Database\ and\ bank\ annual\ reports}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Industry\_Specific\ variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Industry\_Specific\ variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Concentration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{The\ total\ assets\ of\ the\ largest\ five\ (the\ largest\ six\ in\ 2019)\ commercial\ banks\ (in\ terms\ of\ assets),\ as\ percentage\ of\ the\ total\ assets\ of\ the\ whole\ banking\ sector}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{CBIRC\ statistics\ release}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Concentration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}The\ total\ assets\ of\ the\ largest\ five\ (the\ largest\ six\ in\ 2019)\ commercial\ banks\ (in\ terms\ of\ assets),\ as\ percentage\ of\ the\ total\ assets\ of\ the\ whole\ banking\ sector}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}CBIRC\ statistics\ release}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Macro\_Economic\ Variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Macro\_Economic\ Variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{GDP}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{GDP\ Growth\ rate\ (\%),\ Annual\ percentage\ growth\ rate\ of\ GDP\ at\ market\ prices\ based\ on\ constant\ local\ currency.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{World\ Bank\ Database}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}GDP}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}GDP\ Growth\ rate\ (\%),\ Annual\ percentage\ growth\ rate\ of\ GDP\ at\ market\ prices\ based\ on\ constant\ local\ currency.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}World\ Bank\ Database}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.14in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Inflation\_CPI}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.73in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Inflation\ as\ measured\ by\ the\ consumer\ price\ index\ (CPI)\ reflects\ the\ annual\ percentage\ change\ in\ the\ cost\ to\ the\ average\ consumer\ of\ acquiring\ a\ basket\ of\ goods\ and\ services\ that\ may\ be\ fixed\ or\ changed\ at\ specified\ intervals,\ such\ as\ yearly.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.13in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{World\ Bank\ Database}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Inflation\_CPI}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Inflation\ as\ measured\ by\ the\ consumer\ price\ index\ (CPI)\ reflects\ the\ annual\ percentage\ change\ in\ the\ cost\ to\ the\ average\ consumer\ of\ acquiring\ a\ basket\ of\ goods\ and\ services\ that\ may\ be\ fixed\ or\ changed\ at\ specified\ intervals,\ such\ as\ yearly.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}World\ Bank\ Database}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}
 
@@ -1003,13 +1014,13 @@ control rights and cash flow rights through the delegated agent.
 
 \renewcommand*{\arraystretch}{1.5}
 
-\begin{longtable}[c]{|p{1.24in}|p{0.67in}|p{0.75in}|p{0.79in}|p{0.75in}}
+\begin{longtable}[c]{|p{2.00in}|p{2.00in}|p{2.00in}|p{2.00in}|p{2.00in}}
 
 \caption{Table 3: Descriptive statistics of the regression predictors}\\
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{mean}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{median}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{sd}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}mean}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}median}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}sd}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-5}
 
@@ -1017,73 +1028,73 @@ control rights and cash flow rights through the delegated agent.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{mean}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{median}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{sd}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}mean}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}median}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}sd}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-5}\endhead
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Concentration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{41.569}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{40.740}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{4.134}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Concentration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}41.569}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}40.740}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}4.134}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{GDP\_Growth}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{7.678}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{7.234}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.336}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}GDP\_Growth}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}7.678}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}7.234}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.336}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Income\_Div}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,091}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0.447}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0.346}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{0.400}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Income\_Div}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,091}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0.447}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0.346}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0.400}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Inflation\_CPI}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2.590}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2.347}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.123}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Inflation\_CPI}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2.590}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2.347}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.123}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{LLR}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,073}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{3.226}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{3.009}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.363}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LLR}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,073}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}3.226}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}3.009}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.363}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{LnAssets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,128}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{16.585}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{16.448}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.646}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LnAssets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,128}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}16.585}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}16.448}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.646}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{NL\_to\_TA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{2,118}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{43.929}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{45.126}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{10.860}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NL\_to\_TA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,118}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}43.929}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}45.126}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}10.860}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{NPL}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1,818}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.503}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.353}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1.387}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NPL}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,818}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.503}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.353}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.387}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{ROE}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1,973}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{12.862}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{12.756}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{6.708}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}ROE}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,973}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}12.862}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}12.756}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}6.708}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{TC\_to\_RWA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1,989}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{18.429}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{13.345}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{35.733}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}TC\_to\_RWA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,989}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}18.429}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}13.345}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}35.733}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.24in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{Tier1\_Ratio}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.67in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{1,946}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{16.290}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.79in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{11.176}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{35.728}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Tier1\_Ratio}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,946}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}16.290}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}11.176}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}35.728}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-5}
 
@@ -1139,77 +1150,54 @@ capital ratios in one model, in order to avoid high collinearity.
 \subsection{Impact on bank credit risk -- risk-based capital
 ratios}\label{impact-on-bank-credit-risk-risk-based-capital-ratios}}
 
-\begin{verbatim}
-## 'data.frame':    2310 obs. of  17 variables:
-##  $ Institution_Name: chr  "Agricultural Bank of China Ltd." "Anhui Lixin Rural Commercial Bank Co., Ltd" "Anhui Lujiang Rural Commercial Bank Co., Ltd" "Anhui Taihe Rural Commercial Bank Company Ltd." ...
-##  $ Ownership       : Factor w/ 5 levels "Foreign Joint-stock",..: 5 3 3 3 3 2 2 4 3 1 ...
-##  $ Type            : chr  "Big Six" "Rural commercial" "Rural commercial" "Rural commercial" ...
-##  $ Listed          : chr  "Mainland" NA NA NA ...
-##  $ Year            : Factor w/ 10 levels "2010","2011",..: 10 10 10 10 10 10 10 10 10 10 ...
-##  $ NPL             : num  1.4 2.22 3.36 2.05 9.1 ...
-##  $ LLR             : num  4.05 5.62 5.76 7.25 4.91 ...
-##  $ Tier1_Ratio     : num  12.53 10.76 10.29 11.45 7.73 ...
-##  $ TC_to_RWA       : num  16.13 14.63 13.48 13.39 9.13 ...
-##  $ Total_Assets    : num  3.57e+09 2.65e+06 2.72e+06 2.79e+06 4.52e+06 ...
-##  $ LnAssets        : num  22 14.8 14.8 14.8 15.3 ...
-##  $ NL_to_TA        : num  51.5 49.9 49.1 57.4 63.7 ...
-##  $ ROE             : num  11.81 20.87 6.86 12.44 5.72 ...
-##  $ Income_Div      : num  0.347 0.824 0.492 0.072 0.335 ...
-##  $ Concentration   : num  40.3 40.3 40.3 40.3 40.3 ...
-##  $ GDP_Growth      : num  5.95 5.95 5.95 5.95 5.95 ...
-##  $ Inflation_CPI   : num  2.9 2.9 2.9 2.9 2.9 ...
-\end{verbatim}
+\begingroup\fontsize{7}{9}\selectfont
 
-\begin{verbatim}
-## 
-## % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-## % Date and time: Fri, Sep 10, 2021 - 17:43:15
-## % Requires LaTeX packages: dcolumn 
-## \begin{table}[!htbp] \centering 
-##   \caption{Baseline Regression - Year Fixed Effect Model} 
-##   \label{} 
-## \begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
-## \\[-1.8ex]\hline 
-## \hline \\[-1.8ex] 
-##  & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-## \cline{2-5} 
-## \\[-1.8ex] & \multicolumn{2}{c}{NPL} & \multicolumn{2}{c}{LLR} \\ 
-## \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
-## \hline \\[-1.8ex] 
-##  Tier1\_Ratio & -0.005^{***} &  & -0.003^{**} &  \\ 
-##   & (0.001) &  & (0.001) &  \\ 
-##   TC\_to\_RWA &  & -0.005^{***} &  & -0.003^{**} \\ 
-##   &  & (0.001) &  & (0.001) \\ 
-##   LnAssets & -0.051^{***} & -0.050^{***} & -0.187^{***} & -0.184^{***} \\ 
-##   & (0.018) & (0.018) & (0.018) & (0.018) \\ 
-##   NL\_to\_TA & 0.022^{***} & 0.023^{***} & 0.017^{***} & 0.018^{***} \\ 
-##   & (0.003) & (0.003) & (0.003) & (0.003) \\ 
-##   ROE & -0.054^{***} & -0.055^{***} & 0.024^{***} & 0.026^{***} \\ 
-##   & (0.006) & (0.005) & (0.005) & (0.005) \\ 
-##   Income\_Div & -0.003 & -0.00004 & -0.244^{***} & -0.240^{***} \\ 
-##   & (0.075) & (0.075) & (0.072) & (0.071) \\ 
-##   Concentration & -0.089 & -0.102^{*} & -0.083 & -0.091 \\ 
-##   & (0.060) & (0.060) & (0.059) & (0.058) \\ 
-##   GDP\_Growth & 0.137 & 0.153 & -0.195^{*} & -0.184^{*} \\ 
-##   & (0.101) & (0.101) & (0.100) & (0.099) \\ 
-##   Inflation\_CPI & 0.138 & 0.187 & 0.074 & 0.092 \\ 
-##   & (0.261) & (0.262) & (0.257) & (0.255) \\ 
-##   Constant & 4.401^{***} & 4.642^{***} & 10.153^{***} & 10.239^{***} \\ 
-##   & (1.185) & (1.185) & (1.166) & (1.155) \\ 
-##  \hline \\[-1.8ex] 
-## Year Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
-## \hline \\[-1.8ex] 
-## Observations & \multicolumn{1}{c}{1,621} & \multicolumn{1}{c}{1,649} & \multicolumn{1}{c}{1,817} & \multicolumn{1}{c}{1,847} \\ 
-## R$^{2}$ & \multicolumn{1}{c}{0.157} & \multicolumn{1}{c}{0.163} & \multicolumn{1}{c}{0.175} & \multicolumn{1}{c}{0.180} \\ 
-## Adjusted R$^{2}$ & \multicolumn{1}{c}{0.150} & \multicolumn{1}{c}{0.156} & \multicolumn{1}{c}{0.169} & \multicolumn{1}{c}{0.174} \\ 
-## Residual Std. Error & \multicolumn{1}{c}{1.126 (df = 1606)} & \multicolumn{1}{c}{1.131 (df = 1634)} & \multicolumn{1}{c}{1.156 (df = 1802)} & \multicolumn{1}{c}{1.152 (df = 1832)} \\ 
-## F Statistic & \multicolumn{1}{c}{21.376$^{***}$ (df = 14; 1606)} & \multicolumn{1}{c}{22.742$^{***}$ (df = 14; 1634)} & \multicolumn{1}{c}{27.382$^{***}$ (df = 14; 1802)} & \multicolumn{1}{c}{28.734$^{***}$ (df = 14; 1832)} \\ 
-## \hline 
-## \hline \\[-1.8ex] 
-## \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-## \end{tabular} 
-## \end{table}
-\end{verbatim}
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hline
+**Characteristic** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value**\\
+\hline
+Tier1\_Ratio & -0.02 & -0.03, 0.00 & 0.005 & -0.01 & -0.01, 0.00 & 0.13 &  &  &  &  &  & \\
+\hline
+LnAssets & -0.07 & -0.10, -0.03 & <0.001 & -0.20 & -0.23, -0.16 & <0.001 & -0.06 & -0.10, -0.03 & <0.001 & -0.19 & -0.22, -0.15 & <0.001\\
+\hline
+NL\_to\_TA & 0.02 & 0.01, 0.03 & <0.001 & 0.02 & 0.01, 0.02 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & 0.02 & 0.01, 0.02 & <0.001\\
+\hline
+ROE & -0.06 & -0.07, -0.05 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & -0.06 & -0.07, -0.05 & <0.001 & 0.03 & 0.01, 0.04 & <0.001\\
+\hline
+Concentration & -0.09 & -0.21, 0.03 & 0.13 & -0.09 & -0.20, 0.03 & 0.14 & -0.10 & -0.22, 0.01 & 0.083 & -0.09 & -0.21, 0.02 & 0.11\\
+\hline
+GDP\_Growth & 0.14 & -0.06, 0.34 & 0.2 & -0.19 & -0.39, 0.01 & 0.058 & 0.15 & -0.04, 0.35 & 0.13 & -0.18 & -0.37, 0.01 & 0.070\\
+\hline
+Inflation\_CPI & 0.16 & -0.35, 0.67 & 0.5 & 0.10 & -0.40, 0.61 & 0.7 & 0.21 & -0.31, 0.72 & 0.4 & 0.11 & -0.39, 0.61 & 0.7\\
+\hline
+Income\_Div & -0.01 & -0.16, 0.14 & 0.9 & -0.24 & -0.38, -0.10 & <0.001 & -0.01 & -0.16, 0.14 & 0.9 & -0.24 & -0.38, -0.10 & 0.001\\
+\hline
+Year &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2010 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2011 & -0.36 & -1.6, 0.87 & 0.6 & -0.27 & -1.5, 0.95 & 0.7 & -0.48 & -1.7, 0.76 & 0.4 & -0.31 & -1.5, 0.90 & 0.6\\
+\hline
+2012 & 0.28 & -0.15, 0.70 & 0.2 & -0.20 & -0.62, 0.21 & 0.3 & 0.29 & -0.13, 0.71 & 0.2 & -0.21 & -0.62, 0.20 & 0.3\\
+\hline
+2013 & -0.04 & -0.32, 0.25 & 0.8 & -0.19 & -0.47, 0.09 & 0.2 & -0.04 & -0.32, 0.25 & 0.8 & -0.20 & -0.47, 0.08 & 0.2\\
+\hline
+2014 & 0.14 & -0.27, 0.55 & 0.5 & -0.14 & -0.54, 0.26 & 0.5 & 0.16 & -0.25, 0.56 & 0.5 & -0.14 & -0.53, 0.26 & 0.5\\
+\hline
+2015 & 0.24 & -0.25, 0.72 & 0.3 & -0.04 & -0.52, 0.43 & 0.9 & 0.27 & -0.21, 0.76 & 0.3 & -0.02 & -0.49, 0.45 & >0.9\\
+\hline
+2016 & 0.04 & -0.15, 0.24 & 0.7 & 0.00 & -0.19, 0.19 & >0.9 & 0.03 & -0.17, 0.22 & 0.8 & 0.02 & -0.17, 0.20 & 0.9\\
+\hline
+2017 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2018 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2019 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+TC\_to\_RWA &  &  &  &  &  &  & -0.02 & -0.03, -0.01 & 0.001 & 0.00 & -0.01, 0.01 & 0.7\\
+\hline
+\end{tabu}
+\endgroup{}
 
 Table 5 reports fixed effect baseline regression results for the full
 sample of banks. The first two columns in Table 5 show regressions of
@@ -1265,65 +1253,6 @@ in their credit activities, compared with other smaller-sized banks.
 \hypertarget{impact-on-bank-credit-risk-ownership-structure}{%
 \subsection{Impact on bank credit risk -- Ownership
 structure}\label{impact-on-bank-credit-risk-ownership-structure}}
-
-\begin{verbatim}
-## 
-## % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-## % Date and time: Fri, Sep 10, 2021 - 17:43:15
-## % Requires LaTeX packages: dcolumn 
-## \begin{table}[!htbp] \centering 
-##   \caption{Fixed Effect Regression - Ownership Structure} 
-##   \label{} 
-## \begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
-## \\[-1.8ex]\hline 
-## \hline \\[-1.8ex] 
-##  & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-## \cline{2-5} 
-## \\[-1.8ex] & \multicolumn{2}{c}{NPL} & \multicolumn{2}{c}{LLR} \\ 
-## \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
-## \hline \\[-1.8ex] 
-##  Tier1\_Ratio & -0.003^{**} &  & -0.0003 &  \\ 
-##   & (0.001) &  & (0.001) &  \\ 
-##   TC\_to\_RWA &  & -0.003^{**} &  & -0.0003 \\ 
-##   &  & (0.001) &  & (0.001) \\ 
-##   OwnershipForeign-owned & -0.858^{***} & -0.885^{***} & -1.555^{***} & -1.515^{***} \\ 
-##   & (0.167) & (0.166) & (0.137) & (0.135) \\ 
-##   OwnershipJoint-stock & 0.030 & 0.037 & -0.018 & -0.001 \\ 
-##   & (0.115) & (0.115) & (0.110) & (0.109) \\ 
-##   OwnershipLocal government-holding & 0.072 & 0.063 & -0.086 & -0.070 \\ 
-##   & (0.118) & (0.118) & (0.113) & (0.112) \\ 
-##   OwnershipState-owned & 0.123 & 0.119 & 0.077 & 0.082 \\ 
-##   & (0.149) & (0.150) & (0.144) & (0.144) \\ 
-##   LnAssets & -0.074^{***} & -0.073^{***} & -0.229^{***} & -0.225^{***} \\ 
-##   & (0.023) & (0.023) & (0.021) & (0.021) \\ 
-##   NL\_to\_TA & 0.019^{***} & 0.019^{***} & 0.010^{***} & 0.011^{***} \\ 
-##   & (0.003) & (0.003) & (0.003) & (0.003) \\ 
-##   ROE & -0.070^{***} & -0.071^{***} & -0.019^{***} & -0.016^{***} \\ 
-##   & (0.006) & (0.006) & (0.005) & (0.005) \\ 
-##   Income\_Div & 0.055 & 0.060 & -0.113^{*} & -0.110 \\ 
-##   & (0.075) & (0.075) & (0.068) & (0.068) \\ 
-##   Concentration & -0.088 & -0.100^{*} & -0.068 & -0.073 \\ 
-##   & (0.059) & (0.059) & (0.055) & (0.055) \\ 
-##   GDP\_Growth & 0.149 & 0.165^{*} & -0.157^{*} & -0.151 \\ 
-##   & (0.100) & (0.100) & (0.094) & (0.093) \\ 
-##   Inflation\_CPI & 0.161 & 0.211 & 0.043 & 0.053 \\ 
-##   & (0.258) & (0.258) & (0.241) & (0.239) \\ 
-##   Constant & 4.918^{***} & 5.173^{***} & 10.955^{***} & 10.978^{***} \\ 
-##   & (1.218) & (1.218) & (1.131) & (1.122) \\ 
-##  \hline \\[-1.8ex] 
-## Year Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
-## \hline \\[-1.8ex] 
-## Observations & \multicolumn{1}{c}{1,621} & \multicolumn{1}{c}{1,649} & \multicolumn{1}{c}{1,817} & \multicolumn{1}{c}{1,847} \\ 
-## R$^{2}$ & \multicolumn{1}{c}{0.182} & \multicolumn{1}{c}{0.189} & \multicolumn{1}{c}{0.279} & \multicolumn{1}{c}{0.281} \\ 
-## Adjusted R$^{2}$ & \multicolumn{1}{c}{0.173} & \multicolumn{1}{c}{0.180} & \multicolumn{1}{c}{0.272} & \multicolumn{1}{c}{0.274} \\ 
-## Residual Std. Error & \multicolumn{1}{c}{1.111 (df = 1602)} & \multicolumn{1}{c}{1.115 (df = 1630)} & \multicolumn{1}{c}{1.082 (df = 1798)} & \multicolumn{1}{c}{1.080 (df = 1828)} \\ 
-## F Statistic & \multicolumn{1}{c}{19.794$^{***}$ (df = 18; 1602)} & \multicolumn{1}{c}{21.099$^{***}$ (df = 18; 1630)} & \multicolumn{1}{c}{38.703$^{***}$ (df = 18; 1798)} & \multicolumn{1}{c}{39.691$^{***}$ (df = 18; 1828)} \\ 
-## \hline 
-## \hline \\[-1.8ex] 
-## \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-## \end{tabular} 
-## \end{table}
-\end{verbatim}
 
 Table 6 reports the results of the impact on bank credit risk by adding
 banks' ownership structure as a specific control variable. We find that
@@ -1422,80 +1351,88 @@ banks in Italy. This finding is also consistent with Laeven and Levine
 and ownership
 structure\}}\label{impact-on-bank-credit-risk-interaction-between-regulation-and-ownership-structure}}
 
-\begin{verbatim}
-## 
-## % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-## % Date and time: Fri, Sep 10, 2021 - 17:43:16
-## % Requires LaTeX packages: dcolumn 
-## \begin{table}[!htbp] \centering 
-##   \caption{Table 7: Regression with Interaction between Ownership and Regulation} 
-##   \label{} 
-## \begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
-## \\[-1.8ex]\hline 
-## \hline \\[-1.8ex] 
-##  & \multicolumn{4}{c}{\textit{Dependent variable:}} \\ 
-## \cline{2-5} 
-## \\[-1.8ex] & \multicolumn{2}{c}{NPL} & \multicolumn{2}{c}{LLR} \\ 
-## \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)}\\ 
-## \hline \\[-1.8ex] 
-##  Tier1\_Ratio & -0.078 &  & -0.049^{***} &  \\ 
-##   & (0.072) &  & (0.013) &  \\ 
-##   TC\_to\_RWA &  & -0.040 &  & -0.039^{***} \\ 
-##   &  & (0.065) &  & (0.009) \\ 
-##   OwnershipForeign-owned & -1.747^{**} & -1.456^{*} & -2.126^{***} & -2.119^{***} \\ 
-##   & (0.767) & (0.857) & (0.211) & (0.198) \\ 
-##   OwnershipJoint-stock & -0.018 & 0.860 & -0.804^{***} & -0.819^{***} \\ 
-##   & (0.763) & (0.866) & (0.240) & (0.256) \\ 
-##   OwnershipLocal government-holding & 0.235 & 0.585 & -0.951^{***} & -1.215^{***} \\ 
-##   & (0.794) & (0.908) & (0.317) & (0.364) \\ 
-##   OwnershipState-owned & 0.227 & 0.913 & -0.015 & -0.374 \\ 
-##   & (0.897) & (1.069) & (0.522) & (0.670) \\ 
-##   LnAssets & -0.106^{***} & -0.100^{***} & -0.229^{***} & -0.229^{***} \\ 
-##   & (0.023) & (0.023) & (0.022) & (0.022) \\ 
-##   NL\_to\_TA & 0.018^{***} & 0.019^{***} & 0.010^{***} & 0.010^{***} \\ 
-##   & (0.003) & (0.003) & (0.003) & (0.003) \\ 
-##   ROE & -0.074^{***} & -0.072^{***} & -0.020^{***} & -0.018^{***} \\ 
-##   & (0.006) & (0.006) & (0.005) & (0.005) \\ 
-##   Income\_Div & 0.020 & 0.022 & -0.104 & -0.094 \\ 
-##   & (0.074) & (0.074) & (0.068) & (0.068) \\ 
-##   Concentration & -0.095 & -0.108^{*} & -0.065 & -0.070 \\ 
-##   & (0.058) & (0.058) & (0.055) & (0.054) \\ 
-##   GDP\_Growth & 0.165^{*} & 0.164^{*} & -0.163^{*} & -0.154^{*} \\ 
-##   & (0.099) & (0.098) & (0.093) & (0.092) \\ 
-##   Inflation\_CPI & 0.228 & 0.267 & 0.027 & 0.034 \\ 
-##   & (0.256) & (0.254) & (0.240) & (0.238) \\ 
-##   Tier1\_Ratio:OwnershipForeign-owned & 0.075 &  & 0.049^{***} &  \\ 
-##   & (0.072) &  & (0.013) &  \\ 
-##   Tier1\_Ratio:OwnershipJoint-stock & 0.009 &  & 0.069^{***} &  \\ 
-##   & (0.073) &  & (0.019) &  \\ 
-##   Tier1\_Ratio:OwnershipLocal government-holding & -0.013 &  & 0.077^{***} &  \\ 
-##   & (0.076) &  & (0.027) &  \\ 
-##   Tier1\_Ratio:OwnershipState-owned & -0.001 &  & 0.006 &  \\ 
-##   & (0.085) &  & (0.047) &  \\ 
-##   TC\_to\_RWA:OwnershipForeign-owned &  & 0.038 &  & 0.039^{***} \\ 
-##   &  & (0.065) &  & (0.009) \\ 
-##   TC\_to\_RWA:OwnershipJoint-stock &  & -0.061 &  & 0.057^{***} \\ 
-##   &  & (0.067) &  & (0.017) \\ 
-##   TC\_to\_RWA:OwnershipLocal government-holding &  & -0.041 &  & 0.083^{***} \\ 
-##   &  & (0.070) &  & (0.026) \\ 
-##   TC\_to\_RWA:OwnershipState-owned &  & -0.057 &  & 0.032 \\ 
-##   &  & (0.082) &  & (0.051) \\ 
-##   Constant & 6.379^{***} & 6.351^{***} & 11.526^{***} & 11.584^{***} \\ 
-##   & (1.430) & (1.482) & (1.148) & (1.135) \\ 
-##  \hline \\[-1.8ex] 
-## Year Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
-## \hline \\[-1.8ex] 
-## Observations & \multicolumn{1}{c}{1,621} & \multicolumn{1}{c}{1,649} & \multicolumn{1}{c}{1,817} & \multicolumn{1}{c}{1,847} \\ 
-## R$^{2}$ & \multicolumn{1}{c}{0.199} & \multicolumn{1}{c}{0.216} & \multicolumn{1}{c}{0.287} & \multicolumn{1}{c}{0.290} \\ 
-## Adjusted R$^{2}$ & \multicolumn{1}{c}{0.188} & \multicolumn{1}{c}{0.205} & \multicolumn{1}{c}{0.278} & \multicolumn{1}{c}{0.281} \\ 
-## Residual Std. Error & \multicolumn{1}{c}{1.100 (df = 1598)} & \multicolumn{1}{c}{1.098 (df = 1626)} & \multicolumn{1}{c}{1.078 (df = 1794)} & \multicolumn{1}{c}{1.074 (df = 1824)} \\ 
-## F Statistic & \multicolumn{1}{c}{18.102$^{***}$ (df = 22; 1598)} & \multicolumn{1}{c}{20.305$^{***}$ (df = 22; 1626)} & \multicolumn{1}{c}{32.750$^{***}$ (df = 22; 1794)} & \multicolumn{1}{c}{33.874$^{***}$ (df = 22; 1824)} \\ 
-## \hline 
-## \hline \\[-1.8ex] 
-## \textit{Note:}  & \multicolumn{4}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-## \end{tabular} 
-## \end{table}
-\end{verbatim}
+\begingroup\fontsize{7}{9}\selectfont
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hline
+**Characteristic** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value**\\
+\hline
+Tier1\_Ratio & -0.07 & -0.21, 0.07 & 0.3 & -0.05 & -0.07, -0.02 & <0.001 &  &  &  &  &  & \\
+\hline
+Ownership &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+Foreign Joint-stock &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+Foreign-owned & -2.3 & -3.8, -0.76 & 0.003 & -2.6 & -3.1, -2.2 & <0.001 & -2.6 & -4.2, -1.1 & <0.001 & -2.6 & -3.1, -2.2 & <0.001\\
+\hline
+Joint-stock & 0.01 & -1.5, 1.5 & >0.9 & -0.80 & -1.3, -0.34 & <0.001 & -0.02 & -1.5, 1.5 & >0.9 & -0.86 & -1.3, -0.39 & <0.001\\
+\hline
+Local government-holding & 0.26 & -1.3, 1.8 & 0.7 & -1.0 & -1.6, -0.34 & 0.002 & 0.22 & -1.3, 1.8 & 0.8 & -1.0 & -1.6, -0.38 & 0.002\\
+\hline
+State-owned & 0.22 & -1.5, 2.0 & 0.8 & -0.11 & -1.1, 0.91 & 0.8 & 0.31 & -1.4, 2.1 & 0.7 & -0.22 & -1.2, 0.80 & 0.7\\
+\hline
+LnAssets & -0.10 & -0.14, -0.05 & <0.001 & -0.20 & -0.25, -0.16 & <0.001 & -0.08 & -0.13, -0.04 & <0.001 & -0.20 & -0.25, -0.16 & <0.001\\
+\hline
+NL\_to\_TA & 0.02 & 0.01, 0.02 & <0.001 & 0.01 & 0.01, 0.02 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & 0.01 & 0.01, 0.02 & <0.001\\
+\hline
+ROE & -0.07 & -0.08, -0.06 & <0.001 & -0.02 & -0.03, -0.01 & 0.002 & -0.07 & -0.08, -0.06 & <0.001 & -0.02 & -0.03, -0.01 & 0.002\\
+\hline
+Concentration & -0.09 & -0.21, 0.02 & 0.11 & -0.06 & -0.17, 0.04 & 0.2 & -0.09 & -0.21, 0.02 & 0.10 & -0.06 & -0.17, 0.04 & 0.2\\
+\hline
+GDP\_Growth & 0.16 & -0.03, 0.36 & 0.10 & -0.17 & -0.35, 0.02 & 0.074 & 0.14 & -0.05, 0.34 & 0.2 & -0.15 & -0.34, 0.03 & 0.10\\
+\hline
+Inflation\_CPI & 0.22 & -0.28, 0.72 & 0.4 & 0.01 & -0.46, 0.48 & >0.9 & 0.21 & -0.29, 0.71 & 0.4 & 0.01 & -0.46, 0.48 & >0.9\\
+\hline
+Income\_Div & 0.05 & -0.09, 0.20 & 0.5 & -0.07 & -0.21, 0.06 & 0.3 & 0.05 & -0.10, 0.20 & 0.5 & -0.06 & -0.20, 0.07 & 0.3\\
+\hline
+Year &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2010 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2011 & -0.47 & -1.7, 0.74 & 0.4 & 0.06 & -1.1, 1.2 & >0.9 & -0.44 & -1.6, 0.76 & 0.5 & 0.07 & -1.0, 1.2 & 0.9\\
+\hline
+2012 & 0.37 & -0.04, 0.79 & 0.077 & -0.10 & -0.49, 0.28 & 0.6 & 0.33 & -0.08, 0.75 & 0.11 & -0.09 & -0.47, 0.30 & 0.7\\
+\hline
+2013 & 0.00 & -0.28, 0.28 & >0.9 & -0.07 & -0.33, 0.19 & 0.6 & -0.09 & -0.37, 0.19 & 0.5 & -0.05 & -0.31, 0.21 & 0.7\\
+\hline
+2014 & 0.19 & -0.20, 0.59 & 0.3 & -0.08 & -0.45, 0.29 & 0.7 & 0.11 & -0.29, 0.51 & 0.6 & -0.05 & -0.42, 0.32 & 0.8\\
+\hline
+2015 & 0.26 & -0.22, 0.73 & 0.3 & -0.07 & -0.51, 0.37 & 0.8 & 0.19 & -0.28, 0.66 & 0.4 & -0.04 & -0.48, 0.39 & 0.8\\
+\hline
+2016 & 0.00 & -0.19, 0.19 & >0.9 & 0.05 & -0.13, 0.22 & 0.6 & -0.03 & -0.23, 0.16 & 0.7 & 0.07 & -0.11, 0.24 & 0.5\\
+\hline
+2017 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2018 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+2019 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+Tier1\_Ratio * Ownership &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+Tier1\_Ratio * Foreign-owned & 0.10 & -0.04, 0.24 & 0.2 & 0.07 & 0.05, 0.10 & <0.001 &  &  &  &  &  & \\
+\hline
+Tier1\_Ratio * Joint-stock & 0.01 & -0.14, 0.15 & >0.9 & 0.07 & 0.03, 0.11 & <0.001 &  &  &  &  &  & \\
+\hline
+Tier1\_Ratio * Local government-holding & -0.02 & -0.16, 0.13 & 0.8 & 0.08 & 0.03, 0.13 & 0.003 &  &  &  &  &  & \\
+\hline
+Tier1\_Ratio * State-owned & 0.00 & -0.17, 0.16 & >0.9 & 0.01 & -0.08, 0.10 & 0.9 &  &  &  &  &  & \\
+\hline
+TC\_to\_RWA &  &  &  &  &  &  & -0.11 & -0.16, -0.06 & <0.001 & 0.04 & -0.01, 0.09 & 0.10\\
+\hline
+Ownership * Tier1\_Ratio &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+Foreign Joint-stock * Tier1\_Ratio &  &  &  &  &  &  & 0.02 & -0.13, 0.17 & 0.8 & -0.09 & -0.14, -0.03 & 0.002\\
+\hline
+Foreign-owned * Tier1\_Ratio &  &  &  &  &  &  & 0.14 & 0.08, 0.19 & <0.001 & -0.01 & -0.06, 0.04 & 0.7\\
+\hline
+Joint-stock * Tier1\_Ratio &  &  &  &  &  &  & 0.03 & -0.03, 0.08 & 0.3 & -0.01 & -0.06, 0.04 & 0.7\\
+\hline
+Local government-holding * Tier1\_Ratio &  &  &  &  &  &  & 0.01 & -0.06, 0.07 & 0.8 & 0.00 & -0.06, 0.06 & >0.9\\
+\hline
+State-owned * Tier1\_Ratio &  &  &  &  &  &  & 0.00 & -0.10, 0.10 & >0.9 & -0.07 & -0.16, 0.03 & 0.2\\
+\hline
+\end{tabu}
+\endgroup{}
 
 Table 7 presents regressions in which we assess the interactive
 associations among ownership structure, regulatory capital requirements,
