@@ -1,0 +1,426 @@
+---
+title: "Ownership dynamics, risk and regulation in Chinese banking: New Evidence"
+author: ["Veronica Zhang","Lisa Sheenan",'Barry Quinn']
+abstract: |
+  In this study we consider how the ownership dynamics of banks in China interact with both risk and regulation.  Using a forensically compile dataset, we assess the responsiveness of 
+keywords:
+- Chinese financial institutions
+- Industrial organisation
+- State ownership
+- Credit risk
+bibliography: refs.bib
+output: pdf_document
+---
+
+```{r set-up, include=FALSE}
+knitr::opts_chunk$set(fig.align = "center",warning = FALSE, echo = FALSE, message = FALSE)
+pacman::p_load(
+  readxl,
+  corrplot,
+  rio,          # File import
+  skimr,        # get overview of data
+  tidyverse,    # data management + ggplot2 graphics 
+  gtsummary,    # summary statistics and tests
+  rstatix,      # summary statistics and statistical tests
+  janitor,      # adding totals and percents to tables
+  scales,       # easily convert proportions to percents  
+  flextable,     # converting tables to pretty images
+  knitr,
+  kableExtra
+)
+```
+
+# Introduction
+\label{sec:intro}
+
+The relationship between capital buffers and bank risk-taking has long attracted academic attention, [@RN37;@RN44;@RN56].  The implementation of Basel Accords also lead to work focusing on the effects of capital regulation on bank behaviour, in particular on the impact of capital adequacy requirements on bank risk-taking behaviour. The 2007-2009 global financial crisis uncovered structural weaknesses in capital regulations which were implemented before the crisis. After the crisis, the Basel Committee on Banking Regulation and Supervision (BCBS) developed a consolidated framework (Basel III) for more stringent capital adequacy regulations and liquidity assessment, in recognition of the need for banks to be subject to more stringent capital regulations. Following the goals set by the BCBS, member countries, including China, have established legislation and regulatory frameworks. While regulatory consensus has been reached focusing on capital buffers, there is continued academic debate about what effect capital requirements could have on bank risk-taking [@RN36;@RN42;@RN68]
+
+China’s banking sector plays an essential role in the country’s economic development. It underwent fundamental reform in 1978, as an integrate part of China’s overall economic reform. Since 2001, when China got accession to the World Trade Organization (WTO), the reform of China’s banking system has stepped up its pace and the whole banking sector has been dramatically reshaped. The reform has transformed Chinese banks into market-oriented enterprises, changed their ownership structure, established modern corporate governance mechanisms, and introduced legislation and regulatory framework. Since 2010, improvements and refinements have continued in China’s banking sector as part of an advanced stage of the reform. China’s financial authority fully accepted the Basel III framework and began its implementation in 2013. A rich body of literature focusing on the previous stages of the reform assesses the relationship between capital requirements and Chinese banks’ performance and risk-taking [@RN63;@RN66;@RN75]. The objective of this paper is to analyze the impact of capital requirements on Chinese bank risk-taking following the 2007-2009 global financial crisis using the risk-based capital definition of the Basel III framework.
+
+In this paper, we extend existing empirical work studying the impact of capital requirements on bank credit risk-taking by incorporating the interaction between capital regulation and ownership structure. Financial theories suggest that capital regulations impact banks’ risk-taking due to the effect of the regulation on shareholders’ incentives. [@RN15;@RN44] (Demirgüç-Kunt and Kane, 2002, Allen et al., 2011) Empirical studies support those theories. Nevertheless, empirical studies find mixed results including negative association [RN24;RN75] (Berger and Bouwman, 2013, Tan and Floros, 2013), positive association [RN27] (Bichsel and Blum, 2004) and nonlinear relationships [@RN35] between capital regulation and bank risk-taking. Agency theory suggests that corporate risk-taking is influenced by ownership structure depending on the power of shareholder control. [@RN52,@RN4] Therefore, these theoretical keystones provide the foundation for us to examine the effect of capital regulation on bank risk-taking and how this interacts with ownership structure in determining risk-taking. 
+
+This paper provides empirical evidence using forensically analysed data on 231 China’s commercial banks over the period 2010-2019. To perform our analysis, we also hand collect the ownership structure information of these 231 Chinese commercial banks and classify them into 5 categories of ownership identities: State-owned (Big Six and other than Big Six), Local government-holding, Joint-stock, Foreign joint-stock, and Foreign-owned banks. (Table 1)  We regress both regulatory capital requirements from the Basel III framework and ownership identities on bank credit risk-taking proxies, respectively. We employ banks’ Non-performing Loans (NPL) ratios and Loan Loss Reserves (LLR) ratios to reflect the level of banks’ credit risk-taking. We also examine the actual impact of Basel III capital regulation on credit risk-taking incorporating the interaction between capital regulation and ownership structure. 
+
+Our key findings are as follows. First, credit risk is generally lower in banks that have higher regulatory capital. This finding is consistent with the theory suggesting regulatory capital acts as a buffer to resist economic shocks and lower banks’ risk-taking incentives [@RN42,@RN64]. This finding also supports the empirical studies of Chinese banks conducted by @RN75 and @RN62.
+
+Second, state-owned banks in general have higher credit risk compared to foreign-owned banks and other ownership identities. This finding is consistent with the results of @RN78 which examines risk-taking of state-owned banks and foreign banks. This finding also, to some extent, backs up the empirical results of @RN1 which finds banks with large owners who have significant cash flow rights take higher credit risk. During the financial reform, the state-shareholder in Chinese banks has transformed from a state-bureau (e.g., the Finance Ministry) to a state-corporation (e.g., Central Huijin Investment Co.) with modern corporate governance mechanisms. The state-shareholder has become a shareholder with *highly concentrated control rights and significant cash flow rights*. Due to this fact, our finding can be considered consistent with the agency theory that concentrated ownership and powerful shareholders suggest higher corporate risk-taking[@RN70;@RN74].  This finding also supports the social view of the theory of state ownership of banks that state-owned banks would undertake credit projects which might not be financially profitable[@RN73].
+
+Third, the actual impact of Basel III capital regulation on credit risk-taking can be influenced, to some extent, by ownership structure. For example, the results suggest that in government-holding banks, the negative effect of capital regulation on credit risk-taking can be enhanced by its ownership identity when there is no shareholder with significant power to increase risk-taking incentives.
+
+This paper contributes to the literature in several ways. First, this study assesses the impact of risk-based capital regulation on Chinese bank credit risk-taking following the global financial crisis, using the definition of capital from Basel III framework. It has been 10 years since the BCBS first released Basel III framework in 2010. The Chair of the BCBS stated that evaluating the regulation effects is part of the BCBS post-crisis reform in the current macroeconomic environment. In addition, China’s banking industry achieved extensive transformation before 2010 and the Chinese case provides uniqueness in terms of ownership structure.
+
+Second, our study bridges the research gap by incorporating the interaction between ownership structure and capital regulation while examining the impact of Basel III capital requirements on bank credit risk-taking. Only a small number of existing studies evaluate the joint effects of ownership structure and bank regulations on bank risk-taking, such as @RN1 2009. @RN66 test the impact of the interaction between capital regulation and ownership structure on cost efficiency of Chinese banks. To the best of our knowledge, this is the first study to assess how Basel III regulation and ownership structure jointly shape Chinese bank credit risk-taking following the global financial crisis.
+
+Third, we analyse a bespoke dataset of 231 Chinese commercial banks over a relatively long period (2010-2019) to study China’s banking sector. These 231 banks account for over 80% of China’s banking sector in terms of total assets. Apart from employing the data provided by the SNL database, we hand collected any missing values from the original annual reports of individual banks, which makes our data set extremely comprehensive. 
+
+The remainder of this paper is organised as follows. Section II reviews related literature, develops the testable predictions, as well as a brief introduction of the evolution of ownership structure of commercial banks in China. Section III presents the data set and the empirical model including the variables considered in our analysis. The empirical results are presented in section IV. And section V concludes.  
+
+# Literature
+
+As a member of the G20 and the Basel Committee on Banking Supervision, China has been fully supporting and participating in the global regulatory reform following the Great Financial Crisis of 2007-2009. In June 2012, The China Banking Regulatory Commission (CBRC) issued the regulation *Commercial Bank Capital Management Measure (Trial)*, which means that the Basel III framework was adopted and incorporated into the banking regulatory framework in China. The relationship between macro and micro prudential regulations has a hierarchical structure. @RN30 argue that the objectives of macro-prudential regulation subsume the rationales of the micro-prudential approach. The Basel III Framework is a macro-prudential framework based on Basel II framework (a micro-prudential framework). Through examining the relation between credit risk/solvency risk and Basel III, the impact of this macro-prudential oriented framework can be assessed from the institutional angle.
+
+## Bank capital and risk
+
+Empirical literature and financial theories provide mixed views regarding the impact of bank capital on risk-taking and bank stability. The Basel framework, centered with capital regulation, is designed to reduce bank risk and enhance bank resilience. @RN18 support this view that bank capital acts as a buffer in absorbing economic shocks and strengthens systemic stability. @RN42 find that a strong capital position helps banks resist earning shocks and have higher probability to survive the crisis. They also find evidence to advocate higher quality capital, i.e., Tier 1 capital, in the regulatory capital requirements. A lot of theories underline that risk-based capital, more effective than interest rate ceilings, boosts banks’ "franchise value", improve borrowers screening, and lower banks’ excessive risk-taking incentives [@RN15;RN64;RN67]. Other theories emphasize a moral hazard perspective, arguing effective regulatory capitalization may offset the excessive risk-taking incentives created by deposit insurance [@RN56;@RN44]. In terms of Chinese commercial banks, [@RN75] find a significant negative relationship between bank capital and risk. @RN62 report that bank capital is negatively related to NPL and support theories with the moral hazard view.  
+
+Contrariwise, other research posits that greater capital regulations may induce higher bank risk. @RN37 extend the research of @RN46, stating that the existence of deposit insurance weaken the depositors’ incentive to monitor banks and causes them to engage in excessive risk-taking activities. @RN29 suggests that banks may have higher incentives to raise risk due to the binding capital adequacy requirements. @RN35 find a U-shaped relationship between bank capital position and risk. The risk-taking first decreases with the increase of bank capital; then it increases as bank capital increases on its high level. They also argue that the increase in capital adequacy requirements induces banks to take additional portfolio risk even if they are well-capitalized. For Chinese banking data, @RN63 find that the negative relationship between capital and risk only exists in the sub-sample of small banks and is not found in the sub-sample of large banks. 
+We test the following two hypotheses regarding the impact of regulatory capital requirements on bank credit risk:
+
+**Hypothesis 1a:** *There is a negative relationship between regulatory capital and credit risk.*
+
+**Hypothesis 1b:** *There is a positive relationship between regulatory capital and credit risk.*
+
+## Ownership structure and risk
+
+Agency theory posits that corporate governance affects corporate risk-taking in sourcing outside financing and in the choice of value-enhancing projects because the private benefit of corporate control comes at the expense of the firm's outside investors [@RN52]. As one of the most important approaches to corporate governance, the legal investor protection (shareholder rights) approach suggests that corporate risk-taking is influenced by shareholder rights. Agency theory literature provides the results of both positive and negative links between shareholder rights and firms’ risk-taking.  @RN16 and @RN49 argue that in firms where managers have high levels of discretion, managers have the motive to engage their firms in conservative investment projects such as conglomerate mergers and low net present value (NPV) projects, in order to protect their careers or build their professional reputation. Based on this view, better investor protection may constrain the managers’ excessive control rights in firms, and may result in higher corporate risk-taking behaviour. @RN54 conduct a cross-country study and support this view. They find a positive relationship between investor protection and corporate risk-taking. 
+
+This school of thought suggests that investor protection is negatively related to corporate risk-taking. @RN33 argue that strong investor protection gives managers latitude to divert company resources within their compensation packages. Therefore, it would be optimal for the firm founders to sell the equity and hire professionals to manage the company. According to this view, strong legal protection, in fact, leads to a scenario of no controlling shareholding in firms; and induces managers to take more conservative actions in choosing investment in order to protect their private benefit. The model provided by @RN33 predicts that there is a negative relationship between legal investor protection and ownership concentration which is another popular approach to corporate governance. 
+
+Ownership concentrated in large investors with significant control rights and significant cash flow rights is another common approach to corporate governance [@RN1]. @RN58 suggest that corporations with dominant owners are more commonly seen around the world, compared to widely held firms. Controlling shareholders with strong incentives of monitoring inside managers and maximizing firms’ expected profits, execute their control rights and cash flow rights mainly through the *pyramid* corporate setting [@RN58;@RN71]. Agency models of large investors suggest a positive relationship between ownership concentration and corporate risk-taking. @RN70 argue that stockholder controlled banks have more intention to take higher risks than banks controlled by managers. @RN74 suggests that highly concentrated ownership decreases risk aversion of managers inside the firms. @RN1 provide empirical evidence supporting banks with concentrated shareholding generally have higher risk. 
+
+## State ownership
+
+State ownership is regarded as one of the special corporate arrangements. From a corporate governance perspective, state firms are defined as being "controlled by the public; and the de facto control rights usually belong to bureaucrat shareholders with highly concentrated control rights and no significant cash flow rights" [@RN4]. According to this view, state shareholders can be considered as a special form of large investors with highly concentrated control rights and lack of cash flow rights. 
+
+There are two alternative theories in the literature regarding the state ownership in banks; the social view and the political view. The social view, based on the economic theory of institutions, suggests that state ownership is a form of government intervention which addresses market failures and improves market functions and economic performance [@RN73]. According to this view, state-owned banks may finance those projects which might not be profitable but might have a high value of social welfare. Therefore, state-owned banks may have poorer performance in terms of profitability along with higher default risk compared to their counterparties in the private sector. In contrast, the political view claims that state ownership creates sources of political benefits for politicians rather than social welfare. For example, excessive employment of state firms only benefits those who support government politically [@RN72]. @RN4 suggests that state-owned firms are inefficient because the state shareholders, with highly concentrated control rights and no cash flow rights, only maximize their political goals which may jeopardize social welfare. 
+
+There is an extant literature examines the impact of state ownership of banks, from both a macroeconomic angle and the perspective of individual banks, mostly on economic growth and bank performance. @RN17 find that state ownership of banks improves countries’ long-run economic growth. However, @RN59 find that higher government ownership is related to lower economic growth. @RN23 find no supporting evidence for either the social view or the political view. At the individual bank level, studies tend to focus on bank performance under different ownership structures. Many studies report that state-owned banks are less efficient than private-owned banks. For example, @RN22} argue that state ownership intensifies bank concentration and restrains market competition. @RN25 and @RN51 find that state-owned banks have lower profitability and poor long-term performance. 
+
+Ownership structure of banks in China’s financial markets has attracted academic attention following China’s accession to the WTO in 2001. Many studies focusing on bank efficiency report that state-owned banks exhibit lower efficiency compared to joint-stock banks and foreign banks [@RN26;@RN47]. Several papers focus on ownership structure and bank risk. @RN75 argue that state-owned banks have higher volume of non-performing loans and lower profitability. @RN78 report that state-owned banks take higher risk than foreign banks in China. 
+
+## The evolution of ownership structure of commercial banks in China
+
+The dramatic changes regarding the ownership structure of commercial banks in China are an essential part of every stage of China’s financial reform. The four largest state-owned banks were founded during the first stage of the financial reform (1978-early 1990s), along with other national banks. These big banks were owned by the Finance Ministry and state-owned enterprises. The lower level of financial institutions, known as city credit cooperatives, were controlled by the local Bureau of Finance and foreign banks were operating in Special Economic Zones [@RN26]. During the second stage (early 1990s-2001), most of the *policy-lending* business of the largest four state-owned banks was released to three policy banks founded during this period. Private enterprises and individuals began entering different levels of financial institutions as shareholders. Local *Bureaus of Finance* began to exit city banks by transferring their shareholding to local business enterprises. The biggest change to the ownership structure happened at the third stage of the financial reform (2001-2010). An investment enterprise, Central Huijin Investment Ltd. (hereafter CH), was established by the state government acting as a designated shareholder of those state-owned banks, in order to fulfil the corporate governance requirements set by laws and regulations. Direct government shareholding has sharply decreased. Foreign financial institutions such as RBS Group and Bank of America invested in all levels of Chinese banks including state-owned banks, national banks and city banks, as strategic investors. The majority of state-owned banks and several city banks went public at this stage, introducing more diversified shareholders. After 2010, more detailed improvements happened regarding ownership structure. Private-owned banks were established. Local government shareholders become minority shareholders in city banks. Over 50% of shareholding in city banks and over 87% of shareholding in rural commercial banks had become private enterprises by 2017. In total 50 commercial banks were listed by 2019. 
+
+Based on the above discussion, we test the following two hypotheses regarding the relationship between ownership structure and bank credit risk in China’s banking sector: 
+
+**Hypothesis 2a:** *state-owned banks have higher credit risk compared to other type of banks.*
+
+**Hypothesis 2b:** *state-owned banks do not have higher credit risk compared to other type of banks.*
+
+## Ownership structure and regulation
+
+Financial theories suggest that banking regulations impact banks’ risk-taking by influencing shareholders’ incentives [@RN15;@RN44]. Corporate governance theories suggest that ownership structure affects corporate risk-taking through shareholder control rights on corporate decision-making [@RN52,@RN4]. Few studies on bank risk and regulation take account of the interaction between regulation and ownership structure. However, @RN57 argue that bank owners would compensate their potential expected utility loss by allocating assets to riskier portfolios when facing more stringent capital regulation. This means that the effects of bank regulation on credit risk are manifested through bank owners’ incentives and power. @RN31 set up models examining the relation between bank risk-taking and bank regulations under the circumstances of different ownership structure. They claim that banks’ incentives for taking excessive risk (risk-shifting) and bank managers’ looting, in response to bank regulations, are affected by ownership structure. @RN1 further the empirical research of bank risk, regulation, and ownership structure by examining cross-country data. They find that the stringency of regulatory oversight can be dampened by ownership with large control rights and cash flow rights. Concerning empirical studies of commercial banks in China, @RN66 suggest that the effects of capital requirements on commercial banks may vary depending on the individual banks’ ownership structure. Thus, based on financial theories and corporate governance theories, we examine whether or not bank regulation and ownership structure jointly impact on bank credit risk:
+
+**Hypothesis 3a:** *the impact of bank regulation on credit risk depends on ownership structure.*
+
+**Hypothesis 3b:** *the impact of bank regulation on credit risk does not depend on ownership structure.*
+
+
+## Data and forensic accounting anaysis
+This study uses annual data for 231 commercial banks in China, for the period 2010-2019, providing a total of 2,310 observations. The categories of sample financial institutions of the banking sector and their ownership structure are listed in Table 1. 
+
+```{r table1}
+import("raw.xlsx")->dat
+dat %>% 
+  distinct(Institution_Name,.keep_all=TRUE) %>%
+  tabyl(Ownership,Type) %>% 
+  adorn_totals(where = c("col","row")) %>% 
+  adorn_percentages(denominator = "all") %>% 
+  adorn_pct_formatting() %>% 
+  adorn_ns(position = "front") %>% 
+  adorn_title(row_name = "Ownership",
+    col_name = "Type",
+    placement = "combined") %>%
+   flextable() %>%
+  # autofit() %>%
+  set_caption("Cross tabulation of Ownership and Type") %>%
+  flextable::footnote(i=1,j=3:6,value = as_paragraph(c("Branches usually cover a city and the near cities within the province where the bank headquarter is located","Foreign bank branches and subsidiaries","Branches cover the whole country; following CBIRC's categorization","Branches usually cover local communities and rural area within a province where the bank headquarter is located")),
+                                          ref_symbols=c("a","b","c","d"),
+                                          part="header") %>%
+  valign(valign="bottom",part="header") %>%
+  flextable::footnote(j=1,i=c(2,4,5),value = as_paragraph(c("Joint-stock Banks having foreign strategic investors (usually shareholding over 15%)","Banks' share held by mixed-ownership insitutions and individuals; if shareholding involves indirect local government holding, the stake is less than 10%","Banks'share either held by local Treasury Bureau (no matter how much of the stake), or indirectly held by local government over 10%")),ref_symbols=c("e","f","g"),part="body") %>%
+  fontsize(size = 8, part = "all")
+  
+# %>% # format to one line per row 
+#   save_as_image("table1.png")
+```
+
+The main data source for the empirical analysis is SNL Financial (a service provided by S&P Global Inc.). When the SNL database does not provide enough information or has doubtful values, we double-check and hand collect data from other official sources including the annual issues of China’s Statistical Yearbook, the press release and the annual reports of the China Banking and Insurance Regulatory Commission (CBIRC), and the annual reports of individual banks. Macroeconomic data will be collected from the official channels of the World Bank, IMF, FSB, BCBS, the national regulatory authorities such as CBIRC, and China’s Statistical Yearbook. 
+
+
+# Methodology
+
+Our empirical design follows @RN75 and @RN28. @RN28] examine the impact of risk-based and non-risk-based capital ratios on bank risk, performance and profitability, using a sample of banks from OECD countries. @RN75 employ data on Chinese banks from 2003 to 2009 to examine the relationship between bank capital, risk and efficiency. Both studies use OLS regression models and provide enlightening results regarding the relationship between capital and risk. @RN28 focus on the impact of different measures of capital ratios on bank risk. @RN75 attempt to disentangle the inter relationship between capital, efficiency and risk. The banking data they employ covers the third stage of China’s financial reforms. Both studies provide plausible benchmarks for our research. This paper tests the impact of regulatory capital requirements of CBIRC (based on the Basel III framework) on bank credit risk, incorporating the interaction between bank regulation and ownership structure of Chinese banks. This study employs the annual panel data of 231 commercial banks over the period 2010-2019 (the fourth stage of the financial reform). We begin by examining the impact of regulatory capital on credit risk. Then, we explore the relationship between ownership structure and bank credit risk. Finally, we extend the analysis by testing whether the relation between regulatory capital and credit risk varies with different ownership structure. The baseline OLS regression model specification is outlined as follows:
+
+\begin{align*}
+Risk_{i, t} &= \beta_0 + \beta_1 \times Capital_{i, t} + \beta_2 \times Bank\_Control_{i, t} + \beta_3 \times Ownership_i \\
+& \beta_4 \times Capital_i \times Ownership_i + \beta_5 \times Industry\_Specific_{i,t}  + \beta_6 \times Macro_{i,t} + Year_t + \epsilon_{i,t} (1)
+\end{align*}
+
+In Equation (1), the subscripts $i$ and $t$ denote the individual bank and year respectively. The variable $Risk_{i,t}$ refers to bank $i$’s credit risk indicators which are represented by financial ratios of *Asset Quality* in the CAMEL rating system. The variables $Capital_{i,t}$ and $BankControl_{i,t}$ are different dimensions of capital adequacy requirements and control variables. The variables $Ownership_i$ and $Banktype_i$ are firm specific dummy variables. $Year_t$ is a vector of time specific dummy variables. A year fix-effect dummy variable is included in our baseline model in order to mitigate any effect of omitted variables related to time such as different effective time of the Basel III capital requirements for different levels of banks.  The variables are defined in Table 2. 
+
+```{r table 2}
+import("table2.xlsx") %>%
+  flextable() %>%
+  set_caption("Variable Definitions") %>%
+ fontsize(size = 8, part = "all")
+
+```
+
+## Bank Credit Risk
+
+We use the non-performing loan ratio (i.e., Non-Performing Loans/Total Gross Loans) to represent banks’ credit risk [@RN75,RN63,RN28], with  higher values indicative of increased credit risk. However, NPL ratios only reflect the size of the problem not quality of the loan book, which reflects the future expectation of loans write-offs. In order to ensure the robustness of our results, Loan Loss Reserve/Gross Loans (LLR) are also employed, representing the proportion of the loan book a bank expects to be written-off. Taken together, these ratios capture banks’ potential credit default risk (NPL) and loan book quality (LLR).^[Similar to Bitar et al. (2018), we focus on bank credit default which is one of the components of Pillar I of Basel III. Because our sample banks include listed and un-listed banks in China, we will not consider market risk and operational risk.]
+
+## Capital Adequacy Requirements
+
+The impact of capital adequacy regulation on credit risk has been widely debated yet remains an empirical challenge [@RN56;@RN29;@RN37;@RN44;@RN42;@RN67;@RN15;@RN63;@RN18;@RN62]. @RN50 suggest that capital requirements are negatively related to bank risk-taking. @RN48 argue that capital regulation induces banks to take excessive risk. @RN35 find a U-shaped association between capital buffer and bank risk-taking which is also found in the Chinese banks by @RN53. In terms of the measurement of bank capital, studies such as @RN75 and @RN61 both use Equity/Total Assets to measure individual banks’ capital adequacy. @RN42 find stronger association between bank capital and stock return when the leverage ratio is used to measure bank capital instead of risk-based capital ratios. @RN24 find broadly similar empirical results using risk-based and non-risk-based capital ratios. The Basel III framework, as the core of the Basel Committee’s post-crisis reforms, aims at strengthening banks’ risk capture and the resilience of the whole banking system. Risk-based capital ratios are commonly employed to examine the relationship between regulation and bank risk-taking [@RN1;@RN28;@RN68]^[Laeven and Levine (2009) use the regulatory capital ratio (TC/RWA) as the variable of capital requirements] 
+
+To examine the impact of Basel III on the individual banks’ credit risk, two regulatory capital ratios are considered based on the Basel III framework and CBIRC capital management regulation. The Tier 1 capital ratio, is defined as the ratio of Tier 1 capital to the total risk-weighted assets (RWA). The total regulatory capital ratio is measured as Tier 1 and Tier 2 capital to RWA. 
+
+## Bank-level predictors
+
+The vector $Bank_Control$ includes a set of variables which account for banks’ particular characteristics. The following bank-level control variables are employed: 
+
+$NL to GL$: we use the ratio of the Total Net Loans/Total Assets as a proxy for asset quality. The existing literature shows that banks with traditional loan portfolios may be exposed to lower risk thank those investing in derivatives [@RN28]. @RN75 use the loan to total assets ratio as an indicator of liquidity.
+
+$ROE$: we employ the ratio of return on equity to measure profitability of banks. This exhibits the ability of a bank to employ its own resource, i.e., equity, to generate profits.
+
+$Income Div$: a measure of banks’ income diversity. The ratio is calculated as 1-((Net Interest Income – Other Operating Income)/Total Operating Income) [@RN60]. Literature has a mix of views on banks’ risk and return. For example, @RN45 states that diversification of financial intermediaries may improve market valuation under delegated monitoring. @RN60 argue that diversified financial conglomerates may have a lower market value compare to those who concentrate on lending activities. @RN43} report that both bank risk and return increase with the increase of non-interest income share in the total operation income.
+
+$LnAssets$: we employ the natural logarithm of total assets to control for bank size. Bank size is considered as one of the important influences of risk given a bank’s scale economies of scale. A higher value of total assets may decrease individual banks’ risk [@RN65;RN75]; and a larger bank may have higher probability to survive during the financial crisis [@RN24]. Thus, a negative relationship would be expected between bank size and credit risk. 
+
+## Industry and Macroeconomic variables
+In addition to bank-specific variables, industry and macroeconomic conditions are taken into account when assessing the relationship between bank credit risk and regulation.
+
+$Concentration$: we use the ratio of total assets of the largest six banks to the total assets of all Chinese commercial banks to measure the level of industry competition. We employ this ratio by following @RN75 as a measure of competition in China’s banking sector. @RN75 take the total assets of the largest three banks, matching their data period 2003-2009. We take four systemic important banks plus Bank of Communications and the Postal Savings Bank. These six banks individually are considered as much larger than the rest of commercial banks in terms of total assets. A high concentration ratio may reflect low competition. @RN32 argue that more concentrated financial markets may lead to more bank risks.
+
+Macroeconomic conditions may influence bank activities. @RN40 argue that there may be a procyclical relationship between economic development and bank lending. @RN41 find that countries are more prone to financial crisis when economic growth is low and inflation is high. We take the annual GDP growth rate (GDP Growth) and the consumer price index (Inflation CPI) as measure of macroeconomic conditions. Both variable definitions are presented in Table 2. 
+
+## Ownership structure
+
+A key focus of our analysis is the influence of ownership structure on the responsiveness of Chinese banks to capital regulation changes. Institutional structure is an essential part of corporate governance, attracting much academic attention.  Ownership structure and business model dynamics are a distinct characteristic of risk and profitability profiles in European banking [@RN21]. @RN1 argue that ownership structure should be taken into account when assessing individual banks’ risk-taking behaviour. Existing literature tests bank risk-taking, regulation and ownership structure and finds the risk preference of managers depends on the importance of private benefit and the level of shareholder rights [@RN54], yet typically does not integrate the ownership structure into the risk-regulation studies [@RN1]. Banking theory suggests that bank regulation influences the incentives of bank risk-taking [@RN29;@RN37;@RN44;@RN15;@RN42;@RN75;@RN62]. Agency theory suggests that ownership structure determines shareholder power and affects corporate risk-taking [@RN52;@RN4;@RN58;@RN74;@RN54]. Based on the above discussion, ownership structure should be incorporated into the analysis of the risk-regulation relationship, because ownership structure influences the incentive of bank risk-taking in response to bank regulation [@RN31]. Thus, we examine the impact of Basel III regulation on banks’ credit risk, taking into account the interaction between ownership structure and regulation requirements. 
+
+Using a forensically hand-crafted data-set, gathered by hand from translations of annual reports, we employ ownership structure as a categorical variable, and classify commercial banks in China into five categories: state-owned, local government-holding, joint-stock, foreign-joint stock, and foreign-owned. We learn from the above classification that two kinds of banks involved with government shareholding: state-owned banks and local government-holding banks. The state-owned banks and local government-holding banks both have state or local government as their direct or indirect shareholders. We differentiate these two types of banks on the grounds that: 
+
+1. concerning the government involved, the state-owned banks only have the state government as their direct or ultimate shareholder, for example, Finance Ministry and Central Huijin Investment Ltd.; while the local government-holding banks only have local Bureau of Finance as their government shareholder. 
+
+2. In terms of power of government shareholders, the state-ownership has much greater control rights in the state-owned banks, compared to local Bureau of Finance in local government-holding banks where the local government has less than 20% shareholding. 
+
+3. With regard to size, the state-owned banks are the biggest ones in terms of total assets, and most of them are national banks^[National banks: commercial banks that have branches operating nationwide. See Table 1.]; while local government-holding banks usually are medium sized banks and provide financial services in cities and nearby areas.^[From Table 1 we can see that local government-holding banks are city banks.] From these perspectives, these two categories of banks may have distinctive reactions to risk-taking and bank regulation. Therefore, we separate these two types of government-ownership.
+
+State ownership plays an essential role in corporate governance mechanisms. The social view suggests that state ownership improves economic growth and social welfare [@RN73] while the political view considers that state ownership acts as an conduit for politicians to fulfill their political benefits [@RN72]. State-owned firms are criticized as ‘typically extremely inefficient’ [@RN4]. Empirical literature reports mixed results regarding the impact of state ownership on macroeconomic development [@RN59;@RN17]. At the individual bank level, most studies report that state-owned banks have poorer performance and higher risk-taking, compared to other types of ownership. For example, @RN69 finds state-owned banks favor large firms and charge them lower interest rates than private-owned banks in Italy. @RN25 report that state-owned banks in Argentina have poor long-term performance. @RN51 argue that government owned banks have lower loan quality and higher insolvency risk than other bank types in Europe. In the context of China’s banking industry, bank risk and performance state-owned banks do not perform as well as their peers [@RN26;@RN66]. State ownership in China has largely changed alongside the evolution of ownership structure during the past four decades. The direct government shareholders become the ultimate state shareholder and have significant control rights and cash flow rights through the delegated agent. 
+
+
+```{r summary statistics}
+dat %>% 
+  select(-Total_Assets,Concentration,-Year) %>%
+  get_summary_stats(show = c("n","mean","median","sd")) %>%
+  flextable %>%
+  set_caption("Descriptive statistics of the regression predictors") %>%
+  fit_to_width(max_width = 5) %>%
+  fontsize(size = 8, part = "all")
+```
+
+Table 3 presents the descriptive statistics for the sample. The mean of NPL to Gross Loans is 1.503%, slightly lower than the figure of 1.8% in @RN53 where they use the sample of banks in China over the period 2004-2017, and higher than the figure of 0.92% in @RN75 where they take the sample over the period 2003-2009. The relatively low NPL ratio of Chinese banks can be regarded as one of the results of the financial industry reform in China. During the reform, the four Asset Management Companies (AMCs) purchased a large amount of non-performing loans from the state-owned banks [@RN75]. Apart from the increase of the numbers of Chinese commercial banks, the NPL figure suggests an average increase in the NPL to Gross Loan ratio of Chinese commercial banks in recent years.
+
+Tier 1 Ratio and TC/RWA (total capital ratio) have a similar number of observations, both of which are over 1900. The disclosure of regulatory capital information is mandatory for commercial banks in China as *Commercial Bank Capital Management Measures* – the China version of Basel III has become effective since 2013. Tier1 Ratio has a mean of 16.123 and a median of 11.179% which are higher than the minimum 6% requirement proposed by the Basel III Framework. The mean results are higher than the results of @RN28; while the median is similar. The mean and median of TC to RWA are close to the results of European banks in @RN28} (18.18 and 13.78) respectively.
+
+The mean of ROE is 12.86 which is slightly lower than what is reported in @RN62 (13.86). They examine the relationship between bank capital and profitability and risk, using the data of Chinese commercial banks from 1997-2011. This period is a transitional time for China’s banking industry since it witnessed the three main stages of the financial reform in China’s banking industry. By 2011, key regimes of the financial reform had finished and essential mechanisms regarding corporate governance, legislation, among others had been established. Therefore, banks’ profitability may be lower than the era of high-speed development due to constraints in markets, supervision and corporate governance. 
+
+```{r correlation, fig.cap="Linear correlations"}
+cor(dat %>%
+  dplyr::select(-Total_Assets,-Concentration,-Institution_Name,-Ownership,-Type,-Listed,-Year,-Total_Assets) %>% drop_na())  %>% 
+  corrplot::corrplot(method="number",number.cex= 8/ncol(dat))
+```
+Figure 1 reports the Pearson correlation matrix between the predictor variables. All correlation coefficients of the variables are lower than 0.6, except for the correlation between Tier 1 capital ratio and the total capital ratio due to the different definition of capital ratios. Therefore, the regression models will be run only using one of these two capital ratios in one model, in order to avoid high collinearity. 
+
+## Impact on bank credit risk – risk-based capital ratios
+
+```{r table5}
+#GET YEAR FIXED OLS BASELINE REGRESSION TABLE USING Stargazer
+#Coverting formats
+obs<-dat
+obs$Year <- as.character(obs$Year)
+obs$Ownership <- as.factor(obs$Ownership)
+options(scipen=999)
+
+predictors<-c('LnAssets','NL_to_TA','ROE', 
+              'Concentration','GDP_Growth',"Inflation_CPI",
+              'Income_Div','Year') # Cannot include
+## run a regression with all variables of interest 
+# predictors %>%
+#   str_c(collapse = "+") %>%
+#   str_c("NPL ~ Tier1_Ratio +", .) %>%
+#   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+#   tbl_regression() -> mv1
+
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ TC_to_RWA +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100)) %>%
+  tbl_regression() %>%
+  modify_header(label ~ "Predictors N={n}") ->mv2
+
+# predictors %>%
+#   str_c(collapse = "+") %>%
+#   str_c("LLR ~ Tier1_Ratio +", .) %>%
+#   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+#   tbl_regression() ->mv3
+
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ TC_to_RWA +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  tbl_regression() %>%
+  modify_header(label ~ "Predictors N={n}") ->mv4
+
+tbl_merge(
+  tbls = list(mv2,mv4),                         
+  tab_spanner = c("NPL vs TC_RAW", 
+                  "LLR vs TC_RAW")) %>%
+  bold_labels() %>%
+  modify_header(label ~ "Predictors") 
+```
+
+
+Table 5 reports fixed effect baseline regression results for the full sample of banks. The first two columns in Table 5 show regressions of Non-Performing Loans to Gross Loans on regulatory capital requirements. Columns (3) and (4) use Loan Loss Reserve to Gross Loans as the dependent variable. We use a year fixed effect model here, in consideration of that the effects of regulatory capital requirements evolve through years and reducing the potential of omitted variables [@RN77,RN19}. Only one regulatory capital ratio is employed as the variable of interest in each column. All four regressions report negative and statistically significant relationships between bank credit risk variables and risk-based capital ratios. The results support the hypothesis: higher regulatory capital requirements are related to lower bank credit risk.
+
+The finding can be explained by the fact that those Chinese banks with higher level of regulatory capital have higher capability to reduce the impact of Non-Performing Loans, and thus lower Loan Loss Reserve. @RN75 find a negative but insignificant relationship between bank risk and capitalization when Loan Loss Reserve to Gross Loans is employed as the proxy of risk. @RN62 report a significant negative relationship between bank capital and credit risk (proxied by NPL ratio). This finding may reveal that the capital adequacy requirements of Basel III equip commercial banks in China with proper capital buffers in terms of mitigating credit risk.
+
+Among bank-specific and macroeconomic control variables, we find that LnAssets (a proxy of bank size), Net Loans to Total Assets (a proxy of asset quality), and ROE (a proxy of profitability) are the most significant variables. Bank size has a significant and negative impact on Chinese banks’ credit risk. This result is consistent with findings from some studies regarding the impact of capital ratios on bank credit risk [@RN75,RN28}. This finding suggests that large banks are more competent in dealing with risky loans and or they can spread the risk across a larger more diverse loan risk profile. Because large banks may benefit from firm reputation, compared to small banks, and have wide-ranging access to fixed-income and equity markets to diversify and hedge their credit risk. There is a significant and negative relationship between banking industry concentration and individual banks’ credit risk. The total assets of the largest six commercial banks ^[The largest six commercial banks: Industrial and Commercial Bank of China, Agricultural Bank of China, Bank of China, China Construction Bank, Bank of Communications, and Postal Savings Bank of China. The first four banks are listed as global systemically important banks (G-SIBs) in the FSB 2020 G-SIBs list.] account for 41.87% averagely during 2010-2019, although the industry concentration shows roughly a year-by-year decrease in the past decade. Four out of these six banks are listed as global systemically important banks (G-SIBs) by FSB in 2020. In the context of China’s banking industry, these six banks have a better ability to reduce the pressure in their credit activities, compared with other smaller-sized banks.
+
+## Impact on bank credit risk – Ownership structure
+
+```{r table 6, eval=F}
+# GET FIXED EFFECT MODEL-OWNERSHIP STRUCTURE
+#NPL ~ Tier1_Ratio
+Linear_NPL_1 <- lm(NPL ~ Tier1_Ratio + Ownership + LnAssets + NL_to_TA + ROE +
+                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
+                     Year, data = obs)
+#NPL ~ TC_to_RWA
+Linear_NPL_2 <- lm(NPL ~ TC_to_RWA + Ownership + LnAssets + NL_to_TA + ROE +
+                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
+                     Year, data = obs)
+#LLR ~ Tier1_Ratio
+Linear_LLR_1 <- lm(LLR ~ Tier1_Ratio + Ownership + LnAssets + NL_to_TA + ROE +
+                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
+                     Year, data = obs)
+#LLR ~ TC_to_RWA
+Linear_LLR_2 <- lm(LLR ~ TC_to_RWA + Ownership + LnAssets + NL_to_TA + ROE +
+                     Income_Div + Concentration + GDP_Growth + Inflation_CPI +
+                     Year, data = obs)
+
+#Write the regression table-ownership
+mtable1 <- mtable('Model 1' = Linear_NPL_1,
+            'Model 2' = Linear_NPL_2,
+            'Model 3' = Linear_LLR_1,
+            'Model 4' = Linear_LLR_2,
+            summary.stats = c('R-squared','F','p','N'))
+
+```
+
+```{r table6alt}
+# predictors %>%
+#   str_c(collapse = "+") %>%
+#   str_c("NPL ~ Tier1_Ratio + Ownership +", .) %>%
+#   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+#   tbl_regression() ->mv1
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ TC_to_RWA + + Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  tbl_regression() %>%
+  modify_header(label ~ "Predictors N={n}") ->mv2
+# predictors %>%
+#   str_c(collapse = "+") %>%
+#   str_c("LLR ~ Tier1_Ratio + + Ownership + ", .) %>%
+#   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
+#   tbl_regression(digits=5) ->mv3
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ TC_to_RWA ++ Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  tbl_regression() %>% 
+  modify_header(label ~ "Predictors N={n}")->mv4
+
+tbl_merge(
+  tbls = list(mv2,mv4),                         
+  tab_spanner = c("NPL vs TC_RAW",
+                  "LLR vs TC_RAW")) %>%
+  bold_labels() 
+
+```
+
+Table 6 reports the results of the impact on bank credit risk by adding banks’ ownership structure as a specific control variable. We find that adding ownership structure does not change the significant and negative impact of bank size, net loans to total assets and industry concentration on bank credit risk, respectively. However, the relationship between capital requirements and Loan Loss Reserve ratio has become insignificant, although it remains negative. The regressions presented in Table 6 demonstrate that ownership structure is positively associated with bank credit risk. This finding is consistent with the view that shareholders have greater incentives for risky projects than managers [@RN54]. This finding also supports the empirical results of @RN1] where they find a positive association between risk and ownership of a large owner (10% or more voting rights). 
+
+As discussed in the previous sections, ownership structure is always one of the focusing areas of research on China’s banking industry. @RN26} studies  efficiency of Chinese banks from the perspective of ownership structure and suggests that minority of foreign ownership helps improve bank efficiency. @RN66} investigates the effect of capital ratio on Chinese banks’ cost efficiency adjusting for ownership structure. @RN77} compares bank risks between different ownership structures of Chinese banks. The reason that the ownership structure becomes of one of the main interest factors in Chinese banking research could stem from the unique growth path of China’s banking industry and the suspicious in Western democracies of latent state manipulation. The past four decades witnessed dramatic changes and development in China’s banking sector.  The three stages of the reform in China’s banking industry achieves the advancement of the legal and financial infrastructure, as well as the more diversified ownership structure. By 2010 the four G-SIBs and other 12 commercial banks all finished IPOs. Private shareholding accounted for 77.7% in rural commercial banks. The period after 2010 could be considered not only as a stage of the financial reform for further progressing and improving, but also a time to evaluate the effectiveness of the substantial bank ownership changes. In recent times, as China seeks to decouple its reserve banking system from the US, there may be important implications for continued regulatory cooperation in international banking^[https://rhg.com/research/us-china-decoupling]
+
+The results reveal that state-owned banks have higher credit risk compared to those foreign-owned banks in China’s banking industry. This finding, to some extent, supports the viewpoint that state-owned banks would be involved in policy-guided credit activities instead of profit-centered ones [@RN66].  The social lending theory of state ownership @RN20 suggests that state-owned enterprises contribute to “correcting the ‘failure’ of market economy” due to imperfect competition, inefficiency and public good. According to this view, government-owned enterprises may help improve the overall economy performance [@RN73]. In China’s banking context, the biggest four commercial banks were founded and conducted a large amount of government lending in the early 1990’s, before national banks and city banks were established. Within a relatively long period, the state-owned banks (including local government-holding banks founded later in the end of 1990’s) played a role of ‘government agencies’ to pursue the broader social welfare objectives rather than profit maximizing. Since the state-owned banks target multiple welfare objectives which might not be measurable, the managers in the state-owned banks have low powered incentives[@RN76]. However, this resulted in the significant non-performing loan levels of ‘Big Four’ banks before China’s WTO accession in 2001.
+
+Since 2001, the ownership structure has been dramatically transformed, due to China’s overall industrial reforms and the commitments to the WTO agreement. The large part of shares directly held by local government were gradually replaced by mixed ownership enterprises, foreign investments, and private investors. In terms of the state-owned banks, direct state intervention was replaced by Central Huijin (a company representing the state government) along with the establishment of modern corporate governance system. Why does state ownership still have relatively higher credit risk? The higher credit risk taking by state-owned banks can be explained by two reasons: (1) although the direct government shareholding structure changed, business connection with state-owned enterprises remains due to the long-lasting business relationship and contracts such as those nationwide infrastructure projects lasting for decades; (2) the development of modern corporate governance mechanisms in China’s banking industry could transform government ownership into concentrated  ownership, the ownership similar to the one of large investors with significant control rights and cash flow rights [@RN4]. From this perspective, concentrated ownership puts pressure on management decision [@RN4] and bank risk taking incentives [@RN31] Almost all state-owned banks are listed banks. With their significant control rights and cash flow rights, the state (large) shareholder in these state-owned, listed banks may take excessive risk by favouring particular clientele such as large conglomerates in projects with potential of social-benefits rather than those with target of profit-maximizing. @RN69] finds that state-owned banks favour large firms and charge lower interest rates than other types of banks in Italy. This finding is also consistent with @RN1] where they report banks with large investors have higher risk. 
+
+## Impact on bank credit risk – Interaction between regulation and ownership structure}
+
+```{r table 7, eval=F}
+#GET INTERACTION REGRESSION MODEL
+#NPL ~ Tier1_Ratio
+Interaction_NPL_1 <- lm(NPL ~ Tier1_Ratio + Ownership + 
+                          Tier1_Ratio:Ownership + LnAssets + NL_to_TA + ROE + 
+                          Income_Div + Concentration + GDP_Growth + 
+                          Inflation_CPI + Year, data = obs)
+#NPL ~ TC_to_RWA
+Interaction_NPL_2 <- lm(NPL ~ TC_to_RWA + Ownership + 
+                          TC_to_RWA:Ownership + LnAssets + NL_to_TA + ROE + 
+                          Income_Div + Concentration + GDP_Growth + 
+                          Inflation_CPI + Year, data = obs)
+#LLR ~ Tier1_Ratio
+Interaction_LLR_1 <- lm(LLR ~ Tier1_Ratio + Ownership + 
+                          Tier1_Ratio:Ownership + LnAssets + NL_to_TA + ROE + 
+                          Income_Div + Concentration + GDP_Growth + 
+                          Inflation_CPI + Year, data = obs)
+#LLR ~ TC_to_RWA
+Interaction_LLR_2 <- lm(LLR ~ TC_to_RWA + Ownership + 
+                          TC_to_RWA:Ownership + LnAssets + NL_to_TA + ROE + 
+                          Income_Div + Concentration + GDP_Growth + 
+                          Inflation_CPI + Year, data = obs)
+
+#Write the interaction regression table
+mtable1 <- mtable('Model 1' = Linear_NPL_1,
+            'Model 2' = Linear_NPL_2,
+            'Model 3' = Linear_LLR_1,
+            'Model 4' = Linear_LLR_2, 
+            summary.stats = c('R-squared','F','p','N'))
+```
+
+```{r table7alt}
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("NPL ~ TC_to_RWA + + Ownership + Tier1_Ratio:Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  tbl_regression() %>%
+  modify_header(label ~ "Predictors N={n}") ->mv2
+
+predictors %>%
+  str_c(collapse = "+") %>%
+  str_c("LLR ~ TC_to_RWA ++ Ownership + Tier1_Ratio:Ownership +", .) %>%
+  lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
+  tbl_regression()  %>%
+  modify_header(label ~ "Predictors N={n}") ->mv2
+
+tbl_merge(
+  tbls = list(mv2,mv4),                         
+  tab_spanner = c("NPL vs TC_RAW",
+                  "LLR vs TC_RAW")) %>%
+  bold_labels() %>%
+  gtsummary::as_kable_extra()
+```
+
+Table 7 presents regressions in which we assess the interactive associations among ownership structure, regulatory capital requirements, and bank credit risk. Some studies suggest that the relationship between risk and ownership structure is closely associated with national regulation. Because regulation influences both bank owners’ and bank managers’ incentives of risk-taking and risk-shifting [@RN55;RN54]. @RN1 examine the interactions between ownership structure and national regulatory requirements and stringency, and find the relationship between risk and regulation stringency depends on ownership structure. @RN24 state that capital requirements have different impact on bank performance based on different bank size. Here we include the interaction term of each of the capital adequacy variables with different ownership structure variables. Capital adequacy variables remain negative but become insignificant, except for Tier 1 Ratio remains significant but lowers its significant level, under the circumstance of the interactive association between capital ratios and ownership structure. This finding demonstrates the direct effect of the capital adequacy requirement is to reduce bank credit risk and to enhance bank stability.
+
+After add in the interactive term, the coefficients of the ownership structure variables show positively and significantly in Table 7. This finding may partially support the theories arguing that bank owners may choose to increase portfolio risk when facing more stringent capital requirements, in order to compensate their potential loss of expected utility [@RN57;RN34]. Table 7 shows that local government-holding banks have a higher positive coefficient than other types of banks, indicating that local government-holding banks may have higher incentives to reshuffle risk when facing higher capital adequacy regulation.
+
+In regression (1) that include the interaction term between capital ratio and ownership structure, the coefficient of Tie 1 Ratio stays negative and statistically significant. This result reveals that the effect of capital regulation is to mitigate bank credit risk and enhance bank stability, which is also in accordance with banking regulation theories. This result may also indicate that the impact of capital regulation on credit risk, to some extent, depends on ownership structure. The interactive coefficient estimates for Tier 1 Ratio*different ownership structure are negative. Among these terms, the joint-stock and local government-holding terms enter significantly. This shows that the impact on bank credit risk of Tier 1 ratio can be magnified when banks are not dominated by a single large owner^[In our sample, the direct(indirect) shares of local government-holding banks held by government or its agencies are over 10%. However, the local government-holding banks don’t have dominant direct(indirect) government shareholders (50% more voting rights). In fact, most of these banks are widely held and have mixed-ownership shareholders.]. However, Tier 1 Ratio does not have significant non-linear impact on bank credit risk when banks are state-owned. @RN1 argue that regulations affecting risk-taking incentives of banks with powerful owners and the ones widely held may be in different ways. The finding may be interpreted that the interaction between capital regulations and the incentives of joint-stock shareholders is more significant than powerful shareholders, because shareholders of joint-stock banks may have different risk-taking incentives from the influential state-shareholders. This result also collaborates with the estimates of the coefficients of ownership structure. 
+
+# Conclusion
+This paper aims to analyze the impact of capital regulation on Chinese banks’ credit risk-taking following the 2007-2009 global financial crisis and to assess the impact of capital regulation on credit risk-taking by incorporating the interaction between capital regulation and ownership structure. We focus on risk-based capital regulation from the Basel III framework that affects Chinese commercial banks over the period 2010-2019. This period coincides with the fourth stage of China’s financial reform and the implementation of Basel III framework in China. Financial theories, supported by empirical studies, suggest that the impact of bank regulation on bank risk-taking varies due to different ownership structure {RN1}. Therefore, this study provides implications for regulatory strategies and the stability of China’s banking system.
+
+We find that Basel III risk-based capital regulation has a negative impact on bank credit risk-taking. This finding implies that implementation of Basel III capital regulation has strengthened financial stability. We compare the credit risk-taking level of different ownership structure in China’s commercial banks and find that state-owned banks have higher credit risk-taking than any other ownership structure in China’s banking industry. This finding is consistent with the social view of the state ownership theory, as well as the theory predicting that powerful shareholders have stronger incentives to  take risks due to the transformation of ownership structure during China’s financial reform.
+
+Furthermore, we find that the impact of capital regulation on credit risk-taking is influenced by ownership structure. The same bank regulations have different effects on credit risk-taking because of the interaction between bank regulation and ownership structure. Thus, this paper provides strategic implication for regulatory authorities making regulatory decisions to take into account bank ownership structure. 
+
+# Appendix 
+
+## A1. Definitions of the Basel Accords
+
+# References

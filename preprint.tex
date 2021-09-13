@@ -11,14 +11,16 @@
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
+\usepackage{lipsum}
 \usepackage{graphicx}
 
-\title{Ownership dynamics, risk and regulation in Chinese banking: New Evidence}
+\title{Ownership dynamics, risk and regulation in Chinese banking: New
+Evidence}
 
 \author{
     Veronica Zhang
-    \thanks{The authors gratefully acknowledge Professor John Turner and Dr Clive
-Walker for their insight comments.}
+    \thanks{The authors gratefully acknowledge Professor John Turner and
+Dr Clive Walker for their insight comments.}
    \\
     Management School, Queen's University Belfast \\
    \\
@@ -38,23 +40,41 @@ Walker for their insight comments.}
   }
 
 
-
 % Pandoc citation processing
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+% for Pandoc 2.8 to 2.10.1
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+% For Pandoc 2.11+
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc} % for calculating minipage widths
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\usepackage{longtable}
-\usepackage{color}
-\usepackage{xcolor}
-\usepackage{fontspec}
-\usepackage{multirow}
-\usepackage{multicol}
-\usepackage{colortbl}
-\usepackage{hhline}
+preamble.tex
+\usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
-\usepackage{hyperref}
-\usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{wrapfig}
 \usepackage{float}
+\usepackage{colortbl}
 \usepackage{pdflscape}
 \usepackage{tabu}
 \usepackage{threeparttable}
@@ -105,8 +125,8 @@ BCBS, member countries, including China, have established legislation
 and regulatory frameworks. While regulatory consensus has been reached
 focusing on capital buffers, there is continued academic debate about
 what effect capital requirements could have on bank risk-taking
-(Chiaramonte and Casu 2017; Demirguc-Kunt, Detragiache, and Merrouche
-2013; Roulet 2018)
+(Chiaramonte and Casu 2017; Asli Demirguc-Kunt, Detragiache, and
+Merrouche 2013; Roulet 2018)
 
 China's banking sector plays an essential role in the country's economic
 development. It underwent fundamental reform in 1978, as an integrate
@@ -141,11 +161,10 @@ Bouwman, 2013, Tan and Floros, 2013), positive association {[}RN27{]}
 (Bichsel and Blum, 2004) and nonlinear relationships (Calem and Rob
 1999) between capital regulation and bank risk-taking. Agency theory
 suggests that corporate risk-taking is influenced by ownership structure
-depending on the power of shareholder control. (Jensen and Meckling
-1976, @RN4) Therefore, these theoretical keystones provide the
-foundation for us to examine the effect of capital regulation on bank
-risk-taking and how this interacts with ownership structure in
-determining risk-taking.
+depending on the power of shareholder control. Shleifer and Vishny
+(1997) Therefore, these theoretical keystones provide the foundation for
+us to examine the effect of capital regulation on bank risk-taking and
+how this interacts with ownership structure in determining risk-taking.
 
 This paper provides empirical evidence using forensically analysed data
 on 231 China's commercial banks over the period 2010-2019. To perform
@@ -165,10 +184,10 @@ structure.
 Our key findings are as follows. First, credit risk is generally lower
 in banks that have higher regulatory capital. This finding is consistent
 with the theory suggesting regulatory capital acts as a buffer to resist
-economic shocks and lower banks' risk-taking incentives (Demirguc-Kunt,
-Detragiache, and Merrouche 2013, @RN64). This finding also supports the
-empirical studies of Chinese banks conducted by Tan and Floros (2013)
-and Lee, Ning, and Lee (2015).
+economic shocks and lower banks' risk-taking incentives Mehran and
+Thakor (2011). This finding also supports the empirical studies of
+Chinese banks conducted by Tan and Floros (2013) and C.-C. Lee, Ning,
+and Lee (2015).
 
 Second, state-owned banks in gene1ral have higher credit risk compared
 to foreign-owned banks and other ownership identities. This finding is
@@ -261,22 +280,22 @@ regarding the impact of bank capital on risk-taking and bank stability.
 The Basel framework, centered with capital regulation, is designed to
 reduce bank risk and enhance bank resilience. Anginer and Demirguc-Kunt
 (2014) support this view that bank capital acts as a buffer in absorbing
-economic shocks and strengthens systemic stability. Demirguc-Kunt,
+economic shocks and strengthens systemic stability. Asli Demirguc-Kunt,
 Detragiache, and Merrouche (2013) find that a strong capital position
 helps banks resist earning shocks and have higher probability to survive
 the crisis. They also find evidence to advocate higher quality capital,
 i.e., Tier 1 capital, in the regulatory capital requirements. A lot of
 theories underline that risk-based capital, more effective than interest
-rate ceilings, boosts banks' ``franchise value'', improve borrowers
+rate ceilings, boosts banks' ``franchise value,'' improve borrowers
 screening, and lower banks' excessive risk-taking incentives {[}Allen,
 Carletti, and Marquez (2011);RN64;RN67{]}. Other theories emphasize a
 moral hazard perspective, arguing effective regulatory capitalization
 may offset the excessive risk-taking incentives created by deposit
 insurance (Keeley 1990; Demirgüç-Kunt and Kane 2002). In terms of
 Chinese commercial banks, (Tan and Floros 2013) find a significant
-negative relationship between bank capital and risk. Lee, Ning, and Lee
-(2015) report that bank capital is negatively related to NPL and support
-theories with the moral hazard view.
+negative relationship between bank capital and risk. C.-C. Lee, Ning,
+and Lee (2015) report that bank capital is negatively related to NPL and
+support theories with the moral hazard view.
 
 Contrariwise, other research posits that greater capital regulations may
 induce higher bank risk. Cooper and Ross (2002) extend the research of
@@ -470,13 +489,13 @@ Financial theories suggest that banking regulations impact banks'
 risk-taking by influencing shareholders' incentives (Allen, Carletti,
 and Marquez 2011; Demirgüç-Kunt and Kane 2002). Corporate governance
 theories suggest that ownership structure affects corporate risk-taking
-through shareholder control rights on corporate decision-making (Jensen
-and Meckling 1976, @RN4). Few studies on bank risk and regulation take
-account of the interaction between regulation and ownership structure.
-However, Koehn and Santomero (1980) argue that bank owners would
-compensate their potential expected utility loss by allocating assets to
-riskier portfolios when facing more stringent capital regulation. This
-means that the effects of bank regulation on credit risk are manifested
+through shareholder control rights on corporate decision-making Shleifer
+and Vishny (1997). Few studies on bank risk and regulation take account
+of the interaction between regulation and ownership structure. However,
+Koehn and Santomero (1980) argue that bank owners would compensate their
+potential expected utility loss by allocating assets to riskier
+portfolios when facing more stringent capital regulation. This means
+that the effects of bank regulation on credit risk are manifested
 through bank owners' incentives and power. Boyd and Hakenes (2008) set
 up models examining the relation between bank risk-taking and bank
 regulations under the circumstances of different ownership structure.
@@ -521,7 +540,7 @@ their ownership structure are listed in Table 1.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Ownership/Type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Big\ Six}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}City\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}a}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ bank\ subsidiary}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}b}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}National\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Rural\ commercial}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}d}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Ownership/Type}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Big\ Six}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{City\ bank}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{a}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Foreign\ bank\ subsidiary}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{b}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{National\ bank}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{c}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Rural\ commercial}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{d}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-7}
 
@@ -529,87 +548,89 @@ their ownership structure are listed in Table 1.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Ownership/Type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Big\ Six}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}City\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}a}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ bank\ subsidiary}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}b}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}National\ bank}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Rural\ commercial}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}d}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Ownership/Type}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Big\ Six}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{City\ bank}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{a}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Foreign\ bank\ subsidiary}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{b}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{National\ bank}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{c}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Rural\ commercial}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{d}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-7}\endhead
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Branches\ usually\ cover\ a\ city\ and\ the\ near\ cities\ within\ the\ province\ where\ the\ bank\ headquarter\ is\ located}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}a}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Branches\ usually\ cover\ a\ city\ and\ the\ near\ cities\ within\ the\ province\ where\ the\ bank\ headquarter\ is\ located}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{a}}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ bank\ branches\ and\ subsidiaries}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}b}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Foreign\ bank\ branches\ and\ subsidiaries}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{b}}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Branches\ cover\ the\ whole\ country;\ following\ CBIRC's\ categorization}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}c}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Branches\ cover\ the\ whole\ country;\ following\ CBIRC's\ categorization}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{c}}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Branches\ usually\ cover\ local\ communities\ and\ rural\ area\ within\ a\ province\ where\ the\ bank\ headquarter\ is\ located}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}d}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Branches\ usually\ cover\ local\ communities\ and\ rural\ area\ within\ a\ province\ where\ the\ bank\ headquarter\ is\ located}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{d}}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Joint-stock\ Banks\ having\ foreign\ strategic\ investors\ (usually\ shareholding\ over\ 15\%)}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}e}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Joint-stock\ Banks\ having\ foreign\ strategic\ investors\ (usually\ shareholding\ over\ 15\%)}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{e}}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Banks'\ share\ held\ by\ mixed-ownership\ insitutions\ and\ individuals;\ if\ shareholding\ involves\ indirect\ local\ government\ holding,\ the\ stake\ is\ less\ than\ 10\%}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}f}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Banks'\ share\ held\ by\ mixed-ownership\ insitutions\ and\ individuals;\ if\ shareholding\ involves\ indirect\ local\ government\ holding,\ the\ stake\ is\ less\ than\ 10\%}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{f}}}}} \\
 
 
 
 
 
-\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Banks'share\ either\ held\ by\ local\ Treasury\ Bureau\ (no\ matter\ how\ much\ of\ the\ stake),\ or\ indirectly\ held\ by\ local\ government\ over\ 10\%}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}g}}}} \\
+\multicolumn{7}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 5.25in+12\tabcolsep+6\arrayrulewidth}!{\color[HTML]{FFFFFF}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Banks'share\ either\ held\ by\ local\ Treasury\ Bureau\ (no\ matter\ how\ much\ of\ the\ stake),\ or\ indirectly\ held\ by\ local\ government\ over\ 10\%}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{g}}}}} \\
 
 \endfoot
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign\ Joint-stock}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 12\ \ (5.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 1\ (0.4\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 13\ \ \ (5.6\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Foreign\ Joint-stock}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0\ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 12\ \ (5.2\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 1\ (0.4\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 13\ \ \ (5.6\%)}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Foreign-owned}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}e}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ \ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}33\ (14.3\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 33\ \ (14.3\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Foreign-owned}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{e}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0\ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ \ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{33\ (14.3\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 33\ \ (14.3\%)}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Joint-stock}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 48\ (20.8\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 5\ (2.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}66\ (28.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}119\ \ (51.5\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Joint-stock}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0\ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 48\ (20.8\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 5\ (2.2\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{66\ (28.6\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{119\ \ (51.5\%)}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Local\ government-holding}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}f}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0\ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 45\ (19.5\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 2\ (0.9\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 5\ \ (2.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 52\ \ (22.5\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Local\ government-holding}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{f}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0\ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 45\ (19.5\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 2\ (0.9\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 5\ \ (2.2\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 52\ \ (22.5\%)}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}State-owned}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}g}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}6\ (2.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ \ 4\ \ (1.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 4\ (1.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 0\ \ (0.0\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}\ 14\ \ \ (6.1\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{State-owned}}}\fontsize{8}{8}\selectfont{\textsuperscript{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{g}}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{6\ (2.6\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ \ 4\ \ (1.7\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 4\ (1.7\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 0\ \ (0.0\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{\ 14\ \ \ (6.1\%)}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}6\ (2.6\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}109\ (47.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}33\ (14.3\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}12\ (5.2\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}71\ (30.7\%)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}231\ (100.0\%)}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{6\ (2.6\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{109\ (47.2\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{33\ (14.3\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{12\ (5.2\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{71\ (30.7\%)}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{231\ (100.0\%)}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-7}
+
+
 
 \end{longtable}
 
@@ -652,8 +673,10 @@ analysis by testing whether the relation between regulatory capital and
 credit risk varies with different ownership structure. The baseline OLS
 regression model specification is outlined as follows:
 
-\[Risk_{i, t} = \beta_0 + \beta_1 \times Capital_{i, t} + \beta_2 \times Bank\_Control_{i, t} + \beta_3 \times Ownership_i + \\
-\beta_4 \times Capital_i \times Ownership_i + \beta_5 \times Industry\_Specific_{i,t}  + \beta_6 \times Macro_{i,t} + Year_t + \epsilon_{i,t}\]
+\begin{equation}
+Risk_{i, t} = \beta_0 + \beta_1 \times Capital_{i, t} + \beta_2 \times Bank\_Control_{i, t} + \beta_3 \times Ownership_i + \\
+\beta_4 \times Capital_i \times Ownership_i + \beta_5 \times Industry\_Specific_{i,t}  + \beta_6 \times Macro_{i,t} + Year_t + \epsilon_{i,t}
+\end{equation}
 
 In Equation (1), the subscripts \(i\) and \(t\) denote the individual
 bank and year respectively. The variable \(Risk_{i,t}\) refers to bank
@@ -674,13 +697,13 @@ different levels of banks. The variables are defined in Table 2.
 
 \renewcommand*{\arraystretch}{1.5}
 
-\begin{longtable}[c]{|p{2.00in}|p{2.00in}|p{2.00in}|p{2.00in}}
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
 
 \caption{Table 2: Variable Definitions}\\
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Acronym}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Definition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Data\ Source}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Variable}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Acronym}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Definition}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Data\ Source}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}
 
@@ -688,111 +711,113 @@ different levels of banks. The variables are defined in Table 2.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Acronym}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Definition}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Data\ Source}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Variable}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Acronym}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Definition}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Data\ Source}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}\endhead
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Credit\ Risk}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Credit\ Risk}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NPL}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Non-Perfroming\ Loans/Gross\ Loans,\ Non-Performing\ Loans\ as\ a\ percentage\ of\ loans\ before\ reserves}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{NPL}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Non-Perfroming\ Loans/Gross\ Loans,\ Non-Performing\ Loans\ as\ a\ percentage\ of\ loans\ before\ reserves}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LLR}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Loan\ Loss\ Reserves/Gross\ Loans,\ Reserves\ for\ loan\ losses\ as\ a\ percent\ of\ loans\ before\ reserves}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{LLR}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Loan\ Loss\ Reserves/Gross\ Loans,\ Reserves\ for\ loan\ losses\ as\ a\ percent\ of\ loans\ before\ reserves}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Capital\ Adequacy}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Capital\ Adequacy}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Tier1\_Ratio}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Tier\ 1\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Tier1\_Ratio}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Tier\ 1\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}TC\_to\_RWA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\ Regulatory\ Capital/Risk\ Weighted\ Assets,\ Total\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{TC\_to\_RWA}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total\ Regulatory\ Capital/Risk\ Weighted\ Assets,\ Total\ capital\ ratio\ as\ defined\ by\ the\ latest\ regulatory\ and\ supervisory\ guidelines.}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Bank\_Control\ variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Bank\_Control\ variables}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NL\_to\_TA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\ Net\ Loans/Total\ Assets,\ loans\ and\ finance\ leases,\ net\ of\ loan-loss\ reserves,\ as\ a\ percent\ of\ total\ assets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{NL\_to\_TA}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total\ Net\ Loans/Total\ Assets,\ loans\ and\ finance\ leases,\ net\ of\ loan-loss\ reserves,\ as\ a\ percent\ of\ total\ assets}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}ROE}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Return\ on\ average\ equity;\ net\ income\ as\ a\ percent\ of\ average\ equity}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{ROE}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Return\ on\ average\ equity;\ net\ income\ as\ a\ percent\ of\ average\ equity}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\_Assets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Total\ Assets,\ all\ assets\ owned\ by\ the\ company\ as\ of\ the\ date\ indicated,\ as\ carried\ on\ the\ balance\ sheet\ and\ defined\ under\ the\ indicated\ accounting\ principles}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total\_Assets}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Total\ Assets,\ all\ assets\ owned\ by\ the\ company\ as\ of\ the\ date\ indicated,\ as\ carried\ on\ the\ balance\ sheet\ and\ defined\ under\ the\ indicated\ accounting\ principles}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LnAssets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Natrual\ Logarithm\ of\ Total\ Assets,\ as\ an\ indicator\ of\ the\ size\ of\ a\ bank}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Manually\ compuation\ based\ on\ data\ of\ Total\_Assets}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{LnAssets}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Natrual\ Logarithm\ of\ Total\ Assets,\ as\ an\ indicator\ of\ the\ size\ of\ a\ bank}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Manually\ compuation\ based\ on\ data\ of\ Total\_Assets}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Income\_Div}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Income\ diversity,\ 1-(Net\ Interest\ Income\ –\ Other\ Operating\ Income)/Total\ Operating\ Income}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Manually\ compuation\ based\ on\ SNL\ Database\ and\ bank\ annual\ reports}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Income\_Div}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Income\ diversity,\ 1-(Net\ Interest\ Income\ –\ Other\ Operating\ Income)/Total\ Operating\ Income}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Manually\ compuation\ based\ on\ SNL\ Database\ and\ bank\ annual\ reports}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Industry\_Specific\ variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Industry\_Specific\ variables}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Concentration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}The\ total\ assets\ of\ the\ largest\ five\ (the\ largest\ six\ in\ 2019)\ commercial\ banks\ (in\ terms\ of\ assets),\ as\ percentage\ of\ the\ total\ assets\ of\ the\ whole\ banking\ sector}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}CBIRC\ statistics\ release}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Concentration}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{The\ total\ assets\ of\ the\ largest\ five\ (the\ largest\ six\ in\ 2019)\ commercial\ banks\ (in\ terms\ of\ assets),\ as\ percentage\ of\ the\ total\ assets\ of\ the\ whole\ banking\ sector}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{CBIRC\ statistics\ release}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Macro\_Economic\ Variables}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Macro\_Economic\ Variables}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}GDP}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}GDP\ Growth\ rate\ (\%),\ Annual\ percentage\ growth\ rate\ of\ GDP\ at\ market\ prices\ based\ on\ constant\ local\ currency.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}World\ Bank\ Database}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{GDP}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{GDP\ Growth\ rate\ (\%),\ Annual\ percentage\ growth\ rate\ of\ GDP\ at\ market\ prices\ based\ on\ constant\ local\ currency.}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{World\ Bank\ Database}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Inflation\_CPI}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Inflation\ as\ measured\ by\ the\ consumer\ price\ index\ (CPI)\ reflects\ the\ annual\ percentage\ change\ in\ the\ cost\ to\ the\ average\ consumer\ of\ acquiring\ a\ basket\ of\ goods\ and\ services\ that\ may\ be\ fixed\ or\ changed\ at\ specified\ intervals,\ such\ as\ yearly.}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{9}{9}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}World\ Bank\ Database}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Inflation\_CPI}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Inflation\ as\ measured\ by\ the\ consumer\ price\ index\ (CPI)\ reflects\ the\ annual\ percentage\ change\ in\ the\ cost\ to\ the\ average\ consumer\ of\ acquiring\ a\ basket\ of\ goods\ and\ services\ that\ may\ be\ fixed\ or\ changed\ at\ specified\ intervals,\ such\ as\ yearly.}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{World\ Bank\ Database}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}
+
+
 
 \end{longtable}
 
@@ -818,23 +843,26 @@ capture banks' potential credit default risk (NPL) and loan book quality
 Requirements}\label{capital-adequacy-requirements}}
 
 The impact of capital adequacy regulation on credit risk has been widely
-debated yet remains an empirical challenge {[}Keeley
-(1990);RN29;RN37;RN44;RN42;RN67;RN15;RN63;RN18;RN62{]}. Hogan (2015)
-suggest that capital requirements are negatively related to bank
-risk-taking. Hellmann, Murdock, and Stiglitz (2000) argue that capital
-regulation induces banks to take excessive risk. Calem and Rob (1999)
-find a U-shaped association between capital buffer and bank risk-taking
-which is also found in the Chinese banks by Jiang, Zhang, and Sun
-(2020). In terms of the measurement of bank capital, studies such as Tan
-and Floros (2013) and C.-C. Lee and Hsieh (2013) both use Equity/Total
-Assets to measure individual banks' capital adequacy. Demirguc-Kunt,
-Detragiache, and Merrouche (2013) find stronger association between bank
-capital and stock return when the leverage ratio is used to measure bank
-capital instead of risk-based capital ratios. Berger and Bouwman (2013)
-find broadly similar empirical results using risk-based and
-non-risk-based capital ratios. The Basel III framework, as the core of
-the Basel Committee's post-crisis reforms, aims at strengthening banks'
-risk capture and the resilience of the whole banking system. Risk-based
+debated yet remains an empirical challenge (Keeley 1990; Blum 1999;
+Cooper and Ross 2002; Demirgüç-Kunt and Kane 2002; Asli Demirguc-Kunt,
+Detragiache, and Merrouche 2013; Repullo 2004; Allen, Carletti, and
+Marquez 2011; T.-H. Lee and Chih 2013; Anginer and Demirguc-Kunt 2014;
+C.-C. Lee, Ning, and Lee 2015). Hogan (2015) suggest that capital
+requirements are negatively related to bank risk-taking. Hellmann,
+Murdock, and Stiglitz (2000) argue that capital regulation induces banks
+to take excessive risk. Calem and Rob (1999) find a U-shaped association
+between capital buffer and bank risk-taking which is also found in the
+Chinese banks by Jiang, Zhang, and Sun (2020). In terms of the
+measurement of bank capital, studies such as Tan and Floros (2013) and
+C.-C. Lee and Hsieh (2013) both use Equity/Total Assets to measure
+individual banks' capital adequacy. Asli Demirguc-Kunt, Detragiache, and
+Merrouche (2013) find stronger association between bank capital and
+stock return when the leverage ratio is used to measure bank capital
+instead of risk-based capital ratios. Berger and Bouwman (2013) find
+broadly similar empirical results using risk-based and non-risk-based
+capital ratios. The Basel III framework, as the core of the Basel
+Committee's post-crisis reforms, aims at strengthening banks' risk
+capture and the resilience of the whole banking system. Risk-based
 capital ratios are commonly employed to examine the relationship between
 regulation and bank risk-taking (Laeven and Levine 2009; Bitar,
 Pukthuanthong, and Walker 2018; Roulet 2018)\footnote{Laeven and Levine
@@ -908,12 +936,12 @@ concentrated financial markets may lead to more bank risks.
 
 Macroeconomic conditions may influence bank activities. Dagher et al.
 (2016) argue that there may be a procyclical relationship between
-economic development and bank lending. Demirguc-Kunt and Detragiache
-(1997) find that countries are more prone to financial crisis when
-economic growth is low and inflation is high. We take the annual GDP
-growth rate (GDP Growth) and the consumer price index (Inflation CPI) as
-measure of macroeconomic conditions. Both variable definitions are
-presented in Table 2.
+economic development and bank lending. Asli; Demirguc-Kunt and
+Detragiache (1997) find that countries are more prone to financial
+crisis when economic growth is low and inflation is high. We take the
+annual GDP growth rate (GDP Growth) and the consumer price index
+(Inflation CPI) as measure of macroeconomic conditions. Both variable
+definitions are presented in Table 2.
 
 \hypertarget{ownership-structure}{%
 \subsection{Ownership structure}\label{ownership-structure}}
@@ -933,18 +961,18 @@ typically does not integrate the ownership structure into the
 risk-regulation studies (Laeven and Levine 2009). Banking theory
 suggests that bank regulation influences the incentives of bank
 risk-taking (Blum 1999; Cooper and Ross 2002; Demirgüç-Kunt and Kane
-2002; Allen, Carletti, and Marquez 2011; Demirguc-Kunt, Detragiache, and
-Merrouche 2013; Tan and Floros 2013; Lee, Ning, and Lee 2015). Agency
-theory suggests that ownership structure determines shareholder power
-and affects corporate risk-taking (Jensen and Meckling 1976; Shleifer
-and Vishny 1997; La Porta, Florencio, and Shleifer 1999; Stulz 2005;
-John, Litov, and Yeung 2008). Based on the above discussion, ownership
-structure should be incorporated into the analysis of the
-risk-regulation relationship, because ownership structure influences the
-incentive of bank risk-taking in response to bank regulation (Boyd and
-Hakenes 2008). Thus, we examine the impact of Basel III regulation on
-banks' credit risk, taking into account the interaction between
-ownership structure and regulation requirements.
+2002; Allen, Carletti, and Marquez 2011; Asli Demirguc-Kunt,
+Detragiache, and Merrouche 2013; Tan and Floros 2013; C.-C. Lee, Ning,
+and Lee 2015). Agency theory suggests that ownership structure
+determines shareholder power and affects corporate risk-taking (Jensen
+and Meckling 1976; Shleifer and Vishny 1997; La Porta, Florencio, and
+Shleifer 1999; Stulz 2005; John, Litov, and Yeung 2008). Based on the
+above discussion, ownership structure should be incorporated into the
+analysis of the risk-regulation relationship, because ownership
+structure influences the incentive of bank risk-taking in response to
+bank regulation (Boyd and Hakenes 2008). Thus, we examine the impact of
+Basel III regulation on banks' credit risk, taking into account the
+interaction between ownership structure and regulation requirements.
 
 Using a forensically hand-crafted data-set, gathered by hand from
 translations of annual reports, we employ ownership structure as a
@@ -1014,13 +1042,13 @@ control rights and cash flow rights through the delegated agent.
 
 \renewcommand*{\arraystretch}{1.5}
 
-\begin{longtable}[c]{|p{2.00in}|p{2.00in}|p{2.00in}|p{2.00in}|p{2.00in}}
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
 
 \caption{Table 3: Descriptive statistics of the regression predictors}\\
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}mean}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}median}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}sd}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{variable}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{n}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{mean}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{median}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{sd}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-5}
 
@@ -1028,75 +1056,77 @@ control rights and cash flow rights through the delegated agent.
 
 \hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}variable}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}mean}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}median}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}sd}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{variable}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{n}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{mean}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{median}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{sd}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-5}\endhead
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Concentration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}41.569}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}40.740}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}4.134}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Concentration}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,310}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{41.569}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{40.740}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{4.134}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}GDP\_Growth}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}7.678}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}7.234}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.336}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{GDP\_Growth}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,310}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{7.678}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{7.234}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.336}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Income\_Div}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,091}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0.447}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0.346}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}0.400}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Income\_Div}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,091}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0.447}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0.346}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{0.400}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Inflation\_CPI}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,310}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2.590}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2.347}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.123}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Inflation\_CPI}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,310}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2.590}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2.347}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.123}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LLR}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,073}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}3.226}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}3.009}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.363}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{LLR}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,073}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{3.226}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{3.009}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.363}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}LnAssets}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,128}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}16.585}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}16.448}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.646}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{LnAssets}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,128}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{16.585}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{16.448}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.646}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NL\_to\_TA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}2,118}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}43.929}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}45.126}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}10.860}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{NL\_to\_TA}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{2,118}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{43.929}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{45.126}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{10.860}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}NPL}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,818}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.503}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.353}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1.387}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{NPL}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1,818}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.503}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.353}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1.387}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}ROE}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,973}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}12.862}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}12.756}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}6.708}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{ROE}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1,973}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{12.862}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{12.756}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{6.708}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}TC\_to\_RWA}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,989}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}18.429}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}13.345}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}35.733}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{TC\_to\_RWA}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1,989}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{18.429}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{13.345}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{35.733}}}} \\
 
 
 
 
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}Tier1\_Ratio}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}1,946}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}16.290}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}11.176}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Helvetica}35.728}}} \\
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{Tier1\_Ratio}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{1,946}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{16.290}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{11.176}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{8}{8}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{DejaVu Sans}{35.728}}}} \\
 
 \noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-5}
+
+
 
 \end{longtable}
 
@@ -1126,20 +1156,27 @@ to the results of European banks in Bitar, Pukthuanthong, and Walker
 (2018)\} (18.18 and 13.78) respectively.
 
 The mean of ROE is 12.86 which is slightly lower than what is reported
-in Lee, Ning, and Lee (2015) (13.86). They examine the relationship
-between bank capital and profitability and risk, using the data of
-Chinese commercial banks from 1997-2011. This period is a transitional
-time for China's banking industry since it witnessed the three main
-stages of the financial reform in China's banking industry. By 2011, key
-regimes of the financial reform had finished and essential mechanisms
-regarding corporate governance, legislation, among others had been
-established. Therefore, banks' profitability may be lower than the era
-of high-speed development due to constraints in markets, supervision and
-corporate governance.
+in C.-C. Lee, Ning, and Lee (2015) (13.86). They examine the
+relationship between bank capital and profitability and risk, using the
+data of Chinese commercial banks from 1997-2011. This period is a
+transitional time for China's banking industry since it witnessed the
+three main stages of the financial reform in China's banking industry.
+By 2011, key regimes of the financial reform had finished and essential
+mechanisms regarding corporate governance, legislation, among others had
+been established. Therefore, banks' profitability may be lower than the
+era of high-speed development due to constraints in markets, supervision
+and corporate governance.
 
-\begin{center}\includegraphics{preprint_files/figure-latex/correlation-1} \end{center}
+\begin{figure}
 
-Table 4 reports the Pearson correlation matrix between the predictor
+{\centering \includegraphics{preprint_files/figure-latex/correlation-1} 
+
+}
+
+\caption{Linear correlations}\label{fig:correlation}
+\end{figure}
+
+Figure 4 reports the Pearson correlation matrix between the predictor
 variables. All correlation coefficients of the variables are lower than
 0.6, except for the correlation between Tier 1 capital ratio and the
 total capital ratio due to the different definition of capital ratios.
@@ -1150,52 +1187,59 @@ capital ratios in one model, in order to avoid high collinearity.
 \subsection{Impact on bank credit risk -- risk-based capital
 ratios}\label{impact-on-bank-credit-risk-risk-based-capital-ratios}}
 
-\begingroup\fontsize{7}{9}\selectfont
+\begin{verbatim}
+## gtsummary does not support bold or italics for kableExtra output.
+\end{verbatim}
 
-\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\begingroup\fontsize{6}{8}\selectfont
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
 \hline
-**Characteristic** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value**\\
+\multicolumn{1}{c|}{ } & \multicolumn{3}{c|}{NPL vs Tier1} & \multicolumn{3}{c|}{LLR vs Tier1} & \multicolumn{3}{c|}{NPL vs TC\_RAW} & \multicolumn{4}{c}{LLR vs TC\_RAW} \\
+\cline{2-4} \cline{5-7} \cline{8-10} \cline{11-14}
+Predictors & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value & N & Beta & 95\% CI & p-value\\
 \hline
-Tier1\_Ratio & -0.02 & -0.03, 0.00 & 0.005 & -0.01 & -0.01, 0.00 & 0.13 &  &  &  &  &  & \\
+Tier1\_Ratio & -0.02 & -0.03, 0.00 & 0.005 & -0.01 & -0.01, 0.00 & 0.13 &  &  &  &  &  &  & \\
 \hline
-LnAssets & -0.07 & -0.10, -0.03 & <0.001 & -0.20 & -0.23, -0.16 & <0.001 & -0.06 & -0.10, -0.03 & <0.001 & -0.19 & -0.22, -0.15 & <0.001\\
+LnAssets & -0.07 & -0.10, -0.03 & <0.001 & -0.20 & -0.23, -0.16 & <0.001 & -0.06 & -0.10, -0.03 & <0.001 & 1832 & -0.19 & -0.22, -0.15 & <0.001\\
 \hline
-NL\_to\_TA & 0.02 & 0.01, 0.03 & <0.001 & 0.02 & 0.01, 0.02 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & 0.02 & 0.01, 0.02 & <0.001\\
+NL\_to\_TA & 0.02 & 0.01, 0.03 & <0.001 & 0.02 & 0.01, 0.02 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & 1832 & 0.02 & 0.01, 0.02 & <0.001\\
 \hline
-ROE & -0.06 & -0.07, -0.05 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & -0.06 & -0.07, -0.05 & <0.001 & 0.03 & 0.01, 0.04 & <0.001\\
+ROE & -0.06 & -0.07, -0.05 & <0.001 & 0.02 & 0.01, 0.03 & <0.001 & -0.06 & -0.07, -0.05 & <0.001 & 1832 & 0.03 & 0.01, 0.04 & <0.001\\
 \hline
-Concentration & -0.09 & -0.21, 0.03 & 0.13 & -0.09 & -0.20, 0.03 & 0.14 & -0.10 & -0.22, 0.01 & 0.083 & -0.09 & -0.21, 0.02 & 0.11\\
+Concentration & -0.09 & -0.21, 0.03 & 0.13 & -0.09 & -0.20, 0.03 & 0.14 & -0.10 & -0.22, 0.01 & 0.083 & 1832 & -0.09 & -0.21, 0.02 & 0.11\\
 \hline
-GDP\_Growth & 0.14 & -0.06, 0.34 & 0.2 & -0.19 & -0.39, 0.01 & 0.058 & 0.15 & -0.04, 0.35 & 0.13 & -0.18 & -0.37, 0.01 & 0.070\\
+GDP\_Growth & 0.14 & -0.06, 0.34 & 0.2 & -0.19 & -0.39, 0.01 & 0.058 & 0.15 & -0.04, 0.35 & 0.13 & 1832 & -0.18 & -0.37, 0.01 & 0.070\\
 \hline
-Inflation\_CPI & 0.16 & -0.35, 0.67 & 0.5 & 0.10 & -0.40, 0.61 & 0.7 & 0.21 & -0.31, 0.72 & 0.4 & 0.11 & -0.39, 0.61 & 0.7\\
+Inflation\_CPI & 0.16 & -0.35, 0.67 & 0.5 & 0.10 & -0.40, 0.61 & 0.7 & 0.21 & -0.31, 0.72 & 0.4 & 1832 & 0.11 & -0.39, 0.61 & 0.7\\
 \hline
-Income\_Div & -0.01 & -0.16, 0.14 & 0.9 & -0.24 & -0.38, -0.10 & <0.001 & -0.01 & -0.16, 0.14 & 0.9 & -0.24 & -0.38, -0.10 & 0.001\\
+Income\_Div & -0.01 & -0.16, 0.14 & 0.9 & -0.24 & -0.38, -0.10 & <0.001 & -0.01 & -0.16, 0.14 & 0.9 & 1832 & -0.24 & -0.38, -0.10 & 0.001\\
 \hline
-Year &  &  &  &  &  &  &  &  &  &  &  & \\
+Year &  &  &  &  &  &  &  &  &  & 1832 &  &  & \\
 \hline
-2010 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2010 &  &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2011 & -0.36 & -1.6, 0.87 & 0.6 & -0.27 & -1.5, 0.95 & 0.7 & -0.48 & -1.7, 0.76 & 0.4 & -0.31 & -1.5, 0.90 & 0.6\\
+\hspace{1em}2011 & -0.36 & -1.6, 0.87 & 0.6 & -0.27 & -1.5, 0.95 & 0.7 & -0.48 & -1.7, 0.76 & 0.4 &  & -0.31 & -1.5, 0.90 & 0.6\\
 \hline
-2012 & 0.28 & -0.15, 0.70 & 0.2 & -0.20 & -0.62, 0.21 & 0.3 & 0.29 & -0.13, 0.71 & 0.2 & -0.21 & -0.62, 0.20 & 0.3\\
+\hspace{1em}2012 & 0.28 & -0.15, 0.70 & 0.2 & -0.20 & -0.62, 0.21 & 0.3 & 0.29 & -0.13, 0.71 & 0.2 &  & -0.21 & -0.62, 0.20 & 0.3\\
 \hline
-2013 & -0.04 & -0.32, 0.25 & 0.8 & -0.19 & -0.47, 0.09 & 0.2 & -0.04 & -0.32, 0.25 & 0.8 & -0.20 & -0.47, 0.08 & 0.2\\
+\hspace{1em}2013 & -0.04 & -0.32, 0.25 & 0.8 & -0.19 & -0.47, 0.09 & 0.2 & -0.04 & -0.32, 0.25 & 0.8 &  & -0.20 & -0.47, 0.08 & 0.2\\
 \hline
-2014 & 0.14 & -0.27, 0.55 & 0.5 & -0.14 & -0.54, 0.26 & 0.5 & 0.16 & -0.25, 0.56 & 0.5 & -0.14 & -0.53, 0.26 & 0.5\\
+\hspace{1em}2014 & 0.14 & -0.27, 0.55 & 0.5 & -0.14 & -0.54, 0.26 & 0.5 & 0.16 & -0.25, 0.56 & 0.5 &  & -0.14 & -0.53, 0.26 & 0.5\\
 \hline
-2015 & 0.24 & -0.25, 0.72 & 0.3 & -0.04 & -0.52, 0.43 & 0.9 & 0.27 & -0.21, 0.76 & 0.3 & -0.02 & -0.49, 0.45 & >0.9\\
+\hspace{1em}2015 & 0.24 & -0.25, 0.72 & 0.3 & -0.04 & -0.52, 0.43 & 0.9 & 0.27 & -0.21, 0.76 & 0.3 &  & -0.02 & -0.49, 0.45 & >0.9\\
 \hline
-2016 & 0.04 & -0.15, 0.24 & 0.7 & 0.00 & -0.19, 0.19 & >0.9 & 0.03 & -0.17, 0.22 & 0.8 & 0.02 & -0.17, 0.20 & 0.9\\
+\hspace{1em}2016 & 0.04 & -0.15, 0.24 & 0.7 & 0.00 & -0.19, 0.19 & >0.9 & 0.03 & -0.17, 0.22 & 0.8 &  & 0.02 & -0.17, 0.20 & 0.9\\
 \hline
-2017 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2017 &  &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2018 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2018 &  &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2019 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2019 &  &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-TC\_to\_RWA &  &  &  &  &  &  & -0.02 & -0.03, -0.01 & 0.001 & 0.00 & -0.01, 0.01 & 0.7\\
+TC\_to\_RWA &  &  &  &  &  &  & -0.02 & -0.03, -0.01 & 0.001 & 1832 & 0.00 & -0.01, 0.01 & 0.7\\
 \hline
+\multicolumn{14}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
 \end{tabu}
 \endgroup{}
 
@@ -1218,7 +1262,7 @@ higher level of regulatory capital have higher capability to reduce the
 impact of Non-Performing Loans, and thus lower Loan Loss Reserve. Tan
 and Floros (2013) find a negative but insignificant relationship between
 bank risk and capitalization when Loan Loss Reserve to Gross Loans is
-employed as the proxy of risk. Lee, Ning, and Lee (2015) report a
+employed as the proxy of risk. C.-C. Lee, Ning, and Lee (2015) report a
 significant negative relationship between bank capital and credit risk
 (proxied by NPL ratio). This finding may reveal that the capital
 adequacy requirements of Basel III equip commercial banks in China with
@@ -1253,6 +1297,74 @@ in their credit activities, compared with other smaller-sized banks.
 \hypertarget{impact-on-bank-credit-risk-ownership-structure}{%
 \subsection{Impact on bank credit risk -- Ownership
 structure}\label{impact-on-bank-credit-risk-ownership-structure}}
+
+\begin{verbatim}
+## gtsummary does not support bold or italics for kableExtra output.
+\end{verbatim}
+
+\begingroup\fontsize{6}{8}\selectfont
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\hline
+\multicolumn{1}{c|}{ } & \multicolumn{3}{c|}{NPL vs Tier1} & \multicolumn{3}{c|}{LLR vs Tier1} & \multicolumn{3}{c|}{NPL vs TC\_RAW} & \multicolumn{3}{c}{LLR vs TC\_RAW} \\
+\cline{2-4} \cline{5-7} \cline{8-10} \cline{11-13}
+Predictors & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value\\
+\hline
+Tier1\_Ratio & 0.00 & -0.01, 0.02 & 0.7 & 0.02 & 0.01, 0.03 & <0.001 &  &  &  &  &  & \\
+\hline
+Ownership &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hspace{1em}Foreign Joint-stock &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hspace{1em}Foreign-owned & -0.90 & -1.3, -0.55 & <0.001 & -1.7 & -2.0, -1.4 & <0.001 & -0.89 & -1.2, -0.54 & <0.001 & -1.7 & -2.0, -1.5 & <0.001\\
+\hline
+\hspace{1em}Joint-stock & 0.03 & -0.20, 0.25 & 0.8 & 0.00 & -0.22, 0.21 & >0.9 & 0.03 & -0.19, 0.26 & 0.8 & 0.00 & -0.21, 0.21 & >0.9\\
+\hline
+\hspace{1em}Local government-holding & 0.07 & -0.16, 0.30 & 0.6 & -0.06 & -0.28, 0.16 & 0.6 & 0.06 & -0.17, 0.29 & 0.6 & -0.06 & -0.27, 0.16 & 0.6\\
+\hline
+\hspace{1em}State-owned & 0.12 & -0.18, 0.42 & 0.4 & 0.01 & -0.27, 0.29 & >0.9 & 0.13 & -0.17, 0.42 & 0.4 & 0.00 & -0.28, 0.28 & >0.9\\
+\hline
+LnAssets & -0.07 & -0.12, -0.03 & 0.002 & -0.20 & -0.24, -0.16 & <0.001 & -0.08 & -0.12, -0.03 & 0.002 & -0.20 & -0.24, -0.15 & <0.001\\
+\hline
+NL\_to\_TA & 0.02 & 0.01, 0.02 & <0.001 & 0.01 & 0.01, 0.02 & <0.001 & 0.02 & 0.01, 0.02 & <0.001 & 0.01 & 0.01, 0.02 & <0.001\\
+\hline
+ROE & -0.07 & -0.08, -0.06 & <0.001 & -0.02 & -0.03, 0.00 & 0.005 & -0.07 & -0.08, -0.06 & <0.001 & -0.01 & -0.02, 0.00 & 0.008\\
+\hline
+Concentration & -0.09 & -0.20, 0.03 & 0.14 & -0.06 & -0.17, 0.04 & 0.2 & -0.10 & -0.22, 0.02 & 0.090 & -0.07 & -0.18, 0.04 & 0.2\\
+\hline
+GDP\_Growth & 0.15 & -0.05, 0.34 & 0.14 & -0.16 & -0.34, 0.02 & 0.082 & 0.17 & -0.03, 0.36 & 0.10 & -0.15 & -0.33, 0.03 & 0.10\\
+\hline
+Inflation\_CPI & 0.16 & -0.35, 0.67 & 0.5 & 0.02 & -0.45, 0.49 & >0.9 & 0.21 & -0.30, 0.72 & 0.4 & 0.03 & -0.44, 0.49 & >0.9\\
+\hline
+Income\_Div & 0.06 & -0.09, 0.21 & 0.4 & -0.08 & -0.22, 0.05 & 0.2 & 0.06 & -0.08, 0.21 & 0.4 & -0.07 & -0.20, 0.06 & 0.3\\
+\hline
+Year &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hspace{1em}2010 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hspace{1em}2011 & -0.33 & -1.5, 0.90 & 0.6 & 0.03 & -1.1, 1.2 & >0.9 & -0.45 & -1.7, 0.78 & 0.5 & 0.03 & -1.1, 1.1 & >0.9\\
+\hline
+\hspace{1em}2012 & 0.32 & -0.10, 0.74 & 0.14 & -0.09 & -0.48, 0.29 & 0.6 & 0.35 & -0.07, 0.77 & 0.11 & -0.09 & -0.47, 0.30 & 0.7\\
+\hline
+\hspace{1em}2013 & -0.01 & -0.29, 0.28 & >0.9 & -0.06 & -0.32, 0.20 & 0.6 & 0.01 & -0.28, 0.29 & >0.9 & -0.05 & -0.30, 0.21 & 0.7\\
+\hline
+\hspace{1em}2014 & 0.16 & -0.24, 0.56 & 0.4 & -0.07 & -0.44, 0.30 & 0.7 & 0.20 & -0.21, 0.60 & 0.3 & -0.04 & -0.41, 0.32 & 0.8\\
+\hline
+\hspace{1em}2015 & 0.23 & -0.25, 0.71 & 0.3 & -0.08 & -0.52, 0.36 & 0.7 & 0.28 & -0.20, 0.76 & 0.2 & -0.04 & -0.48, 0.39 & 0.8\\
+\hline
+\hspace{1em}2016 & 0.04 & -0.15, 0.23 & 0.7 & 0.04 & -0.14, 0.21 & 0.7 & 0.03 & -0.16, 0.22 & 0.8 & 0.06 & -0.12, 0.23 & 0.5\\
+\hline
+\hspace{1em}2017 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hspace{1em}2018 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+\hspace{1em}2019 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hline
+TC\_to\_RWA &  &  &  &  &  &  & 0.00 & -0.01, 0.01 & >0.9 & 0.02 & 0.02, 0.03 & <0.001\\
+\hline
+\multicolumn{13}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
+\end{tabu}
+\endgroup{}
 
 Table 6 reports the results of the impact on bank credit risk by adding
 banks' ownership structure as a specific control variable. We find that
@@ -1333,43 +1445,49 @@ projects lasting for decades; (2) the development of modern corporate
 governance mechanisms in China's banking industry could transform
 government ownership into concentrated ownership, the ownership similar
 to the one of large investors with significant control rights and cash
-flow rights {[}Shleifer and Vishny (1997)\}. From this perspective,
-concentrated ownership puts pressure on management decision {[}Shleifer
-and Vishny (1997)\} and bank risk taking incentives {[}Boyd and Hakenes
-(2008)\} Almost all state-owned banks are listed banks. With their
-significant control rights and cash flow rights, the state (large)
-shareholder in these state-owned, listed banks may take excessive risk
-by favouring particular clientele such as large conglomerates in
-projects with potential of social-benefits rather than those with target
-of profit-maximizing. Sapienza (2004)\} finds that state-owned banks
+flow rights (Shleifer and Vishny 1997). From this perspective,
+concentrated ownership puts pressure on management decision (Shleifer
+and Vishny 1997) and bank risk taking incentives (Boyd and Hakenes 2008)
+Almost all state-owned banks are listed banks. With their significant
+control rights and cash flow rights, the state (large) shareholder in
+these state-owned, listed banks may take excessive risk by favouring
+particular clientele such as large conglomerates in projects with
+potential of social-benefits rather than those with target of
+profit-maximizing. Sapienza (2004){]} finds that state-owned banks
 favour large firms and charge lower interest rates than other types of
 banks in Italy. This finding is also consistent with Laeven and Levine
-(2009)\} where they report banks with large investors have higher risk.
+(2009){]} where they report banks with large investors have higher risk.
 
 \hypertarget{impact-on-bank-credit-risk-interaction-between-regulation-and-ownership-structure}{%
 \subsection{Impact on bank credit risk -- Interaction between regulation
 and ownership
 structure\}}\label{impact-on-bank-credit-risk-interaction-between-regulation-and-ownership-structure}}
 
-\begingroup\fontsize{7}{9}\selectfont
+\begin{verbatim}
+## gtsummary does not support bold or italics for kableExtra output.
+\end{verbatim}
+
+\begingroup\fontsize{6}{8}\selectfont
 
 \begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
 \hline
-**Characteristic** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value** & **Beta** & **95\% CI** & **p-value**\\
+\multicolumn{1}{c|}{ } & \multicolumn{3}{c|}{NPL vs Tier1} & \multicolumn{3}{c|}{LLR vs Tier1} & \multicolumn{3}{c|}{NPL vs TC\_RAW} & \multicolumn{3}{c}{LLR vs TC\_RAW} \\
+\cline{2-4} \cline{5-7} \cline{8-10} \cline{11-13}
+Predictors & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value & Beta & 95\% CI & p-value\\
 \hline
 Tier1\_Ratio & -0.07 & -0.21, 0.07 & 0.3 & -0.05 & -0.07, -0.02 & <0.001 &  &  &  &  &  & \\
 \hline
 Ownership &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-Foreign Joint-stock &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}Foreign Joint-stock &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-Foreign-owned & -2.3 & -3.8, -0.76 & 0.003 & -2.6 & -3.1, -2.2 & <0.001 & -2.6 & -4.2, -1.1 & <0.001 & -2.6 & -3.1, -2.2 & <0.001\\
+\hspace{1em}Foreign-owned & -2.3 & -3.8, -0.76 & 0.003 & -2.6 & -3.1, -2.2 & <0.001 & -2.6 & -4.2, -1.1 & <0.001 & -2.6 & -3.1, -2.2 & <0.001\\
 \hline
-Joint-stock & 0.01 & -1.5, 1.5 & >0.9 & -0.80 & -1.3, -0.34 & <0.001 & -0.02 & -1.5, 1.5 & >0.9 & -0.86 & -1.3, -0.39 & <0.001\\
+\hspace{1em}Joint-stock & 0.01 & -1.5, 1.5 & >0.9 & -0.80 & -1.3, -0.34 & <0.001 & -0.02 & -1.5, 1.5 & >0.9 & -0.86 & -1.3, -0.39 & <0.001\\
 \hline
-Local government-holding & 0.26 & -1.3, 1.8 & 0.7 & -1.0 & -1.6, -0.34 & 0.002 & 0.22 & -1.3, 1.8 & 0.8 & -1.0 & -1.6, -0.38 & 0.002\\
+\hspace{1em}Local government-holding & 0.26 & -1.3, 1.8 & 0.7 & -1.0 & -1.6, -0.34 & 0.002 & 0.22 & -1.3, 1.8 & 0.8 & -1.0 & -1.6, -0.38 & 0.002\\
 \hline
-State-owned & 0.22 & -1.5, 2.0 & 0.8 & -0.11 & -1.1, 0.91 & 0.8 & 0.31 & -1.4, 2.1 & 0.7 & -0.22 & -1.2, 0.80 & 0.7\\
+\hspace{1em}State-owned & 0.22 & -1.5, 2.0 & 0.8 & -0.11 & -1.1, 0.91 & 0.8 & 0.31 & -1.4, 2.1 & 0.7 & -0.22 & -1.2, 0.80 & 0.7\\
 \hline
 LnAssets & -0.10 & -0.14, -0.05 & <0.001 & -0.20 & -0.25, -0.16 & <0.001 & -0.08 & -0.13, -0.04 & <0.001 & -0.20 & -0.25, -0.16 & <0.001\\
 \hline
@@ -1387,50 +1505,51 @@ Income\_Div & 0.05 & -0.09, 0.20 & 0.5 & -0.07 & -0.21, 0.06 & 0.3 & 0.05 & -0.1
 \hline
 Year &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2010 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2010 &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2011 & -0.47 & -1.7, 0.74 & 0.4 & 0.06 & -1.1, 1.2 & >0.9 & -0.44 & -1.6, 0.76 & 0.5 & 0.07 & -1.0, 1.2 & 0.9\\
+\hspace{1em}2011 & -0.47 & -1.7, 0.74 & 0.4 & 0.06 & -1.1, 1.2 & >0.9 & -0.44 & -1.6, 0.76 & 0.5 & 0.07 & -1.0, 1.2 & 0.9\\
 \hline
-2012 & 0.37 & -0.04, 0.79 & 0.077 & -0.10 & -0.49, 0.28 & 0.6 & 0.33 & -0.08, 0.75 & 0.11 & -0.09 & -0.47, 0.30 & 0.7\\
+\hspace{1em}2012 & 0.37 & -0.04, 0.79 & 0.077 & -0.10 & -0.49, 0.28 & 0.6 & 0.33 & -0.08, 0.75 & 0.11 & -0.09 & -0.47, 0.30 & 0.7\\
 \hline
-2013 & 0.00 & -0.28, 0.28 & >0.9 & -0.07 & -0.33, 0.19 & 0.6 & -0.09 & -0.37, 0.19 & 0.5 & -0.05 & -0.31, 0.21 & 0.7\\
+\hspace{1em}2013 & 0.00 & -0.28, 0.28 & >0.9 & -0.07 & -0.33, 0.19 & 0.6 & -0.09 & -0.37, 0.19 & 0.5 & -0.05 & -0.31, 0.21 & 0.7\\
 \hline
-2014 & 0.19 & -0.20, 0.59 & 0.3 & -0.08 & -0.45, 0.29 & 0.7 & 0.11 & -0.29, 0.51 & 0.6 & -0.05 & -0.42, 0.32 & 0.8\\
+\hspace{1em}2014 & 0.19 & -0.20, 0.59 & 0.3 & -0.08 & -0.45, 0.29 & 0.7 & 0.11 & -0.29, 0.51 & 0.6 & -0.05 & -0.42, 0.32 & 0.8\\
 \hline
-2015 & 0.26 & -0.22, 0.73 & 0.3 & -0.07 & -0.51, 0.37 & 0.8 & 0.19 & -0.28, 0.66 & 0.4 & -0.04 & -0.48, 0.39 & 0.8\\
+\hspace{1em}2015 & 0.26 & -0.22, 0.73 & 0.3 & -0.07 & -0.51, 0.37 & 0.8 & 0.19 & -0.28, 0.66 & 0.4 & -0.04 & -0.48, 0.39 & 0.8\\
 \hline
-2016 & 0.00 & -0.19, 0.19 & >0.9 & 0.05 & -0.13, 0.22 & 0.6 & -0.03 & -0.23, 0.16 & 0.7 & 0.07 & -0.11, 0.24 & 0.5\\
+\hspace{1em}2016 & 0.00 & -0.19, 0.19 & >0.9 & 0.05 & -0.13, 0.22 & 0.6 & -0.03 & -0.23, 0.16 & 0.7 & 0.07 & -0.11, 0.24 & 0.5\\
 \hline
-2017 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2017 &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2018 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2018 &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-2019 &  &  &  &  &  &  &  &  &  &  &  & \\
+\hspace{1em}2019 &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
 Tier1\_Ratio * Ownership &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-Tier1\_Ratio * Foreign-owned & 0.10 & -0.04, 0.24 & 0.2 & 0.07 & 0.05, 0.10 & <0.001 &  &  &  &  &  & \\
+\hspace{1em}Tier1\_Ratio * Foreign-owned & 0.10 & -0.04, 0.24 & 0.2 & 0.07 & 0.05, 0.10 & <0.001 &  &  &  &  &  & \\
 \hline
-Tier1\_Ratio * Joint-stock & 0.01 & -0.14, 0.15 & >0.9 & 0.07 & 0.03, 0.11 & <0.001 &  &  &  &  &  & \\
+\hspace{1em}Tier1\_Ratio * Joint-stock & 0.01 & -0.14, 0.15 & >0.9 & 0.07 & 0.03, 0.11 & <0.001 &  &  &  &  &  & \\
 \hline
-Tier1\_Ratio * Local government-holding & -0.02 & -0.16, 0.13 & 0.8 & 0.08 & 0.03, 0.13 & 0.003 &  &  &  &  &  & \\
+\hspace{1em}Tier1\_Ratio * Local government-holding & -0.02 & -0.16, 0.13 & 0.8 & 0.08 & 0.03, 0.13 & 0.003 &  &  &  &  &  & \\
 \hline
-Tier1\_Ratio * State-owned & 0.00 & -0.17, 0.16 & >0.9 & 0.01 & -0.08, 0.10 & 0.9 &  &  &  &  &  & \\
+\hspace{1em}Tier1\_Ratio * State-owned & 0.00 & -0.17, 0.16 & >0.9 & 0.01 & -0.08, 0.10 & 0.9 &  &  &  &  &  & \\
 \hline
 TC\_to\_RWA &  &  &  &  &  &  & -0.11 & -0.16, -0.06 & <0.001 & 0.04 & -0.01, 0.09 & 0.10\\
 \hline
 Ownership * Tier1\_Ratio &  &  &  &  &  &  &  &  &  &  &  & \\
 \hline
-Foreign Joint-stock * Tier1\_Ratio &  &  &  &  &  &  & 0.02 & -0.13, 0.17 & 0.8 & -0.09 & -0.14, -0.03 & 0.002\\
+\hspace{1em}Foreign Joint-stock * Tier1\_Ratio &  &  &  &  &  &  & 0.02 & -0.13, 0.17 & 0.8 & -0.09 & -0.14, -0.03 & 0.002\\
 \hline
-Foreign-owned * Tier1\_Ratio &  &  &  &  &  &  & 0.14 & 0.08, 0.19 & <0.001 & -0.01 & -0.06, 0.04 & 0.7\\
+\hspace{1em}Foreign-owned * Tier1\_Ratio &  &  &  &  &  &  & 0.14 & 0.08, 0.19 & <0.001 & -0.01 & -0.06, 0.04 & 0.7\\
 \hline
-Joint-stock * Tier1\_Ratio &  &  &  &  &  &  & 0.03 & -0.03, 0.08 & 0.3 & -0.01 & -0.06, 0.04 & 0.7\\
+\hspace{1em}Joint-stock * Tier1\_Ratio &  &  &  &  &  &  & 0.03 & -0.03, 0.08 & 0.3 & -0.01 & -0.06, 0.04 & 0.7\\
 \hline
-Local government-holding * Tier1\_Ratio &  &  &  &  &  &  & 0.01 & -0.06, 0.07 & 0.8 & 0.00 & -0.06, 0.06 & >0.9\\
+\hspace{1em}Local government-holding * Tier1\_Ratio &  &  &  &  &  &  & 0.01 & -0.06, 0.07 & 0.8 & 0.00 & -0.06, 0.06 & >0.9\\
 \hline
-State-owned * Tier1\_Ratio &  &  &  &  &  &  & 0.00 & -0.10, 0.10 & >0.9 & -0.07 & -0.16, 0.03 & 0.2\\
+\hspace{1em}State-owned * Tier1\_Ratio &  &  &  &  &  &  & 0.00 & -0.10, 0.10 & >0.9 & -0.07 & -0.16, 0.03 & 0.2\\
 \hline
+\multicolumn{13}{l}{\rule{0pt}{1em}\textsuperscript{1} CI = Confidence Interval}\\
 \end{tabu}
 \endgroup{}
 
@@ -1477,22 +1596,23 @@ structure. The interactive coefficient estimates for Tier 1
 Ratio*different ownership structure are negative. Among these terms, the
 joint-stock and local government-holding terms enter significantly. This
 shows that the impact on bank credit risk of Tier 1 ratio can be
-magnified when banks are not dominated by a single large owner\footnote{In
-  our sample, the direct(indirect) shares of local government-holding
-  banks held by government or its agencies are over 10\%. However, the
-  local government-holding banks don't have dominant direct(indirect)
-  government shareholders (50\% more voting rights). In fact, most of
-  these banks are widely held and have mixed-ownership shareholders.}.
-However, Tier 1 Ratio does not have significant non-linear impact on
-bank credit risk when banks are state-owned. Laeven and Levine (2009)
-argue that regulations affecting risk-taking incentives of banks with
-powerful owners and the ones widely held may be in different ways. The
-finding may be interpreted that the interaction between capital
-regulations and the incentives of joint-stock shareholders is more
-significant than powerful shareholders, because shareholders of
-joint-stock banks may have different risk-taking incentives from the
-influential state-shareholders. This result also collaborates with the
-estimates of the coefficients of ownership structure.
+magnified when banks are not dominated by a single large
+owner\footnote{In our sample, the direct(indirect) shares of local
+  government-holding banks held by government or its agencies are over
+  10\%. However, the local government-holding banks don't have dominant
+  direct(indirect) government shareholders (50\% more voting rights). In
+  fact, most of these banks are widely held and have mixed-ownership
+  shareholders.}. However, Tier 1 Ratio does not have significant
+non-linear impact on bank credit risk when banks are state-owned. Laeven
+and Levine (2009) argue that regulations affecting risk-taking
+incentives of banks with powerful owners and the ones widely held may be
+in different ways. The finding may be interpreted that the interaction
+between capital regulations and the incentives of joint-stock
+shareholders is more significant than powerful shareholders, because
+shareholders of joint-stock banks may have different risk-taking
+incentives from the influential state-shareholders. This result also
+collaborates with the estimates of the coefficients of ownership
+structure.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -1541,27 +1661,28 @@ Accords}\label{a1.-definitions-of-the-basel-accords}}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
 \leavevmode\hypertarget{ref-RN15}{}%
-Allen, Franklin, Elena Carletti, and Robert Marquez. 2011. ``Credit
-Market Competition and Capital Regulation.'' Journal Article. \emph{The
+Allen, Franklin, Elena Carletti, and Robert Marquez. 2011. {``Credit
+Market Competition and Capital Regulation.''} Journal Article. \emph{The
 Review of Financial Studies} 24 (4): 983--1018.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/20869263}.
 
 \leavevmode\hypertarget{ref-RN16}{}%
-Amihud, Yakov, and Baruch Lev. 1981. ``Risk Reduction as a Managerial
-Motive for Conglomerate Mergers.'' Journal Article. \emph{The Bell
+Amihud, Yakov, and Baruch Lev. 1981. {``Risk Reduction as a Managerial
+Motive for Conglomerate Mergers.''} Journal Article. \emph{The Bell
 Journal of Economics} 12 (2): 605--17.
 \url{https://doi.org/10.2307/3003575}.
 
 \leavevmode\hypertarget{ref-RN17}{}%
 Andrianova, Svetlana, Panicos Demetriades, and Anja Shortland. 2012.
-``Government Ownership of Banks, Institutions and Economic Growth.''
+{``Government Ownership of Banks, Institutions and Economic Growth.''}
 Journal Article. \emph{Economica} 79 (315): 449--69.
 \url{http://www.jstor.org/stable/23274805}.
 
 \leavevmode\hypertarget{ref-RN18}{}%
-Anginer, Deniz, and Asli Demirguc-Kunt. 2014. ``Bank Capital and
-Systemic Stability.'' Journal Article. \emph{Policy Research Working
+Anginer, Deniz, and Asli Demirguc-Kunt. 2014. {``Bank Capital and
+Systemic Stability.''} Journal Article. \emph{Policy Research Working
 Papers} 6948 (June 2014): 42.
 \url{https://doi.org/doi:10.1596/1813-9450-6948}.
 
@@ -1571,330 +1692,339 @@ Public Economics}. Book. London ; New York: McGraw-Hill Book Co.
 
 \leavevmode\hypertarget{ref-RN21}{}%
 Ayadi, Rym, Paola Bongini, Barbara Casu, and Doriana Cucinelli. 2020.
-``Bank Business Model Migrations in Europe: Determinants and Effects.''
-Journal Article. \emph{British Journal of Management} n/a (n/a).
-\url{https://doi.org/https://doi.org/10.1111/1467-8551.12437}.
+{``Bank Business Model Migrations in Europe: Determinants and
+Effects.''} Journal Article. \emph{British Journal of Management} n/a
+(n/a). https://doi.org/\url{https://doi.org/10.1111/1467-8551.12437}.
 
 \leavevmode\hypertarget{ref-RN22}{}%
 Beck, Thorsten, Asli Demirgüç-Kunt, and Vojislav Maksimovic. 2004.
-``Bank Competition and Access to Finance: International Evidence.''
+{``Bank Competition and Access to Finance: International Evidence.''}
 Journal Article. \emph{Journal of Money, Credit and Banking} 36 (3):
 627--48.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/3838958}.
 
 \leavevmode\hypertarget{ref-RN23}{}%
-Beck, Thorsten, and Ross Levine. 2002. ``Industry Growth and Capital
-Allocation:: Does Having a Market- or Bank-Based System Matter?''
+Beck, Thorsten, and Ross Levine. 2002. {``Industry Growth and Capital
+Allocation:: Does Having a Market- or Bank-Based System Matter?''}
 Journal Article. \emph{Journal of Financial Economics} 64 (2): 147--80.
-\url{https://doi.org/https://doi.org/10.1016/S0304-405X(02)00074-0}.
+https://doi.org/\url{https://doi.org/10.1016/S0304-405X(02)00074-0}.
 
 \leavevmode\hypertarget{ref-RN24}{}%
-Berger, Allen N., and Christa H. S. Bouwman. 2013. ``How Does Capital
-Affect Bank Performance During Financial Crises?'' Journal Article.
+Berger, Allen N., and Christa H. S. Bouwman. 2013. {``How Does Capital
+Affect Bank Performance During Financial Crises?''} Journal Article.
 \emph{Journal of Financial Economics} 109 (1): 146--76.
-\url{https://doi.org/https://doi.org/10.1016/j.jfineco.2013.02.008}.
+https://doi.org/\url{https://doi.org/10.1016/j.jfineco.2013.02.008}.
 
 \leavevmode\hypertarget{ref-RN25}{}%
 Berger, Allen N., George R. G. Clarke, Robert Cull, Leora Klapper, and
-Gregory F. Udell. 2005. ``Corporate Governance and Bank Performance: A
+Gregory F. Udell. 2005. {``Corporate Governance and Bank Performance: A
 Joint Analysis of the Static, Selection, and Dynamic Effects of
-Domestic, Foreign, and State Ownership.'' Journal Article. \emph{Journal
-of Banking \& Finance} 29 (8): 2179--2221.
-\url{https://doi.org/https://doi.org/10.1016/j.jbankfin.2005.03.013}.
+Domestic, Foreign, and State Ownership.''} Journal Article.
+\emph{Journal of Banking \& Finance} 29 (8): 2179--2221.
+https://doi.org/\url{https://doi.org/10.1016/j.jbankfin.2005.03.013}.
 
 \leavevmode\hypertarget{ref-RN26}{}%
-Berger, Allen N., Iftekhar Hasan, and Mingming Zhou. 2009. ``Bank
+Berger, Allen N., Iftekhar Hasan, and Mingming Zhou. 2009. {``Bank
 Ownership and Efficiency in China: What Will Happen in the World's
-Largest Nation?'' Journal Article. \emph{Journal of Banking \& Finance}
+Largest Nation?''} Journal Article. \emph{Journal of Banking \& Finance}
 33 (1): 113--30.
-\url{https://doi.org/https://doi.org/10.1016/j.jbankfin.2007.05.016}.
+https://doi.org/\url{https://doi.org/10.1016/j.jbankfin.2007.05.016}.
 
 \leavevmode\hypertarget{ref-RN28}{}%
-Bitar, Mohammad, Kuntara Pukthuanthong, and Thomas Walker. 2018. ``The
+Bitar, Mohammad, Kuntara Pukthuanthong, and Thomas Walker. 2018. {``The
 Effect of Capital Ratios on the Risk, Efficiency and Profitability of
-Banks: Evidence from Oecd Countries.'' Journal Article. \emph{Journal of
-International Financial Markets, Institutions and Money} 53: 227--62.
-\url{https://doi.org/https://doi.org/10.1016/j.intfin.2017.12.002}.
+Banks: Evidence from OECD Countries.''} Journal Article. \emph{Journal
+of International Financial Markets, Institutions and Money} 53: 227--62.
+https://doi.org/\url{https://doi.org/10.1016/j.intfin.2017.12.002}.
 
 \leavevmode\hypertarget{ref-RN29}{}%
-Blum, Jürg. 1999. ``Do Capital Adequacy Requirements Reduce Risks in
-Banking?'' Journal Article. \emph{Journal of Banking \& Finance} 23 (5):
-755--71.
-\url{https://doi.org/https://doi.org/10.1016/S0378-4266(98)00113-7}.
+Blum, Jürg. 1999. {``Do Capital Adequacy Requirements Reduce Risks in
+Banking?''} Journal Article. \emph{Journal of Banking \& Finance} 23
+(5): 755--71.
+https://doi.org/\url{https://doi.org/10.1016/S0378-4266(98)00113-7}.
 
 \leavevmode\hypertarget{ref-RN30}{}%
-Borio, Claudio. E. V. 2003. ``Towards a Macroprudential Framework for
-Financial Supervision and Regulation?'' Journal Article. \emph{BIS
+Borio, Claudio. E. V. 2003. {``Towards a Macroprudential Framework for
+Financial Supervision and Regulation?''} Journal Article. \emph{BIS
 Working Papers} no. 128. (Accessed from
 https://nla.gov.au/nla.cat-vn1001461): 1020--0959.
 
 \leavevmode\hypertarget{ref-RN32}{}%
-Boyd, John H., and Gianni De Nicoló. 2005. ``The Theory of Bank Risk
-Taking and Competition Revisited.'' Journal Article. \emph{The Journal
+Boyd, John H., and Gianni De Nicoló. 2005. {``The Theory of Bank Risk
+Taking and Competition Revisited.''} Journal Article. \emph{The Journal
 of Finance} 60 (3): 1329--43.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/3694928}.
 
 \leavevmode\hypertarget{ref-RN31}{}%
-Boyd, John H., and Hendrik Hakenes. 2008. ``Looting and Gambling in
-Banking Crises.'' Conference Proceedings. In.
+Boyd, John H., and Hendrik Hakenes. 2008. {``Looting and Gambling in
+Banking Crises.''} Conference Proceedings. In.
 
 \leavevmode\hypertarget{ref-RN33}{}%
-Burkart, Mike, Fausto Panunzi, and Andrei Shleifer. 2003. ``Family
-Firms.'' Journal Article. \emph{The Journal of Finance} 58 (5):
+Burkart, Mike, Fausto Panunzi, and Andrei Shleifer. 2003. {``Family
+Firms.''} Journal Article. \emph{The Journal of Finance} 58 (5):
 2167--2201.
-\url{https://doi.org/https://doi.org/10.1111/1540-6261.00601}.
+https://doi.org/\url{https://doi.org/10.1111/1540-6261.00601}.
 
 \leavevmode\hypertarget{ref-RN35}{}%
-Calem, Paul, and Rafael Rob. 1999. ``The Impact of Capital-Based
-Regulation on Bank Risk-Taking.'' Journal Article. \emph{Journal of
+Calem, Paul, and Rafael Rob. 1999. {``The Impact of Capital-Based
+Regulation on Bank Risk-Taking.''} Journal Article. \emph{Journal of
 Financial Intermediation} 8 (4): 317--52.
-\url{https://doi.org/https://doi.org/10.1006/jfin.1999.0276}.
+https://doi.org/\url{https://doi.org/10.1006/jfin.1999.0276}.
 
 \leavevmode\hypertarget{ref-RN36}{}%
-Chiaramonte, Laura, and Barbara Casu. 2017. ``Capital and Liquidity
+Chiaramonte, Laura, and Barbara Casu. 2017. {``Capital and Liquidity
 Ratios and Financial Distress. Evidence from the European Banking
-Industry.'' Journal Article. \emph{The British Accounting Review} 49
+Industry.''} Journal Article. \emph{The British Accounting Review} 49
 (2): 138--61.
-\url{https://doi.org/https://doi.org/10.1016/j.bar.2016.04.001}.
+https://doi.org/\url{https://doi.org/10.1016/j.bar.2016.04.001}.
 
 \leavevmode\hypertarget{ref-RN37}{}%
-Cooper, Russell, and Thomas W. Ross. 2002. ``Bank Runs: Deposit
-Insurance and Capital Requirements.'' \emph{International Economic
+Cooper, Russell, and Thomas W. Ross. 2002. {``Bank Runs: Deposit
+Insurance and Capital Requirements.''} \emph{International Economic
 Review} 43 (1): 55--72.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/827056}.
 
 \leavevmode\hypertarget{ref-RN40}{}%
 Dagher, Jihad, Giovanni Dell'Ariccia, Luc Laeven, Lev Ratnovski, and Hui
-Tong. 2016. ``Benefits and Costs of Bank Capital.'' Journal Article.
+Tong. 2016. {``Benefits and Costs of Bank Capital.''} Journal Article.
 \emph{Staff Discussion Notes} 2016 (004): A001.
 \url{https://doi.org/10.5089/9781498387712.006.A001}.
 
 \leavevmode\hypertarget{ref-RN41}{}%
-Demirguc-Kunt, Asli; and Enrica Detragiache. 1997. ``The Determinants of
-Banking Crises : Evidence from Industrial and Developing Countries.''
-Journal Article. \emph{Policy Research Working Papers}, nos. Accessed
-from https://nla.gov.au/nla.cat-vn679349.
+Demirguc-Kunt, Asli;, and Enrica Detragiache. 1997. {``The Determinants
+of Banking Crises : Evidence from Industrial and Developing
+Countries.''} Journal Article. \emph{Policy Research Working Papers},
+no. Accessed from https://nla.gov.au/nla.cat-vn679349.
 
 \leavevmode\hypertarget{ref-RN42}{}%
 Demirguc-Kunt, Asli, Enrica Detragiache, and Ouarda Merrouche. 2013.
-``Bank Capital: Lessons from the Financial Crisis.'' Journal Article.
+{``Bank Capital: Lessons from the Financial Crisis.''} Journal Article.
 \emph{Journal of Money, Credit and Banking} 45 (6): 1147--64.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/23463595}.
 
 \leavevmode\hypertarget{ref-RN43}{}%
-Demirgüç-Kunt, Asli, and Harry Huizinga. 2010. ``Bank Activity and
-Funding Strategies: The Impact on Risk and Returns.'' Journal Article.
+Demirgüç-Kunt, Asli, and Harry Huizinga. 2010. {``Bank Activity and
+Funding Strategies: The Impact on Risk and Returns.''} Journal Article.
 \emph{Journal of Financial Economics} 98 (3): 626--50.
-\url{https://doi.org/https://doi.org/10.1016/j.jfineco.2010.06.004}.
+https://doi.org/\url{https://doi.org/10.1016/j.jfineco.2010.06.004}.
 
 \leavevmode\hypertarget{ref-RN44}{}%
-Demirgüç-Kunt, Asli, and Edward J. Kane. 2002. ``Deposit Insurance
-Around the Globe: Where Does It Work?'' Journal Article. \emph{The
+Demirgüç-Kunt, Asli, and Edward J. Kane. 2002. {``Deposit Insurance
+Around the Globe: Where Does It Work?''} Journal Article. \emph{The
 Journal of Economic Perspectives} 16 (2): 175--95.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/2696502}.
 
 \leavevmode\hypertarget{ref-RN45}{}%
-Diamond, Douglas W. 1984. ``Financial Intermediation and Delegated
-Monitoring.'' Journal Article. \emph{Review of Economic Studies} 51 (3):
-393. \url{https://doi.org/10.2307/2297430}.
+Diamond, Douglas W. 1984. {``Financial Intermediation and Delegated
+Monitoring.''} Journal Article. \emph{Review of Economic Studies} 51
+(3): 393. \url{https://doi.org/10.2307/2297430}.
 
 \leavevmode\hypertarget{ref-RN46}{}%
-Diamond, Douglas W., and Philip H. Dybvig. 1983. ``Bank Runs, Deposit
-Insurance, and Liquidity.'' Journal Article. \emph{Journal of Political
+Diamond, Douglas W., and Philip H. Dybvig. 1983. {``Bank Runs, Deposit
+Insurance, and Liquidity.''} Journal Article. \emph{Journal of Political
 Economy} 91 (3): 401--19. \url{http://www.jstor.org/stable/1837095}.
 
 \leavevmode\hypertarget{ref-RN47}{}%
-Fungáčová, Zuzana, Pierre Pessarossi, and Laurent Weill. 2013. ``Is Bank
-Competition Detrimental to Efficiency? Evidence from China.'' Journal
-Article. \emph{China Economic Review} 27: 121--34.
-\url{https://doi.org/https://doi.org/10.1016/j.chieco.2013.09.004}.
+Fungáčová, Zuzana, Pierre Pessarossi, and Laurent Weill. 2013. {``Is
+Bank Competition Detrimental to Efficiency? Evidence from China.''}
+Journal Article. \emph{China Economic Review} 27: 121--34.
+https://doi.org/\url{https://doi.org/10.1016/j.chieco.2013.09.004}.
 
 \leavevmode\hypertarget{ref-RN48}{}%
 Hellmann, Thomas F., Kevin C. Murdock, and Joseph E. Stiglitz. 2000.
-``Liberalization, Moral Hazard in Banking, and Prudential Regulation:
-Are Capital Requirements Enough?'' Journal Article. \emph{The American
+{``Liberalization, Moral Hazard in Banking, and Prudential Regulation:
+Are Capital Requirements Enough?''} Journal Article. \emph{The American
 Economic Review} 90 (1): 147--65.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/117285}.
 
 \leavevmode\hypertarget{ref-RN49}{}%
-Hirshleifer, David, and Anjan V. Thakor. 1992. ``Managerial
-Conservatism, Project Choice, and Debt.'' Journal Article. \emph{The
+Hirshleifer, David, and Anjan V. Thakor. 1992. {``Managerial
+Conservatism, Project Choice, and Debt.''} Journal Article. \emph{The
 Review of Financial Studies} 5 (3): 437--70.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/2962134}.
 
 \leavevmode\hypertarget{ref-RN50}{}%
-Hogan, Thomas L. 2015. ``Capital and Risk in Commercial Banking: A
-Comparison of Capital and Risk-Based Capital Ratios.'' Journal Article.
+Hogan, Thomas L. 2015. {``Capital and Risk in Commercial Banking: A
+Comparison of Capital and Risk-Based Capital Ratios.''} Journal Article.
 \emph{The Quarterly Review of Economics and Finance} 57: 32--45.
-\url{https://doi.org/https://doi.org/10.1016/j.qref.2014.11.003}.
+https://doi.org/\url{https://doi.org/10.1016/j.qref.2014.11.003}.
 
 \leavevmode\hypertarget{ref-RN51}{}%
-Iannotta, Giuliano, Giacomo Nocera, and Andrea Sironi. 2007. ``Ownership
-Structure, Risk and Performance in the European Banking Industry.''
-Journal Article. \emph{Journal of Banking \& Finance} 31 (7): 2127--49.
-\url{https://doi.org/https://doi.org/10.1016/j.jbankfin.2006.07.013}.
+Iannotta, Giuliano, Giacomo Nocera, and Andrea Sironi. 2007.
+{``Ownership Structure, Risk and Performance in the European Banking
+Industry.''} Journal Article. \emph{Journal of Banking \& Finance} 31
+(7): 2127--49.
+https://doi.org/\url{https://doi.org/10.1016/j.jbankfin.2006.07.013}.
 
 \leavevmode\hypertarget{ref-RN52}{}%
-Jensen, Michael C., and William H. Meckling. 1976. ``Theory of the Firm:
-Managerial Behavior, Agency Costs and Ownership Structure.'' Journal
-Article. \emph{Journal of Financial Economics} 3 (4): 305--60.
-\url{https://doi.org/https://doi.org/10.1016/0304-405X(76)90026-X}.
+Jensen, Michael C., and William H. Meckling. 1976. {``Theory of the
+Firm: Managerial Behavior, Agency Costs and Ownership Structure.''}
+Journal Article. \emph{Journal of Financial Economics} 3 (4): 305--60.
+https://doi.org/\url{https://doi.org/10.1016/0304-405X(76)90026-X}.
 
 \leavevmode\hypertarget{ref-RN53}{}%
-Jiang, Hai, Jinyi Zhang, and Chen Sun. 2020. ``How Does Capital Buffer
+Jiang, Hai, Jinyi Zhang, and Chen Sun. 2020. {``How Does Capital Buffer
 Affect Bank Risk-Taking? New Evidence from China Using Quantile
-Regression.'' Journal Article. \emph{China Economic Review} 60: 101300.
-\url{https://doi.org/https://doi.org/10.1016/j.chieco.2019.04.008}.
+Regression.''} Journal Article. \emph{China Economic Review} 60: 101300.
+https://doi.org/\url{https://doi.org/10.1016/j.chieco.2019.04.008}.
 
 \leavevmode\hypertarget{ref-RN54}{}%
-John, Kose, Lubomir Litov, and Bernard Yeung. 2008. ``Corporate
-Governance and Risk-Taking.'' Journal Article. \emph{The Journal of
+John, Kose, Lubomir Litov, and Bernard Yeung. 2008. {``Corporate
+Governance and Risk-Taking.''} Journal Article. \emph{The Journal of
 Finance} 63 (4): 1679--1728.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/25094487}.
 
 \leavevmode\hypertarget{ref-RN55}{}%
-John, Kose, Anthony Saunders, and Lemma W. Senbet. 2000. ``A Theory of
-Bank Regulation and Management Compensation.'' Journal Article.
+John, Kose, Anthony Saunders, and Lemma W. Senbet. 2000. {``A Theory of
+Bank Regulation and Management Compensation.''} Journal Article.
 \emph{The Review of Financial Studies} 13 (1): 95--125.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/2646082}.
 
 \leavevmode\hypertarget{ref-RN56}{}%
-Keeley, Michael C. 1990. ``Deposit Insurance, Risk, and Market Power in
-Banking.'' Journal Article. \emph{The American Economic Review} 80 (5):
+Keeley, Michael C. 1990. {``Deposit Insurance, Risk, and Market Power in
+Banking.''} Journal Article. \emph{The American Economic Review} 80 (5):
 1183--1200.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/2006769}.
 
 \leavevmode\hypertarget{ref-RN57}{}%
-Koehn, Michael, and Anthony M. Santomero. 1980. ``Regulation of Bank
-Capital and Portfolio Risk.'' Journal Article. \emph{The Journal of
+Koehn, Michael, and Anthony M. Santomero. 1980. {``Regulation of Bank
+Capital and Portfolio Risk.''} Journal Article. \emph{The Journal of
 Finance} 35 (5): 1235--44. \url{https://doi.org/10.2307/2327096}.
-
-\leavevmode\hypertarget{ref-RN60}{}%
-Laeven, Luc, and Ross Levine. 2007. ``Is There a Diversification
-Discount in Financial Conglomerates?'' Journal Article. \emph{Journal of
-Financial Economics} 85 (2): 331--67.
-\url{https://doi.org/https://doi.org/10.1016/j.jfineco.2005.06.001}.
-
-\leavevmode\hypertarget{ref-RN1}{}%
----------. 2009. ``Bank Governance, Regulation and Risk Taking.''
-Journal Article. \emph{Journal of Financial Economics} 93 (2): 259--75.
-\url{https://doi.org/https://doi.org/10.1016/j.jfineco.2008.09.003}.
 
 \leavevmode\hypertarget{ref-RN58}{}%
 La Porta, Rafael, Lopez-de-Silanes Florencio, and Andrei Shleifer. 1999.
-``Corporate Ownership Around the World.'' Journal Article. \emph{The
+{``Corporate Ownership Around the World.''} Journal Article. \emph{The
 Journal of Finance} 54 (2): 471--517.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/2697717}.
 
 \leavevmode\hypertarget{ref-RN59}{}%
----------. 2002. ``Government Ownership of Banks.'' Journal Article.
+---------. 2002. {``Government Ownership of Banks.''} Journal Article.
 \emph{The Journal of Finance} 57 (1): 265--301.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/2697840}.
 
+\leavevmode\hypertarget{ref-RN60}{}%
+Laeven, Luc, and Ross Levine. 2007. {``Is There a Diversification
+Discount in Financial Conglomerates?''} Journal Article. \emph{Journal
+of Financial Economics} 85 (2): 331--67.
+https://doi.org/\url{https://doi.org/10.1016/j.jfineco.2005.06.001}.
+
+\leavevmode\hypertarget{ref-RN1}{}%
+---------. 2009. {``Bank Governance, Regulation and Risk Taking.''}
+Journal Article. \emph{Journal of Financial Economics} 93 (2): 259--75.
+https://doi.org/\url{https://doi.org/10.1016/j.jfineco.2008.09.003}.
+
 \leavevmode\hypertarget{ref-RN61}{}%
-Lee, Chien-Chiang, and Meng-Fen Hsieh. 2013. ``The Impact of Bank
-Capital on Profitability and Risk in Asian Banking.'' Journal Article.
+Lee, Chien-Chiang, and Meng-Fen Hsieh. 2013. {``The Impact of Bank
+Capital on Profitability and Risk in Asian Banking.''} Journal Article.
 \emph{Journal of International Money and Finance} 32: 251--81.
-\url{https://doi.org/https://doi.org/10.1016/j.jimonfin.2012.04.013}.
+https://doi.org/\url{https://doi.org/10.1016/j.jimonfin.2012.04.013}.
 
 \leavevmode\hypertarget{ref-RN62}{}%
-Lee, Chien-Chiang, Shao-Lin Ning, and Chi-Chuan Lee. 2015. ``How Does
+Lee, Chien-Chiang, Shao-Lin Ning, and Chi-Chuan Lee. 2015. {``How Does
 Bank Capital Affect Bank Profitability and Risk? Evidence from China's
-Wto Accession.'' Journal Article. \emph{China \& World Economy} 23 (4):
-19--39. \url{https://doi.org/https://doi.org/10.1111/cwe.12119}.
+WTO Accession.''} Journal Article. \emph{China \& World Economy} 23 (4):
+19--39. https://doi.org/\url{https://doi.org/10.1111/cwe.12119}.
 
 \leavevmode\hypertarget{ref-RN63}{}%
-Lee, Tung-Hao, and Shu-Hwa Chih. 2013. ``Does Financial Regulation
+Lee, Tung-Hao, and Shu-Hwa Chih. 2013. {``Does Financial Regulation
 Affect the Profit Efficiency and Risk of Banks? Evidence from China's
-Commercial Banks.'' Journal Article. \emph{The North American Journal of
-Economics and Finance} 26: 705--24.
-\url{https://doi.org/https://doi.org/10.1016/j.najef.2013.05.005}.
+Commercial Banks.''} Journal Article. \emph{The North American Journal
+of Economics and Finance} 26: 705--24.
+https://doi.org/\url{https://doi.org/10.1016/j.najef.2013.05.005}.
 
 \leavevmode\hypertarget{ref-RN64}{}%
-Mehran, Hamid, and Anjan Thakor. 2011. ``Bank Capital and Value in the
-Cross-Section.'' Journal Article. \emph{The Review of Financial Studies}
-24 (4): 1019--67.
+Mehran, Hamid, and Anjan Thakor. 2011. {``Bank Capital and Value in the
+Cross-Section.''} Journal Article. \emph{The Review of Financial
+Studies} 24 (4): 1019--67.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/20869264}.
 
 \leavevmode\hypertarget{ref-RN65}{}%
-Pasiouras, Fotios. 2008. ``International Evidence on the Impact of
+Pasiouras, Fotios. 2008. {``International Evidence on the Impact of
 Regulations and Supervision on Banks' Technical Efficiency: An
-Application of Two-Stage Data Envelopment Analysis.'' Journal Article.
+Application of Two-Stage Data Envelopment Analysis.''} Journal Article.
 \emph{Review of Quantitative Finance and Accounting} 30 (2): 187--223.
 \url{https://doi.org/10.1007/s11156-007-0046-7}.
 
 \leavevmode\hypertarget{ref-RN66}{}%
-Pessarossi, Pierre, and Laurent Weill. 2015. ``Do Capital Requirements
-Affect Cost Efficiency? Evidence from China.'' Journal Article.
+Pessarossi, Pierre, and Laurent Weill. 2015. {``Do Capital Requirements
+Affect Cost Efficiency? Evidence from China.''} Journal Article.
 \emph{Journal of Financial Stability} 19: 119--27.
-\url{https://doi.org/https://doi.org/10.1016/j.jfs.2014.11.002}.
+https://doi.org/\url{https://doi.org/10.1016/j.jfs.2014.11.002}.
+
+\leavevmode\hypertarget{ref-RN67}{}%
+Repullo, Rafael. 2004. {``Capital Requirements, Market Power, and
+Risk-Taking in Banking.''} Journal Article. \emph{Journal of Financial
+Intermediation} 13 (2): 156--82.
+https://doi.org/\url{https://doi.org/10.1016/j.jfi.2003.08.005}.
 
 \leavevmode\hypertarget{ref-RN68}{}%
-Roulet, Caroline. 2018. ``Basel Iii: Effects of Capital and Liquidity
-Regulations on European Bank Lending.'' Journal Article. \emph{Journal
+Roulet, Caroline. 2018. {``Basel III: Effects of Capital and Liquidity
+Regulations on European Bank Lending.''} Journal Article. \emph{Journal
 of Economics and Business} 95: 26--46.
-\url{https://doi.org/https://doi.org/10.1016/j.jeconbus.2017.10.001}.
+https://doi.org/\url{https://doi.org/10.1016/j.jeconbus.2017.10.001}.
 
 \leavevmode\hypertarget{ref-RN69}{}%
-Sapienza, Paola. 2004. ``The Effects of Government Ownership on Bank
-Lending.'' Journal Article. \emph{Journal of Financial Economics} 72
+Sapienza, Paola. 2004. {``The Effects of Government Ownership on Bank
+Lending.''} Journal Article. \emph{Journal of Financial Economics} 72
 (2): 357--84.
-\url{https://doi.org/https://doi.org/10.1016/j.jfineco.2002.10.002}.
+https://doi.org/\url{https://doi.org/10.1016/j.jfineco.2002.10.002}.
 
 \leavevmode\hypertarget{ref-RN70}{}%
 Saunders, Anthony, Elizabeth Strock, and Nickolaos G. Travlos. 1990.
-``Ownership Structure, Deregulation, and Bank Risk Taking.'' Journal
+{``Ownership Structure, Deregulation, and Bank Risk Taking.''} Journal
 Article. \emph{The Journal of Finance} 45 (2): 643--54.
 \url{https://doi.org/10.2307/2328676}.
 
 \leavevmode\hypertarget{ref-RN71}{}%
-Shleifer, Andrei, and Robert W. Vishny. 1986. ``Large Shareholders and
-Corporate Control.'' Journal Article. \emph{Journal of Political
+Shleifer, Andrei, and Robert W. Vishny. 1986. {``Large Shareholders and
+Corporate Control.''} Journal Article. \emph{Journal of Political
 Economy} 94 (3): 461--88.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/1833044}.
 
 \leavevmode\hypertarget{ref-RN72}{}%
----------. 1994. ``Politicians and Firms.'' Journal Article. \emph{The
+---------. 1994. {``Politicians and Firms.''} Journal Article. \emph{The
 Quarterly Journal of Economics} 109 (4): 995--1025.
 \url{https://doi.org/10.2307/2118354}.
 
 \leavevmode\hypertarget{ref-RN4}{}%
----------. 1997. ``A Survey of Corporate Governance.'' Journal Article.
-\emph{The Journal of Finance} 52 (2): 737--83.
+---------. 1997. {``A Survey of Corporate Governance.''} Journal
+Article. \emph{The Journal of Finance} 52 (2): 737--83.
 \url{https://doi.org/10.2307/2329497}.
 
 \leavevmode\hypertarget{ref-RN73}{}%
-Stiglitz, Joseph E. 1993. ``The Role of the State in Financial
-Markets.'' Journal Article. \emph{The World Bank Economic Review} 7: 1.
+Stiglitz, Joseph E. 1993. {``The Role of the State in Financial
+Markets.''} Journal Article. \emph{The World Bank Economic Review} 7: 1.
 
 \leavevmode\hypertarget{ref-RN74}{}%
-Stulz, René M. 2005. ``The Limits of Financial Globalization.'' Journal
-Article. \emph{The Journal of Finance} 60 (4): 1595--1638.
+Stulz, René M. 2005. {``The Limits of Financial Globalization.''}
+Journal Article. \emph{The Journal of Finance} 60 (4): 1595--1638.
 \url{http://www.jstor.org.queens.ezp1.qub.ac.uk/stable/3694849}.
 
 \leavevmode\hypertarget{ref-RN75}{}%
-Tan, Yong, and Christos Floros. 2013. ``Risk, Capital and Efficiency in
-Chinese Banking.'' Journal Article. \emph{Journal of International
+Tan, Yong, and Christos Floros. 2013. {``Risk, Capital and Efficiency in
+Chinese Banking.''} Journal Article. \emph{Journal of International
 Financial Markets, Institutions and Money} 26: 378--93.
-\url{https://doi.org/https://doi.org/10.1016/j.intfin.2013.07.009}.
+https://doi.org/\url{https://doi.org/10.1016/j.intfin.2013.07.009}.
 
 \leavevmode\hypertarget{ref-RN76}{}%
-Tirole, Jean. 1994. ``The Internal Organization of Government.'' Journal
-Article. \emph{Oxford Economic Papers} 46 (1): 1--29.
+Tirole, Jean. 1994. {``The Internal Organization of Government.''}
+Journal Article. \emph{Oxford Economic Papers} 46 (1): 1--29.
 \url{http://www.jstor.org/stable/2663521}.
 
 \leavevmode\hypertarget{ref-RN77}{}%
 Zhang, Dayong, Jing Cai, David G. Dickinson, and Ali M. Kutan. 2016.
-``Non-Performing Loans, Moral Hazard and Regulation of the Chinese
-Commercial Banking System.'' Journal Article. \emph{Journal of Banking
+{``Non-Performing Loans, Moral Hazard and Regulation of the Chinese
+Commercial Banking System.''} Journal Article. \emph{Journal of Banking
 \& Finance} 63: 48--60.
-\url{https://doi.org/https://doi.org/10.1016/j.jbankfin.2015.11.010}.
+https://doi.org/\url{https://doi.org/10.1016/j.jbankfin.2015.11.010}.
 
 \leavevmode\hypertarget{ref-RN78}{}%
-Zhu, Wenyu, and Jiawen Yang. 2016. ``State Ownership, Cross-Border
-Acquisition, and Risk-Taking: Evidence from China's Banking Industry.''
+Zhu, Wenyu, and Jiawen Yang. 2016. {``State Ownership, Cross-Border
+Acquisition, and Risk-Taking: Evidence from China's Banking Industry.''}
 Journal Article. \emph{Journal of Banking \& Finance} 71: 133--53.
-\url{https://doi.org/https://doi.org/10.1016/j.jbankfin.2016.05.004}.
+https://doi.org/\url{https://doi.org/10.1016/j.jbankfin.2016.05.004}.
+
+\end{CSLReferences}
 
 \bibliographystyle{unsrt}
 \bibliography{refs.bib}

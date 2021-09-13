@@ -20,27 +20,26 @@ keywords:
 bibliography: refs.bib
 output: 
   rticles::arxiv_article:
-    latex_engine: xelatex
+    latex_engine: lualatex
 longtable: true
-header-includes:
-- \usepackage{longtable}
-- \usepackage{color}
-- \usepackage{xcolor}
+header-includes: preamble.tex
 ---
 
 ```{r set-up, include=FALSE}
-knitr::opts_chunk$set(fig.align = "center",warning = FALSE, echo = FALSE)
-pacman::p_load('tidyverse','readxl','flextable','corrplot','stargazer',"memisc","pander")
+knitr::opts_chunk$set(fig.align = "center",warning = FALSE, echo = FALSE,cache = TRUE)
 pacman::p_load(
+  readxl,
+  corrplot,
   rio,          # File import
-  here,         # File locator
   skimr,        # get overview of data
   tidyverse,    # data management + ggplot2 graphics 
   gtsummary,    # summary statistics and tests
   rstatix,      # summary statistics and statistical tests
   janitor,      # adding totals and percents to tables
   scales,       # easily convert proportions to percents  
-  flextable     # converting tables to pretty images
+  flextable,     # converting tables to pretty images
+  knitr,
+  kableExtra
 )
 ```
 
@@ -135,19 +134,16 @@ dat %>%
   adorn_ns(position = "front") %>% 
   adorn_title(row_name = "Ownership",
     col_name = "Type",
-    placement = "combined") %>% # this is necessary to print as image
-  flextable() %>%    # convert to pretty image
+    placement = "combined") %>%
+   flextable() %>%
   # autofit() %>%
   set_caption("Cross tabulation of Ownership and Type") %>%
-  footnote(i=1,j=3:6,value = as_paragraph(c("Branches usually cover a city and the near cities within the province where the bank headquarter is located","Foreign bank branches and subsidiaries","Branches cover the whole country; following CBIRC's categorization","Branches usually cover local communities and rural area within a province where the bank headquarter is located")),
+  flextable::footnote(i=1,j=3:6,value = as_paragraph(c("Branches usually cover a city and the near cities within the province where the bank headquarter is located","Foreign bank branches and subsidiaries","Branches cover the whole country; following CBIRC's categorization","Branches usually cover local communities and rural area within a province where the bank headquarter is located")),
                                           ref_symbols=c("a","b","c","d"),
                                           part="header") %>%
   valign(valign="bottom",part="header") %>%
-  footnote(j=1,i=c(2,4,5),value = as_paragraph(c("Joint-stock Banks having foreign strategic investors (usually shareholding over 15%)","Banks' share held by mixed-ownership insitutions and individuals; if shareholding involves indirect local government holding, the stake is less than 10%","Banks'share either held by local Treasury Bureau (no matter how much of the stake), or indirectly held by local government over 10%")),
-                                          ref_symbols=c("e","f","g"),
-                                          part="body") %>%
-  fontsize(size = 8, part = "all") 
-  
+  flextable::footnote(j=1,i=c(2,4,5),value = as_paragraph(c("Joint-stock Banks having foreign strategic investors (usually shareholding over 15%)","Banks' share held by mixed-ownership insitutions and individuals; if shareholding involves indirect local government holding, the stake is less than 10%","Banks'share either held by local Treasury Bureau (no matter how much of the stake), or indirectly held by local government over 10%")),ref_symbols=c("e","f","g"),part="body") %>%
+  flextable::fontsize(size = 8, part = "all")
   
 # %>% # format to one line per row 
 #   save_as_image("table1.png")
@@ -159,24 +155,21 @@ The main data source for the empirical analysis is SNL Financial (a service prov
 
 Our empirical design follows @RN75 and @RN28. @RN28] examine the impact of risk-based and non-risk-based capital ratios on bank risk, performance and profitability, using a sample of banks from OECD countries. @RN75 employ data on Chinese banks from 2003 to 2009 to examine the relationship between bank capital, risk and efficiency. Both studies use OLS regression models and provide enlightening results regarding the relationship between capital and risk. @RN28 focus on the impact of different measures of capital ratios on bank risk. @RN75 attempt to disentangle the inter relationship between capital, efficiency and risk. The banking data they employ covers the third stage of China’s financial reforms. Both studies provide plausible benchmarks for our research. This paper tests the impact of regulatory capital requirements of CBIRC (based on the Basel III framework) on bank credit risk, incorporating the interaction between bank regulation and ownership structure of Chinese banks. This study employs the annual panel data of 231 commercial banks over the period 2010-2019 (the fourth stage of the financial reform). We begin by examining the impact of regulatory capital on credit risk. Then, we explore the relationship between ownership structure and bank credit risk. Finally, we extend the analysis by testing whether the relation between regulatory capital and credit risk varies with different ownership structure. The baseline OLS regression model specification is outlined as follows:
 
-
-$$Risk_{i, t} = \beta_0 + \beta_1 \times Capital_{i, t} + \beta_2 \times Bank\_Control_{i, t} + \beta_3 \times Ownership_i + \\
-\beta_4 \times Capital_i \times Ownership_i + \beta_5 \times Industry\_Specific_{i,t}  + \beta_6 \times Macro_{i,t} + Year_t + \epsilon_{i,t}$$
-
+\begin{equation}
+Risk_{i, t} = \beta_0 + \beta_1 \times Capital_{i, t} + \beta_2 \times Bank\_Control_{i, t} + \beta_3 \times Ownership_i + \\
+\beta_4 \times Capital_i \times Ownership_i + \beta_5 \times Industry\_Specific_{i,t}  + \beta_6 \times Macro_{i,t} + Year_t + \epsilon_{i,t}
+\end{equation}
 
 In Equation (1), the subscripts $i$ and $t$ denote the individual bank and year respectively. The variable $Risk_{i,t}$ refers to bank $i$’s credit risk indicators which are represented by financial ratios of *Asset Quality* in the CAMEL rating system. The variables $Capital_{i,t}$ and $BankControl_{i,t}$ are different dimensions of capital adequacy requirements and control variables. The variables $Ownership_i$ and $Banktype_i$ are firm specific dummy variables. $Year_t$ is a vector of time specific dummy variables. A year fix-effect dummy variable is included in our baseline model in order to mitigate any effect of omitted variables related to time such as different effective time of the Basel III capital requirements for different levels of banks.  The variables are defined in Table 2. 
 
 ```{r table 2}
 import("table2.xlsx") %>%
   flextable() %>%
-  # autofit() %>%
   set_caption("Table 2: Variable Definitions") %>%
-  fontsize(size = 9, part = "all") %>%
-  width(width = 2)
+  fit_to_width(max_width = 8) %>%
+  fontsize(size = 8, part = "all")
 
 ```
-
-
 
 ## Bank Credit Risk
 
@@ -184,7 +177,7 @@ We use the non-performing loan ratio (i.e., Non-Performing Loans/Total Gross Loa
 
 ## Capital Adequacy Requirements
 
-The impact of capital adequacy regulation on credit risk has been widely debated yet remains an empirical challenge [@RN56;RN29;RN37;RN44;RN42;RN67;RN15;RN63;RN18;RN62]. @RN50 suggest that capital requirements are negatively related to bank risk-taking. @RN48 argue that capital regulation induces banks to take excessive risk. @RN35 find a U-shaped association between capital buffer and bank risk-taking which is also found in the Chinese banks by @RN53. In terms of the measurement of bank capital, studies such as @RN75 and @RN61 both use Equity/Total Assets to measure individual banks’ capital adequacy. @RN42 find stronger association between bank capital and stock return when the leverage ratio is used to measure bank capital instead of risk-based capital ratios. @RN24 find broadly similar empirical results using risk-based and non-risk-based capital ratios. The Basel III framework, as the core of the Basel Committee’s post-crisis reforms, aims at strengthening banks’ risk capture and the resilience of the whole banking system. Risk-based capital ratios are commonly employed to examine the relationship between regulation and bank risk-taking [@RN1;@RN28;@RN68]^[Laeven and Levine (2009) use the regulatory capital ratio (TC/RWA) as the variable of capital requirements] 
+The impact of capital adequacy regulation on credit risk has been widely debated yet remains an empirical challenge [@RN56;@RN29;@RN37;@RN44;@RN42;@RN67;@RN15;@RN63;@RN18;@RN62]. @RN50 suggest that capital requirements are negatively related to bank risk-taking. @RN48 argue that capital regulation induces banks to take excessive risk. @RN35 find a U-shaped association between capital buffer and bank risk-taking which is also found in the Chinese banks by @RN53. In terms of the measurement of bank capital, studies such as @RN75 and @RN61 both use Equity/Total Assets to measure individual banks’ capital adequacy. @RN42 find stronger association between bank capital and stock return when the leverage ratio is used to measure bank capital instead of risk-based capital ratios. @RN24 find broadly similar empirical results using risk-based and non-risk-based capital ratios. The Basel III framework, as the core of the Basel Committee’s post-crisis reforms, aims at strengthening banks’ risk capture and the resilience of the whole banking system. Risk-based capital ratios are commonly employed to examine the relationship between regulation and bank risk-taking [@RN1;@RN28;@RN68]^[Laeven and Levine (2009) use the regulatory capital ratio (TC/RWA) as the variable of capital requirements] 
 
 To examine the impact of Basel III on the individual banks’ credit risk, two regulatory capital ratios are considered based on the Basel III framework and CBIRC capital management regulation. The Tier 1 capital ratio, is defined as the ratio of Tier 1 capital to the total risk-weighted assets (RWA). The total regulatory capital ratio is measured as Tier 1 and Tier 2 capital to RWA. 
 
@@ -227,9 +220,9 @@ dat %>%
   select(-Total_Assets,Concentration,-Year) %>%
   get_summary_stats(show = c("n","mean","median","sd")) %>%
   flextable %>%
-  autofit() %>%
   set_caption("Table 3: Descriptive statistics of the regression predictors") %>%
-  width(width = 2)
+  fit_to_width(max_width = 5) %>%
+  fontsize(size = 8, part = "all")
 ```
 
 Table 3 presents the descriptive statistics for the sample. The mean of NPL to Gross Loans is 1.503%, slightly lower than the figure of 1.8% in @RN53 where they use the sample of banks in China over the period 2004-2017, and higher than the figure of 0.92% in @RN75 where they take the sample over the period 2003-2009. The relatively low NPL ratio of Chinese banks can be regarded as one of the results of the financial industry reform in China. During the reform, the four Asset Management Companies (AMCs) purchased a large amount of non-performing loans from the state-owned banks [@RN75]. Apart from the increase of the numbers of Chinese commercial banks, the NPL figure suggests an average increase in the NPL to Gross Loan ratio of Chinese commercial banks in recent years.
@@ -238,12 +231,12 @@ Tier 1 Ratio and TC/RWA (total capital ratio) have a similar number of observati
 
 The mean of ROE is 12.86 which is slightly lower than what is reported in @RN62 (13.86). They examine the relationship between bank capital and profitability and risk, using the data of Chinese commercial banks from 1997-2011. This period is a transitional time for China’s banking industry since it witnessed the three main stages of the financial reform in China’s banking industry. By 2011, key regimes of the financial reform had finished and essential mechanisms regarding corporate governance, legislation, among others had been established. Therefore, banks’ profitability may be lower than the era of high-speed development due to constraints in markets, supervision and corporate governance. 
 
-```{r correlation}
+```{r correlation, fig.cap="Linear correlations"}
 cor(dat %>%
   dplyr::select(-Total_Assets,-Concentration,-Institution_Name,-Ownership,-Type,-Listed,-Year,-Total_Assets) %>% drop_na())  %>% 
-  corrplot::corrplot(method="number",title="linear correlations")
+  corrplot::corrplot(method="number",number.cex= 8/ncol(dat))
 ```
-Table 4 reports the Pearson correlation matrix between the predictor variables. All correlation coefficients of the variables are lower than 0.6, except for the correlation between Tier 1 capital ratio and the total capital ratio due to the different definition of capital ratios. Therefore, the regression models will be run only using one of these two capital ratios in one model, in order to avoid high collinearity. 
+Figure 4 reports the Pearson correlation matrix between the predictor variables. All correlation coefficients of the variables are lower than 0.6, except for the correlation between Tier 1 capital ratio and the total capital ratio due to the different definition of capital ratios. Therefore, the regression models will be run only using one of these two capital ratios in one model, in order to avoid high collinearity. 
 
 ## Impact on bank credit risk – risk-based capital ratios
 
@@ -263,28 +256,35 @@ predictors %>%
   str_c(collapse = "+") %>%
   str_c("NPL ~ Tier1_Ratio +", .) %>%
   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
-  gtsummary::tbl_regression() ->mv1
+  tbl_regression() -> mv1
+
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("NPL ~ TC_to_RWA +", .) %>%
   lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
-  gtsummary::tbl_regression() ->mv2
+  tbl_regression() ->mv2
+
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("LLR ~ Tier1_Ratio +", .) %>%
   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
-  gtsummary::tbl_regression(digits=5) ->mv3
+  tbl_regression() ->mv3
+
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("LLR ~ TC_to_RWA +", .) %>%
   lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
-  gtsummary::tbl_regression() ->mv4
+  tbl_regression() %>%
+  add_n()->mv4
 
 tbl_merge(
   tbls = list(mv1,mv2,mv3,mv4),                         
-  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
-  as_kable(format="latex") %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", font_size = 7,full_width = T)
+  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", 
+                  "LLR vs Tier1", "LLR vs TC_RAW")) %>%
+  bold_labels() %>%
+  modify_header(label ~ "Predictors") %>%
+    as_kable_extra() %>%
+  kable_styling(font_size = 6,full_width = T)
 ```
 
 
@@ -324,33 +324,36 @@ mtable1 <- mtable('Model 1' = Linear_NPL_1,
 
 ```
 
-```{rtable6alt}
+```{r table6alt}
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("NPL ~ Tier1_Ratio + Ownership +", .) %>%
   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
-  gtsummary::tbl_regression() ->mv1
+  tbl_regression() ->mv1
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("NPL ~ TC_to_RWA + + Ownership +", .) %>%
   lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
-  gtsummary::tbl_regression() ->mv2
+  tbl_regression() ->mv2
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("LLR ~ Tier1_Ratio + + Ownership + ", .) %>%
   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
-  gtsummary::tbl_regression(digits=5) ->mv3
+  tbl_regression(digits=5) ->mv3
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("LLR ~ TC_to_RWA ++ Ownership +", .) %>%
   lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
-  gtsummary::tbl_regression() ->mv4
+  tbl_regression() ->mv4
 
 tbl_merge(
   tbls = list(mv1,mv2,mv3,mv4),                         
-  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
-  as_kable(format="latex") %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", font_size = 7,full_width = T)
+  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW",
+                  "LLR vs Tier1", "LLR vs TC_RAW")) %>%
+  bold_labels() %>%
+  modify_header(label ~ "Predictors") %>%
+  as_kable_extra() %>% 
+  kable_styling(font_size = 6,full_width = T)
 
 ```
 
@@ -360,7 +363,7 @@ As discussed in the previous sections, ownership structure is always one of the 
 
 The results reveal that state-owned banks have higher credit risk compared to those foreign-owned banks in China’s banking industry. This finding, to some extent, supports the viewpoint that state-owned banks would be involved in policy-guided credit activities instead of profit-centered ones [@RN66].  The social lending theory of state ownership @RN20 suggests that state-owned enterprises contribute to “correcting the ‘failure’ of market economy” due to imperfect competition, inefficiency and public good. According to this view, government-owned enterprises may help improve the overall economy performance [@RN73]. In China’s banking context, the biggest four commercial banks were founded and conducted a large amount of government lending in the early 1990’s, before national banks and city banks were established. Within a relatively long period, the state-owned banks (including local government-holding banks founded later in the end of 1990’s) played a role of ‘government agencies’ to pursue the broader social welfare objectives rather than profit maximizing. Since the state-owned banks target multiple welfare objectives which might not be measurable, the managers in the state-owned banks have low powered incentives[@RN76]. However, this resulted in the significant non-performing loan levels of ‘Big Four’ banks before China’s WTO accession in 2001.
 
-Since 2001, the ownership structure has been dramatically transformed, due to China’s overall industrial reforms and the commitments to the WTO agreement. The large part of shares directly held by local government were gradually replaced by mixed ownership enterprises, foreign investments, and private investors. In terms of the state-owned banks, direct state intervention was replaced by Central Huijin (a company representing the state government) along with the establishment of modern corporate governance system. Why does state ownership still have relatively higher credit risk? The higher credit risk taking by state-owned banks can be explained by two reasons: (1) although the direct government shareholding structure changed, business connection with state-owned enterprises remains due to the long-lasting business relationship and contracts such as those nationwide infrastructure projects lasting for decades; (2) the development of modern corporate governance mechanisms in China’s banking industry could transform government ownership into concentrated  ownership, the ownership similar to the one of large investors with significant control rights and cash flow rights [@RN4}. From this perspective, concentrated ownership puts pressure on management decision [@RN4} and bank risk taking incentives [@RN31} Almost all state-owned banks are listed banks. With their significant control rights and cash flow rights, the state (large) shareholder in these state-owned, listed banks may take excessive risk by favouring particular clientele such as large conglomerates in projects with potential of social-benefits rather than those with target of profit-maximizing. @RN69} finds that state-owned banks favour large firms and charge lower interest rates than other types of banks in Italy. This finding is also consistent with @RN1} where they report banks with large investors have higher risk. 
+Since 2001, the ownership structure has been dramatically transformed, due to China’s overall industrial reforms and the commitments to the WTO agreement. The large part of shares directly held by local government were gradually replaced by mixed ownership enterprises, foreign investments, and private investors. In terms of the state-owned banks, direct state intervention was replaced by Central Huijin (a company representing the state government) along with the establishment of modern corporate governance system. Why does state ownership still have relatively higher credit risk? The higher credit risk taking by state-owned banks can be explained by two reasons: (1) although the direct government shareholding structure changed, business connection with state-owned enterprises remains due to the long-lasting business relationship and contracts such as those nationwide infrastructure projects lasting for decades; (2) the development of modern corporate governance mechanisms in China’s banking industry could transform government ownership into concentrated  ownership, the ownership similar to the one of large investors with significant control rights and cash flow rights [@RN4]. From this perspective, concentrated ownership puts pressure on management decision [@RN4] and bank risk taking incentives [@RN31] Almost all state-owned banks are listed banks. With their significant control rights and cash flow rights, the state (large) shareholder in these state-owned, listed banks may take excessive risk by favouring particular clientele such as large conglomerates in projects with potential of social-benefits rather than those with target of profit-maximizing. @RN69] finds that state-owned banks favour large firms and charge lower interest rates than other types of banks in Italy. This finding is also consistent with @RN1] where they report banks with large investors have higher risk. 
 
 ## Impact on bank credit risk – Interaction between regulation and ownership structure}
 
@@ -393,7 +396,6 @@ mtable1 <- mtable('Model 1' = Linear_NPL_1,
             'Model 3' = Linear_LLR_1,
             'Model 4' = Linear_LLR_2, 
             summary.stats = c('R-squared','F','p','N'))
-kable(mtable1)
 ```
 
 ```{r table7alt}
@@ -401,28 +403,33 @@ predictors %>%
   str_c(collapse = "+") %>%
   str_c("NPL ~ Tier1_Ratio + Ownership + Tier1_Ratio:Ownership +", .) %>%
   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
-  gtsummary::tbl_regression() ->mv1
+  tbl_regression() ->mv1
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("NPL ~ TC_to_RWA + + Ownership + Tier1_Ratio:Ownership +", .) %>%
   lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
-  gtsummary::tbl_regression() ->mv2
+  tbl_regression() ->mv2
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("LLR ~ Tier1_Ratio + + Ownership + Tier1_Ratio:Ownership +", .) %>%
   lm(data = obs %>% filter(Tier1_Ratio>0 & Tier1_Ratio<100))  %>%
-  gtsummary::tbl_regression(digits=5) ->mv3
+  tbl_regression(digits=5) ->mv3
 predictors %>%
   str_c(collapse = "+") %>%
   str_c("LLR ~ TC_to_RWA ++ Ownership + Tier1_Ratio:Ownership +", .) %>%
   lm(data = obs %>% filter(TC_to_RWA>0 & TC_to_RWA<100))  %>%
-  gtsummary::tbl_regression() ->mv4
+  tbl_regression() ->mv4
 
 tbl_merge(
   tbls = list(mv1,mv2,mv3,mv4),                         
-  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
-  as_kable(format="latex") %>%
-  kableExtra::kable_styling(bootstrap_options = "striped", font_size = 7,full_width = T)
+  tab_spanner = c("NPL vs Tier1","NPL vs TC_RAW", 
+                  "LLR vs Tier1", "LLR vs TC_RAW")) %>% 
+  modify_header(label ~ "Predictors") %>%
+  bold_labels() %>%
+  as_kable_extra() %>% 
+  kable_styling(font_size = 6,full_width = T)
+  
+  
 ```
 
 Table 7 presents regressions in which we assess the interactive associations among ownership structure, regulatory capital requirements, and bank credit risk. Some studies suggest that the relationship between risk and ownership structure is closely associated with national regulation. Because regulation influences both bank owners’ and bank managers’ incentives of risk-taking and risk-shifting [@RN55;RN54]. @RN1 examine the interactions between ownership structure and national regulatory requirements and stringency, and find the relationship between risk and regulation stringency depends on ownership structure. @RN24 state that capital requirements have different impact on bank performance based on different bank size. Here we include the interaction term of each of the capital adequacy variables with different ownership structure variables. Capital adequacy variables remain negative but become insignificant, except for Tier 1 Ratio remains significant but lowers its significant level, under the circumstance of the interactive association between capital ratios and ownership structure. This finding demonstrates the direct effect of the capital adequacy requirement is to reduce bank credit risk and to enhance bank stability.
